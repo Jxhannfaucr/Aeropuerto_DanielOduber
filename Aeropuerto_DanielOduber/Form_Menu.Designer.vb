@@ -26,26 +26,22 @@ Partial Class Form_Menu
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btn_IngresarVentanilla = New System.Windows.Forms.Button()
-        Me.btn_IngresarAvion = New System.Windows.Forms.Button()
-        Me.btn_ProcesarVentanilla = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(327, 41)
+        Me.Label1.Location = New System.Drawing.Point(245, 33)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(350, 32)
+        Me.Label1.Size = New System.Drawing.Size(273, 26)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Aeropuerto Internacional"
         '
@@ -53,9 +49,10 @@ Partial Class Form_Menu
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(369, 96)
+        Me.Label2.Location = New System.Drawing.Point(277, 78)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(259, 32)
+        Me.Label2.Size = New System.Drawing.Size(204, 26)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Dr: Daniel Oduber"
         '
@@ -63,108 +60,78 @@ Partial Class Form_Menu
         '
         Me.btn_IngresarVentanilla.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.btn_IngresarVentanilla.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_IngresarVentanilla.Location = New System.Drawing.Point(206, 319)
+        Me.btn_IngresarVentanilla.Location = New System.Drawing.Point(307, 258)
+        Me.btn_IngresarVentanilla.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_IngresarVentanilla.Name = "btn_IngresarVentanilla"
-        Me.btn_IngresarVentanilla.Size = New System.Drawing.Size(151, 58)
+        Me.btn_IngresarVentanilla.Size = New System.Drawing.Size(113, 47)
         Me.btn_IngresarVentanilla.TabIndex = 2
         Me.btn_IngresarVentanilla.Text = "Ventanillas"
         Me.btn_IngresarVentanilla.UseVisualStyleBackColor = False
         '
-        'btn_IngresarAvion
+        'PictureBox1
         '
-        Me.btn_IngresarAvion.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.btn_IngresarAvion.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_IngresarAvion.Location = New System.Drawing.Point(420, 319)
-        Me.btn_IngresarAvion.Name = "btn_IngresarAvion"
-        Me.btn_IngresarAvion.Size = New System.Drawing.Size(151, 58)
-        Me.btn_IngresarAvion.TabIndex = 4
-        Me.btn_IngresarAvion.Text = "Avion"
-        Me.btn_IngresarAvion.UseVisualStyleBackColor = False
-        '
-        'btn_ProcesarVentanilla
-        '
-        Me.btn_ProcesarVentanilla.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.btn_ProcesarVentanilla.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_ProcesarVentanilla.Location = New System.Drawing.Point(635, 319)
-        Me.btn_ProcesarVentanilla.Name = "btn_ProcesarVentanilla"
-        Me.btn_ProcesarVentanilla.Size = New System.Drawing.Size(151, 58)
-        Me.btn_ProcesarVentanilla.TabIndex = 8
-        Me.btn_ProcesarVentanilla.Text = "Procesar Ventanilla"
-        Me.btn_ProcesarVentanilla.UseVisualStyleBackColor = False
+        Me.PictureBox1.Image = Global.Aeropuerto_DanielOduber.My.Resources.Resources.taquilla
+        Me.PictureBox1.Location = New System.Drawing.Point(327, 213)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(75, 41)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 3
+        Me.PictureBox1.TabStop = False
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(430, 171)
+        Me.Label3.Location = New System.Drawing.Point(322, 139)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(125, 32)
+        Me.Label3.Size = New System.Drawing.Size(97, 26)
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "Ingresar:"
         '
         'PictureBox5
         '
         Me.PictureBox5.Image = Global.Aeropuerto_DanielOduber.My.Resources.Resources.WhatsApp_Image_2023_07_26_at_15_52_43_removebg_preview
-        Me.PictureBox5.Location = New System.Drawing.Point(75, 41)
+        Me.PictureBox5.Location = New System.Drawing.Point(56, 33)
+        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(162, 116)
+        Me.PictureBox5.Size = New System.Drawing.Size(122, 94)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox5.TabIndex = 11
         Me.PictureBox5.TabStop = False
         '
-        'PictureBox4
+        'Button2
         '
-        Me.PictureBox4.Image = Global.Aeropuerto_DanielOduber.My.Resources.Resources.procesamiento_de_datos
-        Me.PictureBox4.Location = New System.Drawing.Point(661, 263)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(100, 50)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox4.TabIndex = 9
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.Aeropuerto_DanielOduber.My.Resources.Resources.avion_de_linea
-        Me.PictureBox2.Location = New System.Drawing.Point(446, 263)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(100, 50)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 5
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Aeropuerto_DanielOduber.My.Resources.Resources.taquilla
-        Me.PictureBox1.Location = New System.Drawing.Point(232, 263)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
+        Me.Button2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(569, 33)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(87, 26)
+        Me.Button2.TabIndex = 13
+        Me.Button2.Text = "Volver"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Form_Menu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(965, 470)
+        Me.ClientSize = New System.Drawing.Size(667, 382)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.PictureBox4)
-        Me.Controls.Add(Me.btn_ProcesarVentanilla)
-        Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.btn_IngresarAvion)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btn_IngresarVentanilla)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Form_Menu"
         Me.Text = "Aeropuerto Daniel Oduber"
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -174,10 +141,7 @@ Partial Class Form_Menu
     Friend WithEvents Label2 As Label
     Friend WithEvents btn_IngresarVentanilla As Button
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents btn_IngresarAvion As Button
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents btn_ProcesarVentanilla As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents Button2 As Button
 End Class
