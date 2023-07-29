@@ -27,17 +27,14 @@ Partial Class Form_Menu
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btn_IngresarVentanilla = New System.Windows.Forms.Button()
         Me.btn_IngresarAvion = New System.Windows.Forms.Button()
-        Me.btn_IngresarPasajero = New System.Windows.Forms.Button()
         Me.btn_ProcesarVentanilla = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -66,7 +63,7 @@ Partial Class Form_Menu
         '
         Me.btn_IngresarVentanilla.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.btn_IngresarVentanilla.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_IngresarVentanilla.Location = New System.Drawing.Point(86, 308)
+        Me.btn_IngresarVentanilla.Location = New System.Drawing.Point(206, 319)
         Me.btn_IngresarVentanilla.Name = "btn_IngresarVentanilla"
         Me.btn_IngresarVentanilla.Size = New System.Drawing.Size(151, 58)
         Me.btn_IngresarVentanilla.TabIndex = 2
@@ -77,29 +74,18 @@ Partial Class Form_Menu
         '
         Me.btn_IngresarAvion.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.btn_IngresarAvion.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_IngresarAvion.Location = New System.Drawing.Point(300, 308)
+        Me.btn_IngresarAvion.Location = New System.Drawing.Point(420, 319)
         Me.btn_IngresarAvion.Name = "btn_IngresarAvion"
         Me.btn_IngresarAvion.Size = New System.Drawing.Size(151, 58)
         Me.btn_IngresarAvion.TabIndex = 4
         Me.btn_IngresarAvion.Text = "Avion"
         Me.btn_IngresarAvion.UseVisualStyleBackColor = False
         '
-        'btn_IngresarPasajero
-        '
-        Me.btn_IngresarPasajero.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.btn_IngresarPasajero.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_IngresarPasajero.Location = New System.Drawing.Point(515, 308)
-        Me.btn_IngresarPasajero.Name = "btn_IngresarPasajero"
-        Me.btn_IngresarPasajero.Size = New System.Drawing.Size(151, 58)
-        Me.btn_IngresarPasajero.TabIndex = 6
-        Me.btn_IngresarPasajero.Text = "Pasajero"
-        Me.btn_IngresarPasajero.UseVisualStyleBackColor = False
-        '
         'btn_ProcesarVentanilla
         '
         Me.btn_ProcesarVentanilla.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.btn_ProcesarVentanilla.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_ProcesarVentanilla.Location = New System.Drawing.Point(726, 308)
+        Me.btn_ProcesarVentanilla.Location = New System.Drawing.Point(635, 319)
         Me.btn_ProcesarVentanilla.Name = "btn_ProcesarVentanilla"
         Me.btn_ProcesarVentanilla.Size = New System.Drawing.Size(151, 58)
         Me.btn_ProcesarVentanilla.TabIndex = 8
@@ -129,27 +115,17 @@ Partial Class Form_Menu
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.Aeropuerto_DanielOduber.My.Resources.Resources.procesamiento_de_datos
-        Me.PictureBox4.Location = New System.Drawing.Point(752, 252)
+        Me.PictureBox4.Location = New System.Drawing.Point(661, 263)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(100, 50)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox4.TabIndex = 9
         Me.PictureBox4.TabStop = False
         '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = Global.Aeropuerto_DanielOduber.My.Resources.Resources.turista
-        Me.PictureBox3.Location = New System.Drawing.Point(541, 252)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(100, 50)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 7
-        Me.PictureBox3.TabStop = False
-        '
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.Aeropuerto_DanielOduber.My.Resources.Resources.avion_de_linea
-        Me.PictureBox2.Location = New System.Drawing.Point(326, 252)
+        Me.PictureBox2.Location = New System.Drawing.Point(446, 263)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(100, 50)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -159,7 +135,7 @@ Partial Class Form_Menu
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.Aeropuerto_DanielOduber.My.Resources.Resources.taquilla
-        Me.PictureBox1.Location = New System.Drawing.Point(112, 252)
+        Me.PictureBox1.Location = New System.Drawing.Point(232, 263)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -176,8 +152,6 @@ Partial Class Form_Menu
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.btn_ProcesarVentanilla)
-        Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.btn_IngresarPasajero)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.btn_IngresarAvion)
         Me.Controls.Add(Me.PictureBox1)
@@ -189,7 +163,6 @@ Partial Class Form_Menu
         Me.Text = "Aeropuerto Daniel Oduber"
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -203,8 +176,6 @@ Partial Class Form_Menu
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents btn_IngresarAvion As Button
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents btn_IngresarPasajero As Button
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents btn_ProcesarVentanilla As Button
     Friend WithEvents Label3 As Label
