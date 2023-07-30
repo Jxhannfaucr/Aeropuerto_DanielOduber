@@ -8,10 +8,10 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-        Dim usuario As String = UsuarioIngreso.Text
+        Dim usuario As String = ComboBox1.Text
         Dim contrasena As String = contraseñalogin.Text
 
-        If usuario.Equals("admin") AndAlso contrasena.Equals("johan_gay") Then
+        If usuario.Equals("admin") AndAlso contrasena.Equals("progra3easy") Then
 
             Dim pasar_Al_Menu_admin As New Menu_Empleado()
 
@@ -21,7 +21,7 @@
             pasar_Al_Menu_admin.Show()
             Me.Hide()
 
-        ElseIf usuario.Equals("usuario") AndAlso contrasena.Equals("yosiney_Guapo") Then
+        ElseIf usuario.Equals("usuario") AndAlso contrasena.Equals("easyprogra3") Then
             Dim pasar_Al_Menu_usuario As New Form_Menu()
 
             pasar_Al_Menu_usuario.Show()

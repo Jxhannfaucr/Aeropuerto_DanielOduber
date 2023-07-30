@@ -25,17 +25,25 @@ Public Class Form_RegistroVentanillas
             ComboBoxDestinos.Items.Clear()
             ''Agrega las aerolineas dependiendo de la ventanilla que se ingreso
             ComboBoxLinea_Aereas.Items.Add("American Airlines")
-            ComboBoxLinea_Aereas.Items.Add("Qantas")
             ''Agrega los destinos dependiendo de la ventanilla que se ingreso
-            ComboBoxDestinos.Items.Add("Guatemala")
-            ComboBoxDestinos.Items.Add("Estados Unidos")
-            ComboBoxDestinos.Items.Add("Canadá")
+            Dim dt As DataTable = New DataTable
+            Dim queryVuelosV1 As String = "select Destino  from TblVuelo where NumeroVentanilla = 1"
+            Dim cmd As SqlCommand = New SqlCommand(queryVuelosV1, conect.Conectar())
+            Dim da As SqlDataAdapter = New SqlDataAdapter(cmd)
+            da.Fill(dt)
+
+            ComboBoxDestinos.Items.Clear()
+
+            For Each row As DataRow In dt.Rows
+                ComboBoxDestinos.Items.Add(row("Destino"))
+            Next
+            conect.Cerrar()
+
 
         ElseIf seleccionado = 2 Then
             ''Agrega las aerolineas dependiendo de la ventanilla que se ingreso
             ComboBoxLinea_Aereas.Items.Clear()
             ComboBoxLinea_Aereas.Items.Add("British Airways")
-            ComboBoxLinea_Aereas.Items.Add("Air France")
             ''Agrega los destinos dependiendo de la ventanilla que se ingreso
             ComboBoxDestinos.Items.Clear()
             ComboBoxDestinos.Items.Add("Argentina")
@@ -46,7 +54,6 @@ Public Class Form_RegistroVentanillas
             ''Agrega las aerolineas dependiendo de la ventanilla que se ingreso
             ComboBoxLinea_Aereas.Items.Clear()
             ComboBoxLinea_Aereas.Items.Add("Emirates")
-            ComboBoxLinea_Aereas.Items.Add("Singapore Airlines")
             ''Agrega los destinos dependiendo de la ventanilla que se ingreso
             ComboBoxDestinos.Items.Clear()
             ComboBoxDestinos.Items.Add("España")
@@ -58,7 +65,6 @@ Public Class Form_RegistroVentanillas
             ''Agrega las aerolineas dependiendo de la ventanilla que se ingreso
             ComboBoxLinea_Aereas.Items.Clear()
             ComboBoxLinea_Aereas.Items.Add("Lufthansa")
-            ComboBoxLinea_Aereas.Items.Add("Delta Air Lines")
             ''Agrega los destinos dependiendo de la ventanilla que se ingreso
             ComboBoxDestinos.Items.Clear()
             ComboBoxDestinos.Items.Add("Rusia")

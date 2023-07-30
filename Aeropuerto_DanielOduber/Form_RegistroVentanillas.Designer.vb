@@ -26,6 +26,9 @@ Partial Class Form_RegistroVentanillas
         Me.lb_conexion = New System.Windows.Forms.Label()
         Me.ComboBoxID_Ventanilla = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ComboBoxDestinos = New System.Windows.Forms.ComboBox()
+        Me.ComboBoxLinea_Aereas = New System.Windows.Forms.ComboBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBoxCedula_Empl = New System.Windows.Forms.TextBox()
         Me.TextBoxNombre_Emple = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -34,9 +37,6 @@ Partial Class Form_RegistroVentanillas
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.ComboBoxLinea_Aereas = New System.Windows.Forms.ComboBox()
-        Me.ComboBoxDestinos = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -90,6 +90,29 @@ Partial Class Form_RegistroVentanillas
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Ingreso de ventanillas"
+        '
+        'ComboBoxDestinos
+        '
+        Me.ComboBoxDestinos.FormattingEnabled = True
+        Me.ComboBoxDestinos.Location = New System.Drawing.Point(242, 326)
+        Me.ComboBoxDestinos.Name = "ComboBoxDestinos"
+        Me.ComboBoxDestinos.Size = New System.Drawing.Size(121, 24)
+        Me.ComboBoxDestinos.TabIndex = 22
+        '
+        'ComboBoxLinea_Aereas
+        '
+        Me.ComboBoxLinea_Aereas.FormattingEnabled = True
+        Me.ComboBoxLinea_Aereas.Location = New System.Drawing.Point(242, 272)
+        Me.ComboBoxLinea_Aereas.Name = "ComboBoxLinea_Aereas"
+        Me.ComboBoxLinea_Aereas.Size = New System.Drawing.Size(121, 24)
+        Me.ComboBoxLinea_Aereas.TabIndex = 21
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(242, 217)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(121, 22)
+        Me.TextBox1.TabIndex = 20
         '
         'TextBoxCedula_Empl
         '
@@ -165,35 +188,12 @@ Partial Class Form_RegistroVentanillas
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Ingrese la ventanilla:"
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(242, 217)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(121, 22)
-        Me.TextBox1.TabIndex = 20
-        '
-        'ComboBoxLinea_Aereas
-        '
-        Me.ComboBoxLinea_Aereas.FormattingEnabled = True
-        Me.ComboBoxLinea_Aereas.Location = New System.Drawing.Point(242, 272)
-        Me.ComboBoxLinea_Aereas.Name = "ComboBoxLinea_Aereas"
-        Me.ComboBoxLinea_Aereas.Size = New System.Drawing.Size(121, 24)
-        Me.ComboBoxLinea_Aereas.TabIndex = 21
-        '
-        'ComboBoxDestinos
-        '
-        Me.ComboBoxDestinos.FormattingEnabled = True
-        Me.ComboBoxDestinos.Location = New System.Drawing.Point(242, 326)
-        Me.ComboBoxDestinos.Name = "ComboBoxDestinos"
-        Me.ComboBoxDestinos.Size = New System.Drawing.Size(121, 24)
-        Me.ComboBoxDestinos.TabIndex = 22
-        '
         'Form_RegistroVentanillas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(965, 470)
+        Me.ClientSize = New System.Drawing.Size(993, 470)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lb_conexion)
         Me.Controls.Add(Me.btn_VolverMenu)
