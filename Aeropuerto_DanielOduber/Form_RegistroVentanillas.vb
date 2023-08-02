@@ -4,10 +4,8 @@ Public Class Form_RegistroVentanillas
     Public conect As Conexion_BD = New Conexion_BD
 
     Private Sub Form_RegistroVentanillas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ''Conexion con la base de datos''
-        conect.Conectar()
-
-        conect.Cerrar()
+        GroupBoxPasajero.Enabled = False ' se activara el group box de pasajeros hasta que los datos de ventanilla se guarden correctamente
+        BtnConfirmarVentanilla.Enabled = False
     End Sub
 
     Private Sub VerificarCampos()
@@ -73,9 +71,6 @@ Public Class Form_RegistroVentanillas
 
 
     'Parte de ventanillas 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-        BtnConfirmarVentanilla.Enabled = False
-    End Sub
     Private Sub VerificarCamposRellenados()
         If Not String.IsNullOrEmpty(TextBoxCedula_Empl.Text) AndAlso Not String.IsNullOrEmpty(TextBoxHoraApertura.Text) AndAlso Not String.IsNullOrEmpty(TextBoxNombre_Emple.Text) AndAlso
         Not String.IsNullOrEmpty(ComboBoxID_Ventanilla.Text) AndAlso Not String.IsNullOrEmpty(ComboBoxLinea_Aereas.Text) Then
@@ -84,10 +79,13 @@ Public Class Form_RegistroVentanillas
             BtnConfirmarVentanilla.Enabled = False
         End If
     End Sub
+    Private Sub TextBox_TextChanged(sender As Object, e As EventArgs) Handles TextBoxNombre_Emple.TextChanged, TextBoxCedula_Empl.TextChanged, TextBoxHoraApertura.TextChanged
+        VerificarCamposRellenados()
+    End Sub
     Private Sub ComboBoxID_Ventanilla_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxID_Ventanilla.SelectedIndexChanged
         VerificarCamposRellenados()
         If ComboBoxID_Ventanilla.SelectedIndex = 1 Then
-            ComboBoxLinea_Aereas.Items.Clear()
+            'ComboBoxLinea_Aereas.Items.Clear()
             Dim consulta As String = "select distinct LineaAerea from TblAvion
                                         inner join TblVuelo on ID_Avion = IDAvion
                                         where NumeroVentanilla = 1"
@@ -95,7 +93,7 @@ Public Class Form_RegistroVentanillas
             Dim lineaAerea As String = Convert.ToString(cmd.ExecuteScalar())
             conect.Cerrar()
             ComboBoxLinea_Aereas.Items.Add(lineaAerea)
-
+            ComboBoxLinea_Aereas.SelectedItem = lineaAerea
 
 
 
@@ -134,9 +132,7 @@ Public Class Form_RegistroVentanillas
             ComboBoxLinea_Aereas.SelectedItem = lineaAerea
         End If
     End Sub
-    Private Sub TextBox_TextChanged(sender As Object, e As EventArgs) Handles TextBoxNombre_Emple.TextChanged, TextBoxCedula_Empl.TextChanged, TextBoxHoraApertura.TextChanged
-        VerificarCamposRellenados()
-    End Sub
+
     Private Sub BtnConfirmarVentanilla_Click(sender As Object, e As EventArgs) Handles BtnConfirmarVentanilla.Click
         Dim insertar As String = "insert into Ventanillas ( NumeroVentanilla, Nombre_empleado, Cedula_Empleado, Hora_Apertura,Linea_aerea) values (@NumeroVentanilla, @Nombre_empleado, @Cedula_Empleado, @Hora_Apertura,@Linea_aerea)"
         Dim cmd As SqlCommand = New SqlCommand(insertar, conect.Conectar())
@@ -148,6 +144,8 @@ Public Class Form_RegistroVentanillas
         cmd.ExecuteNonQuery()
         conect.Cerrar()
         MessageBox.Show("Los datos de ventanilla fueron agregados exitosamente")
+        'if comprobacion ventanilla
+        'select destino tblvuelo donde ventanilla sea 1 
 
 
     End Sub

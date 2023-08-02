@@ -4,8 +4,8 @@ Public Class Form_Menu
 
 
     Private Sub btn_IngresarVentanilla_Click(sender As Object, e As EventArgs) Handles btn_IngresarVentanilla.Click
-        Dim registroEmpeladoVentanillas As New FormRegistroEmpleadoVentanilla
-        registroEmpeladoVentanillas.Show()
+        Dim registroVentanillas As New Form_RegistroVentanillas
+        registroVentanillas.Show()
         Me.Hide()
     End Sub
 

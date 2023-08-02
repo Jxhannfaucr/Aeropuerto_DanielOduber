@@ -23,7 +23,7 @@ Partial Class Form_RegistroVentanillas
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btn_VolverMenu = New System.Windows.Forms.Button()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GroupBoxPasajero = New System.Windows.Forms.GroupBox()
         Me.TextBoxFechaSalida = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
@@ -43,7 +43,7 @@ Partial Class Form_RegistroVentanillas
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.GroupBoxOrigen = New System.Windows.Forms.GroupBox()
         Me.TextBoxHoraSalida = New System.Windows.Forms.TextBox()
         Me.TextBoxDestino = New System.Windows.Forms.TextBox()
         Me.TextBoxNumVentanilla = New System.Windows.Forms.TextBox()
@@ -69,8 +69,8 @@ Partial Class Form_RegistroVentanillas
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBoxID_Ventanilla = New System.Windows.Forms.ComboBox()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
+        Me.GroupBoxPasajero.SuspendLayout()
+        Me.GroupBoxOrigen.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -86,35 +86,35 @@ Partial Class Form_RegistroVentanillas
         Me.btn_VolverMenu.Text = "Menu"
         Me.btn_VolverMenu.UseVisualStyleBackColor = False
         '
-        'GroupBox2
+        'GroupBoxPasajero
         '
-        Me.GroupBox2.Controls.Add(Me.TextBoxFechaSalida)
-        Me.GroupBox2.Controls.Add(Me.Label21)
-        Me.GroupBox2.Controls.Add(Me.Label20)
-        Me.GroupBox2.Controls.Add(Me.CheckBox2)
-        Me.GroupBox2.Controls.Add(Me.CheckBox1)
-        Me.GroupBox2.Controls.Add(Me.TextBoxNumeroDePasaporte)
-        Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Controls.Add(Me.TextBoxNacionalidad)
-        Me.GroupBox2.Controls.Add(Me.ComboBoxDestino)
-        Me.GroupBox2.Controls.Add(Me.ComboBoxNumeroDeAsiento)
-        Me.GroupBox2.Controls.Add(Me.TextBoxHoraAtencion)
-        Me.GroupBox2.Controls.Add(Me.TextBoxPrecioTiquete)
-        Me.GroupBox2.Controls.Add(Me.TextBoxNombrePasajero)
-        Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Controls.Add(Me.Label9)
-        Me.GroupBox2.Controls.Add(Me.Label10)
-        Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.Label12)
-        Me.GroupBox2.Location = New System.Drawing.Point(529, 45)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GroupBox2.Size = New System.Drawing.Size(446, 488)
-        Me.GroupBox2.TabIndex = 23
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Pasajero"
+        Me.GroupBoxPasajero.Controls.Add(Me.TextBoxFechaSalida)
+        Me.GroupBoxPasajero.Controls.Add(Me.Label21)
+        Me.GroupBoxPasajero.Controls.Add(Me.Label20)
+        Me.GroupBoxPasajero.Controls.Add(Me.CheckBox2)
+        Me.GroupBoxPasajero.Controls.Add(Me.CheckBox1)
+        Me.GroupBoxPasajero.Controls.Add(Me.TextBoxNumeroDePasaporte)
+        Me.GroupBoxPasajero.Controls.Add(Me.Label6)
+        Me.GroupBoxPasajero.Controls.Add(Me.TextBoxNacionalidad)
+        Me.GroupBoxPasajero.Controls.Add(Me.ComboBoxDestino)
+        Me.GroupBoxPasajero.Controls.Add(Me.ComboBoxNumeroDeAsiento)
+        Me.GroupBoxPasajero.Controls.Add(Me.TextBoxHoraAtencion)
+        Me.GroupBoxPasajero.Controls.Add(Me.TextBoxPrecioTiquete)
+        Me.GroupBoxPasajero.Controls.Add(Me.TextBoxNombrePasajero)
+        Me.GroupBoxPasajero.Controls.Add(Me.Label7)
+        Me.GroupBoxPasajero.Controls.Add(Me.Label8)
+        Me.GroupBoxPasajero.Controls.Add(Me.Label9)
+        Me.GroupBoxPasajero.Controls.Add(Me.Label10)
+        Me.GroupBoxPasajero.Controls.Add(Me.Label11)
+        Me.GroupBoxPasajero.Controls.Add(Me.Label12)
+        Me.GroupBoxPasajero.Location = New System.Drawing.Point(529, 45)
+        Me.GroupBoxPasajero.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupBoxPasajero.Name = "GroupBoxPasajero"
+        Me.GroupBoxPasajero.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupBoxPasajero.Size = New System.Drawing.Size(446, 488)
+        Me.GroupBoxPasajero.TabIndex = 23
+        Me.GroupBoxPasajero.TabStop = False
+        Me.GroupBoxPasajero.Text = "Pasajero"
         '
         'TextBoxFechaSalida
         '
@@ -295,28 +295,28 @@ Partial Class Form_RegistroVentanillas
         Me.Label12.TabIndex = 12
         Me.Label12.Text = "Nombre:"
         '
-        'GroupBox3
+        'GroupBoxOrigen
         '
-        Me.GroupBox3.Controls.Add(Me.TextBoxHoraSalida)
-        Me.GroupBox3.Controls.Add(Me.TextBoxDestino)
-        Me.GroupBox3.Controls.Add(Me.TextBoxNumVentanilla)
-        Me.GroupBox3.Controls.Add(Me.TextBoxEscala)
-        Me.GroupBox3.Controls.Add(Me.TextBoxHoraLlegada)
-        Me.GroupBox3.Controls.Add(Me.TextBoxOrigen)
-        Me.GroupBox3.Controls.Add(Me.Label14)
-        Me.GroupBox3.Controls.Add(Me.Label15)
-        Me.GroupBox3.Controls.Add(Me.Label16)
-        Me.GroupBox3.Controls.Add(Me.Label17)
-        Me.GroupBox3.Controls.Add(Me.Label18)
-        Me.GroupBox3.Controls.Add(Me.Label19)
-        Me.GroupBox3.Location = New System.Drawing.Point(1009, 48)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GroupBox3.Size = New System.Drawing.Size(446, 365)
-        Me.GroupBox3.TabIndex = 26
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Vuelo"
+        Me.GroupBoxOrigen.Controls.Add(Me.TextBoxHoraSalida)
+        Me.GroupBoxOrigen.Controls.Add(Me.TextBoxDestino)
+        Me.GroupBoxOrigen.Controls.Add(Me.TextBoxNumVentanilla)
+        Me.GroupBoxOrigen.Controls.Add(Me.TextBoxEscala)
+        Me.GroupBoxOrigen.Controls.Add(Me.TextBoxHoraLlegada)
+        Me.GroupBoxOrigen.Controls.Add(Me.TextBoxOrigen)
+        Me.GroupBoxOrigen.Controls.Add(Me.Label14)
+        Me.GroupBoxOrigen.Controls.Add(Me.Label15)
+        Me.GroupBoxOrigen.Controls.Add(Me.Label16)
+        Me.GroupBoxOrigen.Controls.Add(Me.Label17)
+        Me.GroupBoxOrigen.Controls.Add(Me.Label18)
+        Me.GroupBoxOrigen.Controls.Add(Me.Label19)
+        Me.GroupBoxOrigen.Location = New System.Drawing.Point(1009, 48)
+        Me.GroupBoxOrigen.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupBoxOrigen.Name = "GroupBoxOrigen"
+        Me.GroupBoxOrigen.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.GroupBoxOrigen.Size = New System.Drawing.Size(446, 365)
+        Me.GroupBoxOrigen.TabIndex = 26
+        Me.GroupBoxOrigen.TabStop = False
+        Me.GroupBoxOrigen.Text = "Vuelo"
         '
         'TextBoxHoraSalida
         '
@@ -578,16 +578,16 @@ Partial Class Form_RegistroVentanillas
         Me.Controls.Add(Me.BtnConfirmarVentanilla)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BtnConfirmarCompra)
-        Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBoxOrigen)
+        Me.Controls.Add(Me.GroupBoxPasajero)
         Me.Controls.Add(Me.btn_VolverMenu)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "Form_RegistroVentanillas"
         Me.Text = "Registro de ventanillas"
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
+        Me.GroupBoxPasajero.ResumeLayout(False)
+        Me.GroupBoxPasajero.PerformLayout()
+        Me.GroupBoxOrigen.ResumeLayout(False)
+        Me.GroupBoxOrigen.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
@@ -595,7 +595,7 @@ Partial Class Form_RegistroVentanillas
     End Sub
 
     Friend WithEvents btn_VolverMenu As Button
-    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents GroupBoxPasajero As GroupBox
     Friend WithEvents TextBoxNacionalidad As TextBox
     Friend WithEvents ComboBoxDestino As ComboBox
     Friend WithEvents ComboBoxNumeroDeAsiento As ComboBox
@@ -614,7 +614,7 @@ Partial Class Form_RegistroVentanillas
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents TextBoxNumeroDePasaporte As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents GroupBoxOrigen As GroupBox
     Friend WithEvents TextBoxNumVentanilla As TextBox
     Friend WithEvents TextBoxEscala As TextBox
     Friend WithEvents TextBoxHoraLlegada As TextBox
