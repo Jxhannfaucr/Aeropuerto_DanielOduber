@@ -4,7 +4,7 @@ Public Class Form_RegistroVentanillas
     Public conect As Conexion_BD = New Conexion_BD
 
     Private Sub Form_RegistroVentanillas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        GroupBoxPasajero.Enabled = False ' se activara el group box de pasajeros hasta que los datos de ventanilla se guarden correctamente
+        'GroupBoxPasajero.Enabled = False ' se activara el group box de pasajeros hasta que los datos de ventanilla se guarden correctamente
         BtnConfirmarVentanilla.Enabled = False
     End Sub
 
@@ -73,7 +73,7 @@ Public Class Form_RegistroVentanillas
     'Parte de ventanillas 
     Private Sub VerificarCamposRellenados()
         If Not String.IsNullOrEmpty(TextBoxCedula_Empl.Text) AndAlso Not String.IsNullOrEmpty(TextBoxHoraApertura.Text) AndAlso Not String.IsNullOrEmpty(TextBoxNombre_Emple.Text) AndAlso
-        Not String.IsNullOrEmpty(ComboBoxID_Ventanilla.Text) AndAlso Not String.IsNullOrEmpty(ComboBoxLinea_Aereas.Text) Then
+        Not String.IsNullOrEmpty(ComboBoxID_Ventanilla.Text) AndAlso Not String.IsNullOrEmpty(TextBox_LineasAereas.Text) Then
             BtnConfirmarVentanilla.Enabled = True
         Else
             BtnConfirmarVentanilla.Enabled = False
@@ -84,52 +84,48 @@ Public Class Form_RegistroVentanillas
     End Sub
     Private Sub ComboBoxID_Ventanilla_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxID_Ventanilla.SelectedIndexChanged
         VerificarCamposRellenados()
-        If ComboBoxID_Ventanilla.SelectedIndex = 1 Then
-            'ComboBoxLinea_Aereas.Items.Clear()
+        If ComboBoxID_Ventanilla.SelectedItem = 1 Then
             Dim consulta As String = "select distinct LineaAerea from TblAvion
                                         inner join TblVuelo on ID_Avion = IDAvion
                                         where NumeroVentanilla = 1"
             Dim cmd As SqlCommand = New SqlCommand(consulta, conect.Conectar())
             Dim lineaAerea As String = Convert.ToString(cmd.ExecuteScalar())
             conect.Cerrar()
-            ComboBoxLinea_Aereas.Items.Add(lineaAerea)
-            ComboBoxLinea_Aereas.SelectedItem = lineaAerea
+            TextBox_LineasAereas.Clear()
+            TextBox_LineasAereas.Text = lineaAerea.ToString
 
 
 
-        ElseIf ComboBoxID_Ventanilla.SelectedIndex = 2 Then
-            ComboBoxLinea_Aereas.Items.Clear()
+        ElseIf ComboBoxID_Ventanilla.SelectedItem = 2 Then
             Dim consulta As String = "select distinct LineaAerea from TblAvion
                                         inner join TblVuelo on ID_Avion = IDAvion
                                         where NumeroVentanilla = 2"
             Dim cmd As SqlCommand = New SqlCommand(consulta, conect.Conectar())
             Dim lineaAerea As String = Convert.ToString(cmd.ExecuteScalar())
             conect.Cerrar()
-            ComboBoxLinea_Aereas.Items.Add(lineaAerea)
-            ComboBoxLinea_Aereas.SelectedItem = lineaAerea
+            TextBox_LineasAereas.Clear()
+            TextBox_LineasAereas.Text = lineaAerea.ToString
 
-        ElseIf ComboBoxID_Ventanilla.SelectedIndex = 3 Then
-            ComboBoxLinea_Aereas.Items.Clear()
+        ElseIf ComboBoxID_Ventanilla.SelectedItem = 3 Then
             Dim consulta As String = "select distinct LineaAerea from TblAvion
                                         inner join TblVuelo on ID_Avion = IDAvion
                                         where NumeroVentanilla = 3"
             Dim cmd As SqlCommand = New SqlCommand(consulta, conect.Conectar())
             Dim lineaAerea As String = Convert.ToString(cmd.ExecuteScalar())
             conect.Cerrar()
-            ComboBoxLinea_Aereas.Items.Add(lineaAerea)
-            ComboBoxLinea_Aereas.SelectedItem = lineaAerea
+            TextBox_LineasAereas.Clear()
+            TextBox_LineasAereas.Text = lineaAerea.ToString
 
 
-        ElseIf ComboBoxID_Ventanilla.SelectedIndex = 4 Then
-            ComboBoxLinea_Aereas.Items.Clear()
+        ElseIf ComboBoxID_Ventanilla.SelectedItem = 4 Then
             Dim consulta As String = "select distinct LineaAerea from TblAvion
                                         inner join TblVuelo on ID_Avion = IDAvion
                                         where NumeroVentanilla = 4"
             Dim cmd As SqlCommand = New SqlCommand(consulta, conect.Conectar())
             Dim lineaAerea As String = Convert.ToString(cmd.ExecuteScalar())
             conect.Cerrar()
-            ComboBoxLinea_Aereas.Items.Add(lineaAerea)
-            ComboBoxLinea_Aereas.SelectedItem = lineaAerea
+            TextBox_LineasAereas.Clear()
+            TextBox_LineasAereas.Text = lineaAerea.ToString
         End If
     End Sub
 
@@ -140,12 +136,14 @@ Public Class Form_RegistroVentanillas
         cmd.Parameters.AddWithValue("@Nombre_empleado", TextBoxNombre_Emple.Text)
         cmd.Parameters.AddWithValue("@Cedula_Empleado", TextBoxCedula_Empl.Text)
         cmd.Parameters.AddWithValue("@Hora_Apertura", TextBoxHoraApertura.Text)
-        cmd.Parameters.AddWithValue("@Linea_aerea", ComboBoxLinea_Aereas.Text)
+        cmd.Parameters.AddWithValue("@Linea_aerea", TextBox_LineasAereas.Text)
         cmd.ExecuteNonQuery()
         conect.Cerrar()
         MessageBox.Show("Los datos de ventanilla fueron agregados exitosamente")
         'if comprobacion ventanilla
-        'select destino tblvuelo donde ventanilla sea 1 
+        'select destino tblvuelo donde ventanilla sea 1'
+
+        GroupBoxPasajero.Enabled = True
 
 
     End Sub
