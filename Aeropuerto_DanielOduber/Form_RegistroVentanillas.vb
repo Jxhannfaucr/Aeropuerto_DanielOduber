@@ -142,6 +142,7 @@ Public Class Form_RegistroVentanillas
         MessageBox.Show("Los datos de ventanilla fueron agregados exitosamente")
         'if comprobacion ventanilla
         'select destino tblvuelo donde ventanilla sea 1'
+        ''ajashsh
 
         GroupBoxPasajero.Enabled = True
 
