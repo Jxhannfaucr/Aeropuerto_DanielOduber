@@ -16,61 +16,63 @@ Public Class Form_RegistroVentanillas
         Me.Close()
     End Sub
 
-    Private Sub ComboBoxID_Ventanilla_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxID_Ventanilla.SelectedIndexChanged
-        Dim seleccionado = ComboBoxID_Ventanilla.SelectedItem.ToString
-
-        If seleccionado = 1 Then
-            ''Limpia el comboBox
-            ComboBoxLinea_Aereas.Items.Clear()
-            ComboBoxDestinos.Items.Clear()
-            ''Agrega las aerolineas dependiendo de la ventanilla que se ingreso
-            ComboBoxLinea_Aereas.Items.Add("American Airlines")
-            ''Agrega los destinos dependiendo de la ventanilla que se ingreso
-            Dim dt As DataTable = New DataTable
-            Dim queryVuelosV1 As String = "select Destino  from TblVuelo where NumeroVentanilla = 1"
-            Dim cmd As SqlCommand = New SqlCommand(queryVuelosV1, conect.Conectar())
-            Dim da As SqlDataAdapter = New SqlDataAdapter(cmd)
-            da.Fill(dt)
-
-            ComboBoxDestinos.Items.Clear()
-
-            For Each row As DataRow In dt.Rows
-                ComboBoxDestinos.Items.Add(row("Destino"))
-            Next
-            conect.Cerrar()
-
-
-        ElseIf seleccionado = 2 Then
-            ''Agrega las aerolineas dependiendo de la ventanilla que se ingreso
-            ComboBoxLinea_Aereas.Items.Clear()
-            ComboBoxLinea_Aereas.Items.Add("British Airways")
-            ''Agrega los destinos dependiendo de la ventanilla que se ingreso
-            ComboBoxDestinos.Items.Clear()
-            ComboBoxDestinos.Items.Add("Argentina")
-            ComboBoxDestinos.Items.Add("Colombia")
-            ComboBoxDestinos.Items.Add("Japón")
-
-        ElseIf seleccionado = 3 Then
-            ''Agrega las aerolineas dependiendo de la ventanilla que se ingreso
-            ComboBoxLinea_Aereas.Items.Clear()
-            ComboBoxLinea_Aereas.Items.Add("Emirates")
-            ''Agrega los destinos dependiendo de la ventanilla que se ingreso
-            ComboBoxDestinos.Items.Clear()
-            ComboBoxDestinos.Items.Add("España")
-            ComboBoxDestinos.Items.Add("Venezuela")
-            ComboBoxDestinos.Items.Add("Suecia")
-
-
-        ElseIf seleccionado = 4 Then
-            ''Agrega las aerolineas dependiendo de la ventanilla que se ingreso
-            ComboBoxLinea_Aereas.Items.Clear()
-            ComboBoxLinea_Aereas.Items.Add("Lufthansa")
-            ''Agrega los destinos dependiendo de la ventanilla que se ingreso
-            ComboBoxDestinos.Items.Clear()
-            ComboBoxDestinos.Items.Add("Rusia")
-            ComboBoxDestinos.Items.Add("Ucrania")
-            ComboBoxDestinos.Items.Add("Brasil")
-        End If
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
     End Sub
+
+    Private Sub ComboBoxLinea_Aereas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxLinea_Aereas.SelectedIndexChanged
+
+    End Sub
+
+    'Private Sub ComboBoxID_Ventanilla_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxID_Ventanilla.SelectedIndexChanged
+    '    Dim seleccionado = ComboBoxID_Ventanilla.SelectedItem.ToString
+
+    '    If seleccionado = 1 Then
+    '        ''Limpia el comboBox
+    '        ComboBoxLinea_Aereas.Items.Clear()
+    '        ComboBoxDestinos.Items.Clear()
+    '        ''Agrega las aerolineas dependiendo de la ventanilla que se ingreso
+    '        ComboBoxLinea_Aereas.Items.Add("American Airlines")
+    '        ''Agrega los destinos dependiendo de la ventanilla que se ingreso
+    '        Dim dt As DataTable = New DataTable
+    '        Dim queryVuelosV1 As String = "select Destino  from TblVuelo where NumeroVentanilla = 1"
+    '        Dim cmd As SqlCommand = New SqlCommand(queryVuelosV1, conect.Conectar())
+    '        Dim da As SqlDataAdapter = New SqlDataAdapter(cmd)
+    '        da.Fill(dt)
+
+    '        ComboBoxDestinos.Items.Clear()
+
+    '        For Each row As DataRow In dt.Rows
+    '            ComboBoxDestinos.Items.Add(row("Destino"))
+    '        Next
+    '        conect.Cerrar()
+
+
+    '    ElseIf seleccionado = 2 Then
+    '        ''Agrega las aerolineas dependiendo de la ventanilla que se ingreso
+    '        ComboBoxLinea_Aereas.Items.Clear()
+    '        ComboBoxLinea_Aereas.Items.Add("British Airways")
+    '        ''Agrega los destinos dependiendo de la ventanilla que se ingreso
+    '        ComboBoxDestinos.Items.Clear()
+    '        
+
+    '    ElseIf seleccionado = 3 Then
+    '        ''Agrega las aerolineas dependiendo de la ventanilla que se ingreso
+    '        ComboBoxLinea_Aereas.Items.Clear()
+    '        ComboBoxLinea_Aereas.Items.Add("Emirates")
+    '        ''Agrega los destinos dependiendo de la ventanilla que se ingreso
+    '   
+
+
+    '    ElseIf seleccionado = 4 Then
+    '        ''Agrega las aerolineas dependiendo de la ventanilla que se ingreso
+    '        ComboBoxLinea_Aereas.Items.Clear()
+    '        ComboBoxLinea_Aereas.Items.Add("Lufthansa")
+    '        ''Agrega los destinos dependiendo de la ventanilla que se ingreso
+    '        
+    'End If
+
+    'End Sub
+
+
 End Class

@@ -77,6 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion_BD.vb" />
+    <Compile Include="FormRegistroEmpleadoVentanilla.Designer.vb">
+      <DependentUpon>FormRegistroEmpleadoVentanilla.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegistroEmpleadoVentanilla.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form_RegistroVentanillas.Designer.vb">
       <DependentUpon>Form_RegistroVentanillas.vb</DependentUpon>
     </Compile>

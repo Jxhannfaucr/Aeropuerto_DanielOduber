@@ -36,6 +36,13 @@ Partial Class Form_RegistroVentanillas
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBoxNacionalidad = New System.Windows.Forms.TextBox()
         Me.ComboBoxDestino = New System.Windows.Forms.ComboBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -47,12 +54,12 @@ Partial Class Form_RegistroVentanillas
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBoxNacionalidad = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.ComboBox6 = New System.Windows.Forms.ComboBox()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -60,15 +67,8 @@ Partial Class Form_RegistroVentanillas
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox6 = New System.Windows.Forms.ComboBox()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -89,7 +89,7 @@ Partial Class Form_RegistroVentanillas
         'lb_conexion
         '
         Me.lb_conexion.AutoSize = True
-        Me.lb_conexion.Location = New System.Drawing.Point(14, 556)
+        Me.lb_conexion.Location = New System.Drawing.Point(24, 625)
         Me.lb_conexion.Name = "lb_conexion"
         Me.lb_conexion.Size = New System.Drawing.Size(315, 20)
         Me.lb_conexion.TabIndex = 10
@@ -212,7 +212,7 @@ Partial Class Form_RegistroVentanillas
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.ComboBox5)
+        Me.GroupBox2.Controls.Add(Me.TextBox1)
         Me.GroupBox2.Controls.Add(Me.Label21)
         Me.GroupBox2.Controls.Add(Me.Label20)
         Me.GroupBox2.Controls.Add(Me.CheckBox2)
@@ -239,6 +239,72 @@ Partial Class Form_RegistroVentanillas
         Me.GroupBox2.TabIndex = 23
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Pasajero"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(21, 430)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(217, 25)
+        Me.Label21.TabIndex = 29
+        Me.Label21.Text = "Numero de asiento:"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(20, 392)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(90, 25)
+        Me.Label20.TabIndex = 28
+        Me.Label20.Text = "Escala:"
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(182, 393)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(58, 24)
+        Me.CheckBox2.TabIndex = 27
+        Me.CheckBox2.Text = "NO"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(116, 393)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(51, 24)
+        Me.CheckBox1.TabIndex = 26
+        Me.CheckBox1.Text = "SI"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(272, 342)
+        Me.TextBox6.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(152, 26)
+        Me.TextBox6.TabIndex = 25
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(21, 343)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(245, 25)
+        Me.Label6.TabIndex = 24
+        Me.Label6.Text = "Numero de pasaporte:"
+        '
+        'TextBoxNacionalidad
+        '
+        Me.TextBoxNacionalidad.Location = New System.Drawing.Point(182, 96)
+        Me.TextBoxNacionalidad.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBoxNacionalidad.Name = "TextBoxNacionalidad"
+        Me.TextBoxNacionalidad.Size = New System.Drawing.Size(242, 26)
+        Me.TextBoxNacionalidad.TabIndex = 23
         '
         'ComboBoxDestino
         '
@@ -342,32 +408,6 @@ Partial Class Form_RegistroVentanillas
         Me.Label12.TabIndex = 12
         Me.Label12.Text = "Nombre:"
         '
-        'TextBoxNacionalidad
-        '
-        Me.TextBoxNacionalidad.Location = New System.Drawing.Point(182, 96)
-        Me.TextBoxNacionalidad.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.TextBoxNacionalidad.Name = "TextBoxNacionalidad"
-        Me.TextBoxNacionalidad.Size = New System.Drawing.Size(242, 26)
-        Me.TextBoxNacionalidad.TabIndex = 23
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(21, 343)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(245, 25)
-        Me.Label6.TabIndex = 24
-        Me.Label6.Text = "Numero de pasaporte:"
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Location = New System.Drawing.Point(272, 342)
-        Me.TextBox6.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(152, 26)
-        Me.TextBox6.TabIndex = 25
-        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.TextBox8)
@@ -391,6 +431,24 @@ Partial Class Form_RegistroVentanillas
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Vuelo"
         '
+        'TextBox8
+        '
+        Me.TextBox8.Enabled = False
+        Me.TextBox8.Location = New System.Drawing.Point(269, 254)
+        Me.TextBox8.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(133, 26)
+        Me.TextBox8.TabIndex = 27
+        '
+        'ComboBox6
+        '
+        Me.ComboBox6.FormattingEnabled = True
+        Me.ComboBox6.Location = New System.Drawing.Point(146, 94)
+        Me.ComboBox6.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.ComboBox6.Name = "ComboBox6"
+        Me.ComboBox6.Size = New System.Drawing.Size(136, 28)
+        Me.ComboBox6.TabIndex = 26
+        '
         'ComboBox3
         '
         Me.ComboBox3.FormattingEnabled = True
@@ -407,6 +465,15 @@ Partial Class Form_RegistroVentanillas
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(286, 26)
         Me.TextBox9.TabIndex = 20
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Enabled = False
+        Me.TextBox10.Location = New System.Drawing.Point(209, 203)
+        Me.TextBox10.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.Size = New System.Drawing.Size(182, 26)
+        Me.TextBox10.TabIndex = 19
         '
         'TextBox11
         '
@@ -476,82 +543,6 @@ Partial Class Form_RegistroVentanillas
         Me.Label19.TabIndex = 12
         Me.Label19.Text = "Origen:"
         '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(116, 393)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(51, 24)
-        Me.CheckBox1.TabIndex = 26
-        Me.CheckBox1.Text = "SI"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(182, 393)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(58, 24)
-        Me.CheckBox2.TabIndex = 27
-        Me.CheckBox2.Text = "NO"
-        Me.CheckBox2.UseVisualStyleBackColor = True
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(20, 392)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(90, 25)
-        Me.Label20.TabIndex = 28
-        Me.Label20.Text = "Escala:"
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(21, 430)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(217, 25)
-        Me.Label21.TabIndex = 29
-        Me.Label21.Text = "Numero de asiento:"
-        '
-        'ComboBox5
-        '
-        Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Location = New System.Drawing.Point(214, 253)
-        Me.ComboBox5.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(136, 28)
-        Me.ComboBox5.TabIndex = 30
-        '
-        'ComboBox6
-        '
-        Me.ComboBox6.FormattingEnabled = True
-        Me.ComboBox6.Location = New System.Drawing.Point(146, 94)
-        Me.ComboBox6.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.ComboBox6.Name = "ComboBox6"
-        Me.ComboBox6.Size = New System.Drawing.Size(136, 28)
-        Me.ComboBox6.TabIndex = 26
-        '
-        'TextBox10
-        '
-        Me.TextBox10.Enabled = False
-        Me.TextBox10.Location = New System.Drawing.Point(209, 203)
-        Me.TextBox10.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(182, 26)
-        Me.TextBox10.TabIndex = 19
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Enabled = False
-        Me.TextBox8.Location = New System.Drawing.Point(269, 254)
-        Me.TextBox8.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(133, 26)
-        Me.TextBox8.TabIndex = 27
-        '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("MS Reference Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -562,12 +553,20 @@ Partial Class Form_RegistroVentanillas
         Me.Button1.Text = "Confirmar compra"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(242, 252)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(182, 26)
+        Me.TextBox1.TabIndex = 30
+        '
         'Form_RegistroVentanillas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1467, 588)
+        Me.ClientSize = New System.Drawing.Size(1467, 654)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
@@ -614,7 +613,6 @@ Partial Class Form_RegistroVentanillas
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
-    Friend WithEvents ComboBox5 As ComboBox
     Friend WithEvents Label21 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents CheckBox2 As CheckBox
@@ -635,4 +633,5 @@ Partial Class Form_RegistroVentanillas
     Friend WithEvents Label18 As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents TextBox1 As TextBox
 End Class
