@@ -2,7 +2,7 @@
 Imports System.Data.SqlClient
 Public Class Conexion_BD
 
-    Private cn As New SqlConnection("Data Source=MSI;Initial Catalog=DBAeropuertoDanielOduber;Integrated Security=True")
+    Private cn As New SqlConnection("Data Source=DESKTOP-486225T\SQLEXPRESS122;Initial Catalog=DBAeropuertoDanielOduber;Integrated Security=True")
 
     Public Function Conectar()
         Try
