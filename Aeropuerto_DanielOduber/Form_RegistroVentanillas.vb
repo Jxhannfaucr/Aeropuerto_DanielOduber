@@ -1,5 +1,8 @@
 ﻿Imports System.Data
 Imports System.Data.SqlClient
+Imports System.Data.SqlTypes
+Imports System.Text
+
 Public Class Form_RegistroVentanillas
     Public conect As Conexion_BD = New Conexion_BD
 
@@ -33,10 +36,64 @@ Public Class Form_RegistroVentanillas
     Private Sub TextBoxNumeroDePasaporte_TextChanged(sender As Object, e As EventArgs) Handles TextBoxNumeroDePasaporte.TextChanged
         VerificarCampos()
     End Sub
+    Public Class Vuelo
+        Public Property Origen As String
+        Public Property HoraSalida As String
+        Public Property HoraLlegada As String
+        Public Property Escala As String
+        Public Property Precio As SqlMoney
+    End Class
 
     Private Sub ComboBoxDestino_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxDestino.SelectedIndexChanged
         VerificarCampos()
+        If ComboBoxDestino.SelectedIndex = 0 Then
+            Dim PaisSeleccionado As String = ComboBoxDestino.SelectedItem.ToString()
+            Dim query As String = "SELECT Origen, HoraSalida, HoraLlegada, Escala, Precio FROM TblVuelo WHERE Destino = @pais;"
+            Using con As SqlConnection = conect.Conectar()
+                Dim cmd As SqlCommand = New SqlCommand(query, con)
+                cmd.Parameters.AddWithValue("@pais", PaisSeleccionado)
+                Dim reader As SqlDataReader = cmd.ExecuteReader()
 
+                Dim listaVuelos As New List(Of Vuelo)()
+
+                While reader.Read()
+                    Dim vuelo As New Vuelo()
+                    vuelo.Origen = reader("Origen").ToString()
+                    vuelo.HoraSalida = (reader("HoraSalida"))
+                    vuelo.HoraLlegada = (reader("HoraLlegada"))
+                    vuelo.Escala = reader("Escala").ToString()
+                    vuelo.Precio = Convert.ToDecimal(reader("Precio"))
+                    listaVuelos.Add(vuelo)
+                End While
+
+                reader.Close()
+
+                ' Llenar TextBox con información de vuelos
+                Dim origen As New StringBuilder()
+                Dim HoraSalida As New StringBuilder()
+                Dim Horallegada As New StringBuilder()
+                Dim Escala As New StringBuilder()
+                Dim precio As New StringBuilder()
+
+
+                For Each vuelo As Vuelo In listaVuelos
+                    origen.AppendLine(vuelo.Origen)
+                    HoraSalida.AppendLine(vuelo.HoraSalida)
+                    Horallegada.AppendLine(vuelo.HoraLlegada)
+                    Escala.AppendLine(vuelo.Escala)
+                    precio.AppendLine(vuelo.Precio)
+                Next
+
+                TextBoxOrigen.Text = origen.ToString()
+                TextBoxHoraSalida.Text = HoraSalida.ToString()
+                TextBoxHoraLlegada.Text = Horallegada.ToString()
+                TextBoxEscala.Text = Escala.ToString()
+                TextBoxPrecioTiquete.Text = precio.ToString()
+
+
+
+            End Using
+        End If
     End Sub
 
     Private Sub ComboBoxNumeroDeAsiento_TextChanged(sender As Object, e As EventArgs) Handles ComboBoxNumeroDeAsiento.TextChanged
@@ -132,7 +189,7 @@ Public Class Form_RegistroVentanillas
             ComboBoxLinea_Aereas.SelectedItem = lineaAerea
         End If
     End Sub
-    'Dim correcto As Boolean = False
+
     Private Sub BtnConfirmarVentanilla_Click(sender As Object, e As EventArgs) Handles BtnConfirmarVentanilla.Click
         Dim insertar As String = "insert into Ventanillas ( NumeroVentanilla, Nombre_empleado, Cedula_Empleado, Hora_Apertura,Linea_aerea) values (@NumeroVentanilla, @Nombre_empleado, @Cedula_Empleado, @Hora_Apertura,@Linea_aerea)"
         Dim cmd As SqlCommand = New SqlCommand(insertar, conect.Conectar())
@@ -148,44 +205,77 @@ Public Class Form_RegistroVentanillas
         Catch ex As Exception
             MessageBox.Show("Error")
         End Try
+
+
         GroupBoxPasajero.Enabled = True ' activo el group box de pasajero 
         If ComboBoxID_Ventanilla.SelectedItem = 1 Then
             GroupBox1.Enabled = False ' apago el group box de ventanilla para que no se puedan realizar cambios
             BtnConfirmarVentanilla.Enabled = False 'apago el boton de confimar porque si no se podrian guardar los mismos datos una y otra vez
-            conect.Conectar()
+            Dim dt As DataTable = New DataTable
             Dim consulta As String = "select Destino from TblVuelo where NumeroVentanilla = 1"
             Dim M As SqlCommand = New SqlCommand(consulta, conect.Conectar())
-            Dim losDestinos As String = Convert.ToString(M.ExecuteScalar())
+            Dim da As SqlDataAdapter = New SqlDataAdapter(M)
+            da.Fill(dt)
             conect.Cerrar()
-            ComboBoxDestino.Items.Add(losDestinos)
+            ComboBoxDestino.Items.Clear()
+
+            For Each row As DataRow In dt.Rows
+                ComboBoxDestino.Items.Add(row("Destino"))
+            Next
+            conect.Cerrar()
+
+
+
+
 
         ElseIf ComboBoxID_Ventanilla.SelectedItem = 2 Then
             GroupBox1.Enabled = False
             BtnConfirmarVentanilla.Enabled = False
             conect.Conectar()
-            Dim consulta As String = "select Destino from TblVuelo where NumeroVentanilla = 2"
+            Dim dt As DataTable = New DataTable
+            Dim consulta As String = "select Destino from TblVuelo where NumeroVentanilla = 1"
             Dim M As SqlCommand = New SqlCommand(consulta, conect.Conectar())
-            Dim losDestinos As String = Convert.ToString(M.ExecuteScalar())
+            Dim da As SqlDataAdapter = New SqlDataAdapter(M)
+            da.Fill(dt)
             conect.Cerrar()
-            ComboBoxDestino.Items.Add(losDestinos)
+            ComboBoxDestino.Items.Clear()
+
+            For Each row As DataRow In dt.Rows
+                ComboBoxDestino.Items.Add(row("Destino"))
+            Next
+            conect.Cerrar()
         ElseIf ComboBoxID_Ventanilla.SelectedItem = 3 Then
             GroupBox1.Enabled = False
             BtnConfirmarVentanilla.Enabled = False
             conect.Conectar()
-            Dim consulta As String = "select Destino from TblVuelo where NumeroVentanilla = 3"
+            Dim dt As DataTable = New DataTable
+            Dim consulta As String = "select Destino from TblVuelo where NumeroVentanilla = 1"
             Dim M As SqlCommand = New SqlCommand(consulta, conect.Conectar())
-            Dim losDestinos As String = Convert.ToString(M.ExecuteScalar())
+            Dim da As SqlDataAdapter = New SqlDataAdapter(M)
+            da.Fill(dt)
             conect.Cerrar()
-            ComboBoxDestino.Items.Add(losDestinos)
+            ComboBoxDestino.Items.Clear()
+
+            For Each row As DataRow In dt.Rows
+                ComboBoxDestino.Items.Add(row("Destino"))
+            Next
+            conect.Cerrar()
         ElseIf ComboBoxID_Ventanilla.SelectedItem = 4 Then
             GroupBox1.Enabled = False
             BtnConfirmarVentanilla.Enabled = False
             conect.Conectar()
-            Dim consulta As String = "select Destino from TblVuelo where NumeroVentanilla = 4"
+            Dim dt As DataTable = New DataTable
+            Dim consulta As String = "select Destino from TblVuelo where NumeroVentanilla = 1"
             Dim M As SqlCommand = New SqlCommand(consulta, conect.Conectar())
-            Dim losDestinos As String = Convert.ToString(M.ExecuteScalar())
+            Dim da As SqlDataAdapter = New SqlDataAdapter(M)
+            da.Fill(dt)
             conect.Cerrar()
-            ComboBoxDestino.Items.Add(losDestinos)
+            ComboBoxDestino.Items.Clear()
+
+            For Each row As DataRow In dt.Rows
+                ComboBoxDestino.Items.Add(row("Destino"))
+            Next
+            conect.Cerrar()
         End If
 
 
