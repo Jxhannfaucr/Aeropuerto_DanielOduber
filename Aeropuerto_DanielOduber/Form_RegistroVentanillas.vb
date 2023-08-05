@@ -16,32 +16,7 @@ Public Class Form_RegistroVentanillas
 
     End Sub
 
-    Private Sub VerificarCampos()
-        If Not String.IsNullOrEmpty(TextBoxNombrePasajero.Text) AndAlso
-       Not String.IsNullOrEmpty(TextBoxNacionalidad.Text) AndAlso
-       Not String.IsNullOrEmpty(TextBoxNumeroDePasaporte.Text) AndAlso
-       ComboBoxDestino.SelectedIndex >= 0 AndAlso
-       Not String.IsNullOrEmpty(ComboBoxNumeroDeAsiento.Text) Then
-            ' Todos los campos tienen contenido, habilitar el botón
-            BtnConfirmarCompra.Enabled = True
-        Else
-            ' Al menos un campo está vacío, deshabilitar el botón
-            BtnConfirmarCompra.Enabled = False
-        End If
-    End Sub
 
-
-    Private Sub TextBoxNombrePasajero_TextChanged(sender As Object, e As EventArgs) Handles TextBoxNombrePasajero.TextChanged
-        VerificarCampos()
-    End Sub
-
-    Private Sub TextBoxNacionalidad_TextChanged(sender As Object, e As EventArgs) Handles TextBoxNacionalidad.TextChanged
-        VerificarCampos()
-    End Sub
-
-    Private Sub TextBoxNumeroDePasaporte_TextChanged(sender As Object, e As EventArgs) Handles TextBoxNumeroDePasaporte.TextChanged
-        VerificarCampos()
-    End Sub
     Public Class Vuelo
         Public Property Origen As String
         Public Property HoraSalida As String
@@ -51,7 +26,6 @@ Public Class Form_RegistroVentanillas
     End Class
 
     Private Sub ComboBoxDestino_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxDestino.SelectedIndexChanged
-        VerificarCampos()
         ''guardo el indice del destino
         Dim destinoSeleccionado As Integer = ComboBoxDestino.SelectedIndex
 
@@ -91,15 +65,11 @@ Public Class Form_RegistroVentanillas
 
         Else
             escalaSi.Checked = False
-            escalaNo.Checked = False
+            escalaNo.Checked = True
             escalaSi.Enabled = False
             escalaNo.Enabled = False
         End If
 
-    End Sub
-
-    Private Sub ComboBoxNumeroDeAsiento_TextChanged(sender As Object, e As EventArgs) Handles ComboBoxNumeroDeAsiento.TextChanged
-        VerificarCampos()
     End Sub
 
     Private Sub btn_VolverMenu_Click(sender As Object, e As EventArgs) Handles btn_VolverMenu.Click
@@ -129,7 +99,7 @@ Public Class Form_RegistroVentanillas
 
 
     'Parte de ventanillas 
-    Private Sub VerificarCamposRellenados()
+    Private Sub VerificarCamposRellenadosVentanilla()
         If Not String.IsNullOrEmpty(TextBoxCedula_Empl.Text) AndAlso Not String.IsNullOrEmpty(TextBoxNombre_Emple.Text) AndAlso
         Not String.IsNullOrEmpty(ComboBoxID_Ventanilla.Text) AndAlso Not String.IsNullOrEmpty(ComboBoxLinea_Aereas.Text) Then
             BtnConfirmarVentanilla.Enabled = True
@@ -137,12 +107,14 @@ Public Class Form_RegistroVentanillas
             BtnConfirmarVentanilla.Enabled = False
         End If
     End Sub
+
+
     Private Sub TextBox_TextChanged(sender As Object, e As EventArgs) Handles TextBoxNombre_Emple.TextChanged, TextBoxCedula_Empl.TextChanged
-        VerificarCamposRellenados()
+        VerificarCamposRellenadosVentanilla()
     End Sub
     Private Sub ComboBoxID_Ventanilla_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxID_Ventanilla.SelectedIndexChanged
         Try
-            VerificarCamposRellenados()
+            VerificarCamposRellenadosVentanilla()
             If ComboBoxID_Ventanilla.SelectedItem = 1 Then
                 ComboBoxLinea_Aereas.Items.Clear()
                 Dim consulta As String = "select distinct LineaAerea from TblAvion
@@ -211,13 +183,14 @@ Public Class Form_RegistroVentanillas
                 Dim horaMinutos As String = horaActual.ToString("HH:mm")
                 '''''''''''''''''''''''''''''''''''''''''''''''''''''''
                 ''se guardan los demas datos''
-                Dim insertar As String = "insert into Ventanillas (NumeroVentanilla, Nombre_empleado, Cedula_Empleado, Hora_Apertura,Linea_aerea) values (@NumeroVentanilla, @Nombre_empleado, @Cedula_Empleado, @Hora_Apertura,@Linea_aerea)"
+                Dim insertar As String = "insert into Ventanillas (NumeroVentanilla, Nombre_empleado, Cedula_Empleado, Hora_Apertura, Linea_aerea, Fecha) values (@NumeroVentanilla, @Nombre_empleado, @Cedula_Empleado, @Hora_Apertura,@Linea_aerea, @Fecha)"
                 Dim cmd As SqlCommand = New SqlCommand(insertar, conect.Conectar())
                 cmd.Parameters.AddWithValue("@NumeroVentanilla", ComboBoxID_Ventanilla.Text)
                 cmd.Parameters.AddWithValue("@Nombre_empleado", TextBoxNombre_Emple.Text)
                 cmd.Parameters.AddWithValue("@Cedula_Empleado", TextBoxCedula_Empl.Text)
                 cmd.Parameters.AddWithValue("@Hora_Apertura", horaMinutos)
                 cmd.Parameters.AddWithValue("@Linea_aerea", ComboBoxLinea_Aereas.Text)
+                cmd.Parameters.AddWithValue("@Fecha", DateTimeVentanilla.Text)
                 cmd.ExecuteNonQuery()
                 conect.Cerrar()
                 MessageBox.Show("Los datos de ventanilla fueron agregados exitosamente")
@@ -315,4 +288,109 @@ Public Class Form_RegistroVentanillas
 
     End Sub
 
+    Private Sub ComboBoxNumeroDeAsiento_ValueChanged(sender As Object, e As EventArgs) Handles ComboBoxNumeroDeAsiento.ValueChanged
+        If ComboBoxNumeroDeAsiento.Value < 1 Then
+            ComboBoxNumeroDeAsiento.Value = 1
+        ElseIf ComboBoxNumeroDeAsiento.Value > 199 Then
+            ComboBoxNumeroDeAsiento.Value = 199
+        End If
+    End Sub
+
+    Private Sub BtnConfirmarCompra_Click_1(sender As Object, e As EventArgs) Handles BtnConfirmarCompra.Click
+        If IsNumeric(TextBoxNumeroDePasaporte.Text) AndAlso
+        TextBoxNombrePasajero.Text.All(Function(c) Char.IsLetter(c)) AndAlso
+        TextBoxNacionalidad.Text.All(Function(c) Char.IsLetter(c)) AndAlso
+        ComboBoxDestino.SelectedItem.ToString IsNot Nothing Then
+            ''controlador para saber si se baja en escala o no
+            Dim pasajeroEscala As Integer = 0
+
+            ''verificar el numero de asientoo'''
+            Dim numeroAsientoSolicitado$
+            numeroAsientoSolicitado = ComboBoxNumeroDeAsiento.Value
+            ''se hace la consulta a la base de datos si esta disponible''
+            ''solicito el codigo del destino''
+            Dim destinoSeleccionado As Integer = ComboBoxDestino.SelectedIndex
+            Dim IDVuelo%
+            If destinoSeleccionado >= 0 AndAlso destinoSeleccionado < datosVuelosPorVentanilla.Rows.Count Then
+                Dim filaSeleccionada As DataRow = datosVuelosPorVentanilla.Rows(destinoSeleccionado)
+                ''Guardo el codigo del vuelo''
+                IDVuelo = Integer.Parse(filaSeleccionada("IDVuelo"))
+            End If
+
+            ''CONSULTA SI ESTA DISPONIBLE EL ASIENTO''
+            Dim consulta As String = "SELECT COUNT(*) AS ocupado FROM TblPasajero WHERE ID_Vuelo = @CodigoVuelo AND NumAsiento = @NumeroAsiento"
+            Dim cmd As SqlCommand = New SqlCommand(consulta, conect.Conectar())
+            cmd.Parameters.AddWithValue("@CodigoVuelo", IDVuelo)
+            cmd.Parameters.AddWithValue("@NumeroAsiento", numeroAsientoSolicitado)
+            ''me devuelve un 0 si esta disponible o un 1 si esta ocupado
+            Dim disponible As Integer
+            disponible = CInt(cmd.ExecuteScalar())
+            conect.Cerrar()
+
+            ''CONSULTA DEL ULTIMO PROCESO REALIDADO''
+            Dim consulta2 As String = "select top 1 Id_Proceso from Ventanillas where NumeroVentanilla = @Ventanilla order by Id_Proceso desc"
+            Dim cmd2 As SqlCommand = New SqlCommand(consulta2, conect.Conectar())
+            cmd2.Parameters.AddWithValue("@Ventanilla", ComboBoxID_Ventanilla.Text)
+            Dim idProceso As Integer
+            idProceso = CInt(cmd2.ExecuteScalar())
+            conect.Cerrar()
+
+            ''verifico lo de la escala''
+            If escalaNo.Enabled = False AndAlso escalaSi.Enabled = False Then
+                pasajeroEscala = 0
+
+            ElseIf escalaSi.Checked = True Then
+                pasajeroEscala = 1
+
+            ElseIf escalaNo.Checked = True Then
+                pasajeroEscala = 0
+            End If
+
+
+            If disponible = 0 Then
+                ''se insertan los datos de pasajaero''
+                Try
+                    ''se guarda la hora del proceso''
+                    Dim horaActual As DateTime = DateTime.Now
+                    Dim horaMinutos As String = horaActual.ToString("HH:mm")
+                    '''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                    ''se guardan los demas datos''
+                    Dim destinoViaje As String = ComboBoxDestino.SelectedItem.ToString
+                    Dim insertar As String = "insert into TblPasajero (Nombre, Nacionalidad, Destino, Precio, HoraAtencion, FechaSalida, NumAsiento, Escala, Pasaporte, ID_Ventanilla, ID_Vuelo) values
+                                                                  (@Nombre, @Nacionalidad, @Destino, @Precio, @HoraAtencion, @FechaSalida, @NumAsiento, @Escala, @Pasaporte, @ID_Ventanilla, @ID_Vuelo)"
+
+                    Dim cmdInsert As SqlCommand = New SqlCommand(insertar, conect.Conectar())
+                    cmdInsert.Parameters.AddWithValue("@Nombre", TextBoxNombrePasajero.Text)
+                    cmdInsert.Parameters.AddWithValue("@Nacionalidad", TextBoxNacionalidad.Text)
+                    cmdInsert.Parameters.AddWithValue("@Destino", ComboBoxDestino.SelectedItem.ToString)
+                    cmdInsert.Parameters.AddWithValue("@Precio", SqlMoney.Parse(TextBoxPrecioTiquete.Text))
+                    cmdInsert.Parameters.AddWithValue("@HoraAtencion", horaMinutos)
+                    cmdInsert.Parameters.AddWithValue("@FechaSalida", TextBoxFechaSalida.Text)
+                    cmdInsert.Parameters.AddWithValue("@NumAsiento", numeroAsientoSolicitado)
+                    cmdInsert.Parameters.AddWithValue("@Escala", pasajeroEscala)
+                    cmdInsert.Parameters.AddWithValue("@Pasaporte", TextBoxNumeroDePasaporte.Text)
+                    cmdInsert.Parameters.AddWithValue("@ID_Ventanilla", idProceso)
+                    cmdInsert.Parameters.AddWithValue("@ID_Vuelo", IDVuelo)
+                    cmdInsert.ExecuteNonQuery()
+                    conect.Cerrar()
+                    MessageBox.Show("La compra ha sido exitosa")
+                    limpiarCuadros()
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                End Try
+
+
+
+            Else
+                MessageBox.Show("Numero de asiento vendido, ingrese otro")
+            End If
+
+        Else
+            MessageBox.Show("Ha ocurrido un error. Datos Inválidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub VerificarCamposRellenadosPasajeros(sender As Object, e As EventArgs) Handles TextBoxPrecioTiquete.TextChanged
+
+    End Sub
 End Class

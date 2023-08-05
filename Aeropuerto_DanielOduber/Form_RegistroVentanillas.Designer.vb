@@ -25,6 +25,8 @@ Partial Class Form_RegistroVentanillas
         Me.components = New System.ComponentModel.Container()
         Me.btn_VolverMenu = New System.Windows.Forms.Button()
         Me.GroupBoxPasajero = New System.Windows.Forms.GroupBox()
+        Me.ComboBoxNumeroDeAsiento = New System.Windows.Forms.NumericUpDown()
+        Me.BtnConfirmarCompra = New System.Windows.Forms.Button()
         Me.escalaNo = New System.Windows.Forms.RadioButton()
         Me.escalaSi = New System.Windows.Forms.RadioButton()
         Me.TextBoxFechaSalida = New System.Windows.Forms.TextBox()
@@ -34,7 +36,6 @@ Partial Class Form_RegistroVentanillas
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBoxNacionalidad = New System.Windows.Forms.TextBox()
         Me.ComboBoxDestino = New System.Windows.Forms.ComboBox()
-        Me.ComboBoxNumeroDeAsiento = New System.Windows.Forms.ComboBox()
         Me.TextBoxPrecioTiquete = New System.Windows.Forms.TextBox()
         Me.TextBoxNombrePasajero = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -57,6 +58,8 @@ Partial Class Form_RegistroVentanillas
         Me.Label19 = New System.Windows.Forms.Label()
         Me.BtnConfirmarVentanilla = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.DateTimeVentanilla = New System.Windows.Forms.DateTimePicker()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.ComboBoxLinea_Aereas = New System.Windows.Forms.ComboBox()
         Me.TextBoxCedula_Empl = New System.Windows.Forms.TextBox()
         Me.TextBoxNombre_Emple = New System.Windows.Forms.TextBox()
@@ -67,8 +70,8 @@ Partial Class Form_RegistroVentanillas
         Me.ComboBoxID_Ventanilla = New System.Windows.Forms.ComboBox()
         Me.LabelConexion = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.BtnConfirmarCompra = New System.Windows.Forms.Button()
         Me.GroupBoxPasajero.SuspendLayout()
+        CType(Me.ComboBoxNumeroDeAsiento, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBoxOrigen.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -86,6 +89,7 @@ Partial Class Form_RegistroVentanillas
         '
         'GroupBoxPasajero
         '
+        Me.GroupBoxPasajero.Controls.Add(Me.ComboBoxNumeroDeAsiento)
         Me.GroupBoxPasajero.Controls.Add(Me.BtnConfirmarCompra)
         Me.GroupBoxPasajero.Controls.Add(Me.escalaNo)
         Me.GroupBoxPasajero.Controls.Add(Me.escalaSi)
@@ -96,7 +100,6 @@ Partial Class Form_RegistroVentanillas
         Me.GroupBoxPasajero.Controls.Add(Me.Label6)
         Me.GroupBoxPasajero.Controls.Add(Me.TextBoxNacionalidad)
         Me.GroupBoxPasajero.Controls.Add(Me.ComboBoxDestino)
-        Me.GroupBoxPasajero.Controls.Add(Me.ComboBoxNumeroDeAsiento)
         Me.GroupBoxPasajero.Controls.Add(Me.TextBoxPrecioTiquete)
         Me.GroupBoxPasajero.Controls.Add(Me.TextBoxNombrePasajero)
         Me.GroupBoxPasajero.Controls.Add(Me.Label7)
@@ -111,6 +114,29 @@ Partial Class Form_RegistroVentanillas
         Me.GroupBoxPasajero.TabStop = False
         Me.GroupBoxPasajero.Text = "Pasajero"
         '
+        'ComboBoxNumeroDeAsiento
+        '
+        Me.ComboBoxNumeroDeAsiento.Location = New System.Drawing.Point(249, 324)
+        Me.ComboBoxNumeroDeAsiento.Maximum = New Decimal(New Integer() {200, 0, 0, 0})
+        Me.ComboBoxNumeroDeAsiento.Name = "ComboBoxNumeroDeAsiento"
+        Me.ComboBoxNumeroDeAsiento.Size = New System.Drawing.Size(120, 22)
+        Me.ComboBoxNumeroDeAsiento.TabIndex = 33
+        Me.ComboBoxNumeroDeAsiento.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'BtnConfirmarCompra
+        '
+        Me.BtnConfirmarCompra.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.BtnConfirmarCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BtnConfirmarCompra.Font = New System.Drawing.Font("Microsoft Tai Le", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnConfirmarCompra.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtnConfirmarCompra.Location = New System.Drawing.Point(118, 382)
+        Me.BtnConfirmarCompra.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnConfirmarCompra.Name = "BtnConfirmarCompra"
+        Me.BtnConfirmarCompra.Size = New System.Drawing.Size(167, 37)
+        Me.BtnConfirmarCompra.TabIndex = 31
+        Me.BtnConfirmarCompra.Text = "Confirmar vuelo"
+        Me.BtnConfirmarCompra.UseVisualStyleBackColor = False
+        '
         'escalaNo
         '
         Me.escalaNo.AutoSize = True
@@ -119,7 +145,6 @@ Partial Class Form_RegistroVentanillas
         Me.escalaNo.Name = "escalaNo"
         Me.escalaNo.Size = New System.Drawing.Size(48, 20)
         Me.escalaNo.TabIndex = 32
-        Me.escalaNo.TabStop = True
         Me.escalaNo.Text = "NO"
         Me.ToolTip1.SetToolTip(Me.escalaNo, "NO se baja en la escala")
         Me.escalaNo.UseVisualStyleBackColor = True
@@ -132,7 +157,6 @@ Partial Class Form_RegistroVentanillas
         Me.escalaSi.Name = "escalaSi"
         Me.escalaSi.Size = New System.Drawing.Size(40, 20)
         Me.escalaSi.TabIndex = 31
-        Me.escalaSi.TabStop = True
         Me.escalaSi.Text = "SI"
         Me.ToolTip1.SetToolTip(Me.escalaSi, "SI se baja en la escala")
         Me.escalaSi.UseVisualStyleBackColor = True
@@ -196,14 +220,6 @@ Partial Class Form_RegistroVentanillas
         Me.ComboBoxDestino.Name = "ComboBoxDestino"
         Me.ComboBoxDestino.Size = New System.Drawing.Size(178, 24)
         Me.ComboBoxDestino.TabIndex = 22
-        '
-        'ComboBoxNumeroDeAsiento
-        '
-        Me.ComboBoxNumeroDeAsiento.FormattingEnabled = True
-        Me.ComboBoxNumeroDeAsiento.Location = New System.Drawing.Point(216, 321)
-        Me.ComboBoxNumeroDeAsiento.Name = "ComboBoxNumeroDeAsiento"
-        Me.ComboBoxNumeroDeAsiento.Size = New System.Drawing.Size(161, 24)
-        Me.ComboBoxNumeroDeAsiento.TabIndex = 21
         '
         'TextBoxPrecioTiquete
         '
@@ -405,7 +421,7 @@ Partial Class Form_RegistroVentanillas
         Me.BtnConfirmarVentanilla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.BtnConfirmarVentanilla.Font = New System.Drawing.Font("Microsoft Tai Le", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnConfirmarVentanilla.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnConfirmarVentanilla.Location = New System.Drawing.Point(146, 314)
+        Me.BtnConfirmarVentanilla.Location = New System.Drawing.Point(146, 353)
         Me.BtnConfirmarVentanilla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnConfirmarVentanilla.Name = "BtnConfirmarVentanilla"
         Me.BtnConfirmarVentanilla.Size = New System.Drawing.Size(110, 37)
@@ -415,6 +431,8 @@ Partial Class Form_RegistroVentanillas
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.DateTimeVentanilla)
+        Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.ComboBoxLinea_Aereas)
         Me.GroupBox1.Controls.Add(Me.BtnConfirmarVentanilla)
         Me.GroupBox1.Controls.Add(Me.TextBoxCedula_Empl)
@@ -426,15 +444,32 @@ Partial Class Form_RegistroVentanillas
         Me.GroupBox1.Controls.Add(Me.ComboBoxID_Ventanilla)
         Me.GroupBox1.Location = New System.Drawing.Point(50, 58)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(396, 390)
+        Me.GroupBox1.Size = New System.Drawing.Size(396, 419)
         Me.GroupBox1.TabIndex = 28
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Ingreso de ventanillas"
         '
+        'DateTimeVentanilla
+        '
+        Me.DateTimeVentanilla.Location = New System.Drawing.Point(163, 272)
+        Me.DateTimeVentanilla.Name = "DateTimeVentanilla"
+        Me.DateTimeVentanilla.Size = New System.Drawing.Size(200, 22)
+        Me.DateTimeVentanilla.TabIndex = 31
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(18, 274)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(66, 20)
+        Me.Label4.TabIndex = 30
+        Me.Label4.Text = "Fecha:"
+        '
         'ComboBoxLinea_Aereas
         '
         Me.ComboBoxLinea_Aereas.FormattingEnabled = True
-        Me.ComboBoxLinea_Aereas.Location = New System.Drawing.Point(242, 224)
+        Me.ComboBoxLinea_Aereas.Location = New System.Drawing.Point(242, 220)
         Me.ComboBoxLinea_Aereas.Name = "ComboBoxLinea_Aereas"
         Me.ComboBoxLinea_Aereas.Size = New System.Drawing.Size(121, 24)
         Me.ComboBoxLinea_Aereas.TabIndex = 21
@@ -513,20 +548,6 @@ Partial Class Form_RegistroVentanillas
         Me.LabelConexion.Text = "Conexion realizada con el servidor..."
         Me.LabelConexion.Visible = False
         '
-        'BtnConfirmarCompra
-        '
-        Me.BtnConfirmarCompra.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.BtnConfirmarCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.BtnConfirmarCompra.Font = New System.Drawing.Font("Microsoft Tai Le", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnConfirmarCompra.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnConfirmarCompra.Location = New System.Drawing.Point(118, 382)
-        Me.BtnConfirmarCompra.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BtnConfirmarCompra.Name = "BtnConfirmarCompra"
-        Me.BtnConfirmarCompra.Size = New System.Drawing.Size(167, 37)
-        Me.BtnConfirmarCompra.TabIndex = 31
-        Me.BtnConfirmarCompra.Text = "Confirmar vuelo"
-        Me.BtnConfirmarCompra.UseVisualStyleBackColor = False
-        '
         'Form_RegistroVentanillas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -542,6 +563,7 @@ Partial Class Form_RegistroVentanillas
         Me.Text = "Registro de ventanillas"
         Me.GroupBoxPasajero.ResumeLayout(False)
         Me.GroupBoxPasajero.PerformLayout()
+        CType(Me.ComboBoxNumeroDeAsiento, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBoxOrigen.ResumeLayout(False)
         Me.GroupBoxOrigen.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -555,7 +577,6 @@ Partial Class Form_RegistroVentanillas
     Friend WithEvents GroupBoxPasajero As GroupBox
     Friend WithEvents TextBoxNacionalidad As TextBox
     Friend WithEvents ComboBoxDestino As ComboBox
-    Friend WithEvents ComboBoxNumeroDeAsiento As ComboBox
     Friend WithEvents TextBoxPrecioTiquete As TextBox
     Friend WithEvents TextBoxNombrePasajero As TextBox
     Friend WithEvents Label7 As Label
@@ -596,4 +617,7 @@ Partial Class Form_RegistroVentanillas
     Friend WithEvents escalaSi As RadioButton
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents BtnConfirmarCompra As Button
+    Friend WithEvents ComboBoxNumeroDeAsiento As NumericUpDown
+    Friend WithEvents DateTimeVentanilla As DateTimePicker
+    Friend WithEvents Label4 As Label
 End Class
