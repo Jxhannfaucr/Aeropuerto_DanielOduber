@@ -76,7 +76,19 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cant_vuelos.Designer.vb">
+      <DependentUpon>Cant_vuelos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cant_vuelos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Conexion_BD.vb" />
+    <Compile Include="Informes.Designer.vb">
+      <DependentUpon>Informes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form_RegistroVentanillas.Designer.vb">
       <DependentUpon>Form_RegistroVentanillas.vb</DependentUpon>
     </Compile>
@@ -88,12 +100,6 @@
     </Compile>
     <Compile Include="Form_Menu.Designer.vb">
       <DependentUpon>Form_Menu.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Informes.Designer.vb">
-      <DependentUpon>Informes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Informes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.vb">
@@ -126,14 +132,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Cant_vuelos.resx">
+      <DependentUpon>Cant_vuelos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes.resx">
+      <DependentUpon>Informes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_RegistroVentanillas.resx">
       <DependentUpon>Form_RegistroVentanillas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Menu.resx">
       <DependentUpon>Form_Menu.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Informes.resx">
-      <DependentUpon>Informes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

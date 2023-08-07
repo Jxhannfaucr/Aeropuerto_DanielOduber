@@ -170,11 +170,8 @@ Public Class Form_RegistroVentanillas
 
     Private Sub BtnConfirmarVentanilla_Click(sender As Object, e As EventArgs) Handles BtnConfirmarVentanilla.Click
         Dim ventanilla As Integer = Integer.Parse(ComboBoxID_Ventanilla.SelectedItem.ToString)
-        If IsNumeric(ComboBoxID_Ventanilla.SelectedItem) AndAlso
-   IsNumeric(TextBoxCedula_Empl.Text) AndAlso
-   TextBoxNombre_Emple.Text.All(Function(c) Char.IsLetter(c)) AndAlso
-   ComboBoxLinea_Aereas.SelectedItem IsNot Nothing AndAlso
-   ComboBoxLinea_Aereas.SelectedItem.ToString().All(Function(c) Char.IsLetter(c)) AndAlso ventanilla < 5 Then
+        If Not TextBoxNombre_Emple.Text = "" AndAlso Not TextBoxCedula_Empl.Text = "" AndAlso
+            Not ComboBoxID_Ventanilla.SelectedItem = "" AndAlso Not ComboBoxLinea_Aereas.SelectedItem = "" Then
 
             ''se insertan los datos a ventanilla''
             Try
@@ -284,9 +281,6 @@ Public Class Form_RegistroVentanillas
 
     End Sub
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
 
     Private Sub ComboBoxNumeroDeAsiento_ValueChanged(sender As Object, e As EventArgs) Handles ComboBoxNumeroDeAsiento.ValueChanged
         If ComboBoxNumeroDeAsiento.Value < 1 Then
@@ -297,10 +291,9 @@ Public Class Form_RegistroVentanillas
     End Sub
 
     Private Sub BtnConfirmarCompra_Click_1(sender As Object, e As EventArgs) Handles BtnConfirmarCompra.Click
-        If IsNumeric(TextBoxNumeroDePasaporte.Text) AndAlso
-        TextBoxNombrePasajero.Text.All(Function(c) Char.IsLetter(c)) AndAlso
-        TextBoxNacionalidad.Text.All(Function(c) Char.IsLetter(c)) AndAlso
-        ComboBoxDestino.SelectedItem.ToString IsNot Nothing Then
+        If Not TextBoxNombrePasajero.Text = "" AndAlso Not TextBoxNacionalidad.Text = "" AndAlso
+           Not ComboBoxDestino.SelectedItem = "" AndAlso Not TextBoxNumeroDePasaporte.Text = "" Then
+
             ''controlador para saber si se baja en escala o no
             Dim pasajeroEscala As Integer = 0
 
@@ -392,5 +385,53 @@ Public Class Form_RegistroVentanillas
 
     Private Sub VerificarCamposRellenadosPasajeros(sender As Object, e As EventArgs) Handles TextBoxPrecioTiquete.TextChanged
 
+    End Sub
+
+    Private Sub TextBoxCedula_Empl_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxCedula_Empl.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> "," AndAlso e.KeyChar <> "." Then
+            e.Handled = True ' Cancelar la entrada de caracteres no válidos.
+        End If
+    End Sub
+
+    Private Sub ComboBoxID_Ventanilla_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ComboBoxID_Ventanilla.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> "," AndAlso e.KeyChar <> "." Then
+            e.Handled = True ' Cancelar la entrada de caracteres no válidos.
+        End If
+    End Sub
+
+    Private Sub TextBoxNombre_Emple_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxNombre_Emple.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsLetter(e.KeyChar) AndAlso e.KeyChar <> " " Then
+            e.Handled = True ' Cancelar la entrada de caracteres no válidos.
+        End If
+    End Sub
+
+    Private Sub ComboBoxLinea_Aereas_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ComboBoxLinea_Aereas.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsLetter(e.KeyChar) AndAlso e.KeyChar <> " " Then
+            e.Handled = True ' Cancelar la entrada de caracteres no válidos.
+        End If
+    End Sub
+
+    Private Sub TextBoxNombrePasajero_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxNombrePasajero.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsLetter(e.KeyChar) AndAlso e.KeyChar <> " " Then
+            e.Handled = True ' Cancelar la entrada de caracteres no válidos.
+        End If
+    End Sub
+
+    Private Sub TextBoxNacionalidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxNacionalidad.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsLetter(e.KeyChar) AndAlso e.KeyChar <> " " Then
+            e.Handled = True ' Cancelar la entrada de caracteres no válidos.
+        End If
+    End Sub
+
+    Private Sub TextBoxNumeroDePasaporte_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxNumeroDePasaporte.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> "," AndAlso e.KeyChar <> "." Then
+            e.Handled = True ' Cancelar la entrada de caracteres no válidos.
+        End If
+    End Sub
+
+    Private Sub ComboBoxNumeroDeAsiento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ComboBoxNumeroDeAsiento.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> "," AndAlso e.KeyChar <> "." Then
+            e.Handled = True ' Cancelar la entrada de caracteres no válidos.
+        End If
     End Sub
 End Class

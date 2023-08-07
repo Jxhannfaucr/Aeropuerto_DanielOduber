@@ -12,4 +12,8 @@
     Private Sub Menu_Empleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub btn_IngresarAvion_Click(sender As Object, e As EventArgs) Handles btn_IngresarAvion.Click
+
+    End Sub
 End Class
