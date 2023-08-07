@@ -86,14 +86,15 @@ Partial Class Cant_vuelos
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.DataGridView1)
         Me.GroupBox1.Controls.Add(Me.buscar_fecha)
         Me.GroupBox1.Controls.Add(Me.List_ventanillas)
         Me.GroupBox1.Controls.Add(Me.Total_de_vuelos)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(22, 67)
+        Me.GroupBox1.Location = New System.Drawing.Point(247, 37)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(304, 313)
+        Me.GroupBox1.Size = New System.Drawing.Size(304, 371)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "GroupBox1"
@@ -101,7 +102,7 @@ Partial Class Cant_vuelos
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(371, 222)
+        Me.DataGridView1.Location = New System.Drawing.Point(26, 236)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(243, 111)
         Me.DataGridView1.TabIndex = 7
@@ -112,7 +113,6 @@ Partial Class Cant_vuelos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Button2)
         Me.Name = "Cant_vuelos"
