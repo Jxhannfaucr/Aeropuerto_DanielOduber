@@ -6,7 +6,9 @@
     End Sub
 
     Private Sub btn_ProcesarVentanilla_Click(sender As Object, e As EventArgs) Handles btn_ProcesarVentanilla.Click
-
+        Dim Part_informes As New Informes()
+        Part_informes.Show()
+        Me.Hide()
     End Sub
 
     Private Sub Menu_Empleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
