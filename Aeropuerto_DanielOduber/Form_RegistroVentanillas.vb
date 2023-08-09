@@ -13,17 +13,19 @@ Public Class Form_RegistroVentanillas
         conect.Conectar()
         LabelConexion.Visible = True
         conect.Cerrar()
+        Dim CompraExitosa As Boolean = False
+        BtnNuevaVentanilla.Enabled = False
 
     End Sub
 
 
-    Public Class Vuelo
-        Public Property Origen As String
-        Public Property HoraSalida As String
-        Public Property HoraLlegada As String
-        Public Property Escala As String
-        Public Property Precio As SqlMoney
-    End Class
+    'Public Class Vuelo
+    '    Public Property Origen As String
+    '    Public Property HoraSalida As String
+    '    Public Property HoraLlegada As String
+    '    Public Property Escala As String
+    '    Public Property Precio As SqlMoney
+    'End Class
 
     Private Sub ComboBoxDestino_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxDestino.SelectedIndexChanged
         ''guardo el indice del destino
@@ -86,7 +88,7 @@ Public Class Form_RegistroVentanillas
         TextBoxPrecioTiquete.Clear()
         TextBoxFechaSalida.Clear()
         TextBoxNumeroDePasaporte.Clear()
-        'falta destino combo box
+        ComboBoxDestino.Text = ""
         'falta escala
         'falta numero de asiento
         TextBoxOrigen.Clear()
@@ -191,6 +193,7 @@ Public Class Form_RegistroVentanillas
                 cmd.ExecuteNonQuery()
                 conect.Cerrar()
                 MessageBox.Show("Los datos de ventanilla fueron agregados exitosamente")
+                BtnNuevaVentanilla.Enabled = False
             Catch ex As Exception
                 MessageBox.Show("Error")
             End Try
@@ -367,6 +370,7 @@ Public Class Form_RegistroVentanillas
                     cmdInsert.ExecuteNonQuery()
                     conect.Cerrar()
                     MessageBox.Show("La compra ha sido exitosa")
+                    BtnNuevaVentanilla.Enabled = True
                     limpiarCuadros()
                 Catch ex As Exception
                     MessageBox.Show(ex.Message)
@@ -432,6 +436,20 @@ Public Class Form_RegistroVentanillas
     Private Sub ComboBoxNumeroDeAsiento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ComboBoxNumeroDeAsiento.KeyPress
         If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> "," AndAlso e.KeyChar <> "." Then
             e.Handled = True ' Cancelar la entrada de caracteres no válidos.
+        End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnNuevaVentanilla.Click
+        Dim Resultado As DialogResult = MessageBox.Show("¿Está seguro de que desea cambiar los datos de ventanilla?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If Resultado = DialogResult.Yes Then
+            ComboBoxID_Ventanilla.Text = ""
+            TextBoxNombre_Emple.Clear()
+            TextBoxCedula_Empl.Clear()
+            ComboBoxLinea_Aereas.Text = ""
+            GroupBoxPasajero.Enabled = False
+        Else
+            BtnNuevaVentanilla.Enabled = False
         End If
     End Sub
 End Class
