@@ -148,6 +148,12 @@
     <Compile Include="Pasajeros_llegados.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Recoleccion_monetaria.Designer.vb">
+      <DependentUpon>Recoleccion_monetaria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Recoleccion_monetaria.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Cant_vuelos.resx">
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pasajeros_llegados.resx">
       <DependentUpon>Pasajeros_llegados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recoleccion_monetaria.resx">
+      <DependentUpon>Recoleccion_monetaria.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

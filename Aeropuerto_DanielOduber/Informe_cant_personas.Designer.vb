@@ -28,6 +28,7 @@ Partial Class Informe_cant_personas
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.txtCantidadPasajeros = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -82,12 +83,22 @@ Partial Class Informe_cant_personas
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Cantidad de personas:"
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(703, 69)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 6
+        Me.Button2.Text = "Regresar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Informe_cant_personas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtCantidadPasajeros)
         Me.Controls.Add(Me.DataGridView1)
@@ -108,4 +119,5 @@ Partial Class Informe_cant_personas
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents txtCantidadPasajeros As TextBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents Button2 As Button
 End Class

@@ -68,4 +68,9 @@ Public Class pasajeros_bajados
         conect.Cerrar()
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim volver_Menu_informes As New Informes()
+        volver_Menu_informes.Show()
+        Me.Close()
+    End Sub
 End Class

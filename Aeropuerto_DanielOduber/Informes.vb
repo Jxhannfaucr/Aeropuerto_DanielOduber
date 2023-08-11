@@ -23,4 +23,10 @@
         Cantidad_Vuelos.Show()
         Me.Hide()
     End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim Cantidad_Vuelos As New pasajeros_bajados
+        Cantidad_Vuelos.Show()
+        Me.Hide()
+    End Sub
 End Class

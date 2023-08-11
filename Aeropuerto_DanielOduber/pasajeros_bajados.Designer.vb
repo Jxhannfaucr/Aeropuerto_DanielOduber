@@ -29,6 +29,7 @@ Partial Class pasajeros_bajados
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -93,12 +94,22 @@ Partial Class pasajeros_bajados
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Saber cuales cuales y cuantos pasajeros se bajaron "
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(724, 29)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(64, 24)
+        Me.Button1.TabIndex = 7
+        Me.Button1.Text = "Regresar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'pasajeros_bajados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -121,4 +132,5 @@ Partial Class pasajeros_bajados
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents Button1 As Button
 End Class

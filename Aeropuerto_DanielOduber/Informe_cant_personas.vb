@@ -45,5 +45,10 @@ Public Class Informe_cant_personas
         conect.Cerrar()
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim volver_Menu_informes As New Informes()
+        volver_Menu_informes.Show()
+        Me.Close()
+    End Sub
 
 End Class
