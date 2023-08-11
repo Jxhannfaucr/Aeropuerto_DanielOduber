@@ -11,4 +11,16 @@
         Me.Close()
     End Sub
 
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim Cantidad_Vuelos As New Informe_cant_personas
+        Cantidad_Vuelos.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+
+        Dim Cantidad_Vuelos As New Pasajeros_llegados
+        Cantidad_Vuelos.Show()
+        Me.Hide()
+    End Sub
 End Class

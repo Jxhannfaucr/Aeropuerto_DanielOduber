@@ -102,6 +102,12 @@
       <DependentUpon>Form_Menu.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Informe_cant_personas.Designer.vb">
+      <DependentUpon>Informe_cant_personas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Informe_cant_personas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -136,6 +142,12 @@
     <Compile Include="pasajeros_bajados.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Pasajeros_llegados.Designer.vb">
+      <DependentUpon>Pasajeros_llegados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pasajeros_llegados.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Cant_vuelos.resx">
@@ -149,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Menu.resx">
       <DependentUpon>Form_Menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informe_cant_personas.resx">
+      <DependentUpon>Informe_cant_personas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
@@ -164,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pasajeros_bajados.resx">
       <DependentUpon>pasajeros_bajados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pasajeros_llegados.resx">
+      <DependentUpon>Pasajeros_llegados.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
