@@ -35,6 +35,7 @@ Partial Class pasajeros_bajados
         '
         'Btn_Ver
         '
+        Me.Btn_Ver.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btn_Ver.Location = New System.Drawing.Point(64, 172)
         Me.Btn_Ver.Name = "Btn_Ver"
         Me.Btn_Ver.Size = New System.Drawing.Size(75, 27)
@@ -69,18 +70,20 @@ Partial Class pasajeros_bajados
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(61, 108)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(223, 13)
+        Me.Label1.Size = New System.Drawing.Size(296, 18)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Seleccione de los destino que tienen escalas:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Georgia", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(64, 224)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(67, 13)
+        Me.Label2.Size = New System.Drawing.Size(86, 16)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "ID del vuelo:"
         '
@@ -96,9 +99,10 @@ Partial Class pasajeros_bajados
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(724, 29)
+        Me.Button1.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(705, 29)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(64, 24)
+        Me.Button1.Size = New System.Drawing.Size(83, 32)
         Me.Button1.TabIndex = 7
         Me.Button1.Text = "Regresar"
         Me.Button1.UseVisualStyleBackColor = True

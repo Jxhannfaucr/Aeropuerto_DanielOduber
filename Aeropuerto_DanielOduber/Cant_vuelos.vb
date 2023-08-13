@@ -41,4 +41,8 @@ Public Class Cant_vuelos
         volver_menu_informes.Show()
         Me.Close()
     End Sub
+
+    Private Sub List_ventanillas_KeyPress(sender As Object, e As KeyPressEventArgs) Handles List_ventanillas.KeyPress
+        e.Handled = True ' Evita que se procese la tecla presionada
+    End Sub
 End Class

@@ -73,4 +73,8 @@ Public Class pasajeros_bajados
         volver_Menu_informes.Show()
         Me.Close()
     End Sub
+
+    Private Sub Box_con_escala_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Box_con_escala.KeyPress
+        e.Handled = True ' Evita que se procese la tecla presionada
+    End Sub
 End Class

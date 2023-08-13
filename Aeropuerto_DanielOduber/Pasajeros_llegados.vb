@@ -66,4 +66,9 @@ Public Class Pasajeros_llegados
         volver_Menu_informes.Show()
         Me.Close()
     End Sub
+
+    Private Sub ComboBoxLlegados_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ComboBoxLlegados.KeyPress
+        e.Handled = True ' Evita que se procese la tecla presionada
+    End Sub
+
 End Class

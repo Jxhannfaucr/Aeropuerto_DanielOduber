@@ -114,6 +114,7 @@ Public Class Recoleccion_monetaria
     End Sub
 
     Private Sub ComboBoxID_Ventanilla_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ComboBoxID_Ventanilla.KeyPress
-
+        e.Handled = True ' Evita que se procese la tecla presionada
     End Sub
+
 End Class

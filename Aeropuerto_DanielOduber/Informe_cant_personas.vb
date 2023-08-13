@@ -51,4 +51,7 @@ Public Class Informe_cant_personas
         Me.Close()
     End Sub
 
+    Private Sub ComboSeleccionar_vuelo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ComboSeleccionar_vuelo.KeyPress
+        e.Handled = True ' Evita que se procese la tecla presionada
+    End Sub
 End Class
