@@ -22,7 +22,6 @@ Partial Class Form_RegistroVentanillas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.btn_VolverMenu = New System.Windows.Forms.Button()
         Me.GroupBoxPasajero = New System.Windows.Forms.GroupBox()
         Me.ComboBoxNumeroDeAsiento = New System.Windows.Forms.NumericUpDown()
@@ -69,12 +68,13 @@ Partial Class Form_RegistroVentanillas
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBoxID_Ventanilla = New System.Windows.Forms.ComboBox()
         Me.LabelConexion = New System.Windows.Forms.Label()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.BtnNuevaVentanilla = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBoxPasajero.SuspendLayout()
         CType(Me.ComboBoxNumeroDeAsiento, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBoxOrigen.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btn_VolverMenu
@@ -108,7 +108,7 @@ Partial Class Form_RegistroVentanillas
         Me.GroupBoxPasajero.Controls.Add(Me.Label10)
         Me.GroupBoxPasajero.Controls.Add(Me.Label11)
         Me.GroupBoxPasajero.Controls.Add(Me.Label12)
-        Me.GroupBoxPasajero.Location = New System.Drawing.Point(528, 72)
+        Me.GroupBoxPasajero.Location = New System.Drawing.Point(537, 72)
         Me.GroupBoxPasajero.Name = "GroupBoxPasajero"
         Me.GroupBoxPasajero.Size = New System.Drawing.Size(446, 542)
         Me.GroupBoxPasajero.TabIndex = 23
@@ -146,7 +146,6 @@ Partial Class Form_RegistroVentanillas
         Me.escalaNo.Size = New System.Drawing.Size(57, 24)
         Me.escalaNo.TabIndex = 32
         Me.escalaNo.Text = "NO"
-        Me.ToolTip1.SetToolTip(Me.escalaNo, "NO se baja en la escala")
         Me.escalaNo.UseVisualStyleBackColor = True
         '
         'escalaSi
@@ -158,7 +157,6 @@ Partial Class Form_RegistroVentanillas
         Me.escalaSi.Size = New System.Drawing.Size(50, 24)
         Me.escalaSi.TabIndex = 31
         Me.escalaSi.Text = "SI"
-        Me.ToolTip1.SetToolTip(Me.escalaSi, "SI se baja en la escala")
         Me.escalaSi.UseVisualStyleBackColor = True
         '
         'TextBoxFechaSalida
@@ -300,9 +298,10 @@ Partial Class Form_RegistroVentanillas
         Me.GroupBoxOrigen.Controls.Add(Me.Label17)
         Me.GroupBoxOrigen.Controls.Add(Me.Label18)
         Me.GroupBoxOrigen.Controls.Add(Me.Label19)
-        Me.GroupBoxOrigen.Location = New System.Drawing.Point(1010, 75)
+        Me.GroupBoxOrigen.Enabled = False
+        Me.GroupBoxOrigen.Location = New System.Drawing.Point(1009, 99)
         Me.GroupBoxOrigen.Name = "GroupBoxOrigen"
-        Me.GroupBoxOrigen.Size = New System.Drawing.Size(446, 365)
+        Me.GroupBoxOrigen.Size = New System.Drawing.Size(446, 380)
         Me.GroupBoxOrigen.TabIndex = 26
         Me.GroupBoxOrigen.TabStop = False
         Me.GroupBoxOrigen.Text = "Vuelo"
@@ -560,12 +559,22 @@ Partial Class Form_RegistroVentanillas
         Me.BtnNuevaVentanilla.Text = "Nueva Ventanilla "
         Me.BtnNuevaVentanilla.UseVisualStyleBackColor = False
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(1009, 499)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(446, 152)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 33
+        Me.PictureBox1.TabStop = False
+        '
         'Form_RegistroVentanillas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1491, 663)
+        Me.ClientSize = New System.Drawing.Size(1516, 683)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.BtnNuevaVentanilla)
         Me.Controls.Add(Me.LabelConexion)
         Me.Controls.Add(Me.GroupBox1)
@@ -573,7 +582,9 @@ Partial Class Form_RegistroVentanillas
         Me.Controls.Add(Me.GroupBoxPasajero)
         Me.Controls.Add(Me.btn_VolverMenu)
         Me.Name = "Form_RegistroVentanillas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Registro de ventanillas"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
         Me.GroupBoxPasajero.ResumeLayout(False)
         Me.GroupBoxPasajero.PerformLayout()
         CType(Me.ComboBoxNumeroDeAsiento, System.ComponentModel.ISupportInitialize).EndInit()
@@ -581,6 +592,7 @@ Partial Class Form_RegistroVentanillas
         Me.GroupBoxOrigen.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -628,10 +640,10 @@ Partial Class Form_RegistroVentanillas
     Friend WithEvents LabelConexion As Label
     Friend WithEvents escalaNo As RadioButton
     Friend WithEvents escalaSi As RadioButton
-    Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents BtnConfirmarCompra As Button
     Friend WithEvents ComboBoxNumeroDeAsiento As NumericUpDown
     Friend WithEvents DateTimeVentanilla As DateTimePicker
     Friend WithEvents Label4 As Label
     Friend WithEvents BtnNuevaVentanilla As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

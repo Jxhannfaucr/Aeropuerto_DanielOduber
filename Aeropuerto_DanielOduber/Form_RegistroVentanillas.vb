@@ -13,7 +13,7 @@ Public Class Form_RegistroVentanillas
         conect.Conectar()
         LabelConexion.Visible = True
         conect.Cerrar()
-        Dim CompraExitosa As Boolean = False
+        BtnConfirmarCompra.Enabled = False
         BtnNuevaVentanilla.Enabled = False
 
     End Sub
@@ -127,7 +127,7 @@ Public Class Form_RegistroVentanillas
                 conect.Cerrar()
                 ComboBoxLinea_Aereas.Items.Add(lineaAerea)
                 ComboBoxLinea_Aereas.SelectedItem = lineaAerea
-
+                PictureBox1.Image = Image.FromFile("C:\Users\Dylan slack\Downloads\THUMB-aa_aa__ahz_4cp_grd_pos-(1).png")
 
 
             ElseIf ComboBoxID_Ventanilla.SelectedItem = 2 Then
@@ -140,7 +140,7 @@ Public Class Form_RegistroVentanillas
                 conect.Cerrar()
                 ComboBoxLinea_Aereas.Items.Add(lineaAerea)
                 ComboBoxLinea_Aereas.SelectedItem = lineaAerea
-
+                PictureBox1.Image = Image.FromFile("C:\Users\Dylan slack\Downloads\British-Airways-Logo.png")
             ElseIf ComboBoxID_Ventanilla.SelectedItem = 3 Then
                 ComboBoxLinea_Aereas.Items.Clear()
                 Dim consulta As String = "select distinct LineaAerea from TblAvion
@@ -151,7 +151,7 @@ Public Class Form_RegistroVentanillas
                 conect.Cerrar()
                 ComboBoxLinea_Aereas.Items.Add(lineaAerea)
                 ComboBoxLinea_Aereas.SelectedItem = lineaAerea
-
+                PictureBox1.Image = Image.FromFile("C:\Users\Dylan slack\Downloads\Emirates-Logo.png")
 
             ElseIf ComboBoxID_Ventanilla.SelectedItem = 4 Then
                 ComboBoxLinea_Aereas.Items.Clear()
@@ -163,6 +163,7 @@ Public Class Form_RegistroVentanillas
                 conect.Cerrar()
                 ComboBoxLinea_Aereas.Items.Add(lineaAerea)
                 ComboBoxLinea_Aereas.SelectedItem = lineaAerea
+                PictureBox1.Image = Image.FromFile("C:\Users\Dylan slack\Downloads\61586b0b258f1e000415490d.png")
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -448,8 +449,9 @@ Public Class Form_RegistroVentanillas
             TextBoxCedula_Empl.Clear()
             ComboBoxLinea_Aereas.Text = ""
             GroupBoxPasajero.Enabled = False
+            GroupBox1.Enabled = True
         Else
-            BtnNuevaVentanilla.Enabled = False
+
         End If
     End Sub
 End Class

@@ -83,6 +83,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property nube_ap() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("nube-ap", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property procesamiento_de_datos() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("procesamiento-de-datos", resourceCulture)
@@ -96,6 +106,16 @@ Namespace My.Resources
         Friend ReadOnly Property taquilla() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("taquilla", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property todo_sobre_las_nubes() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("todo-sobre-las-nubes", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
