@@ -202,7 +202,7 @@ Public Class Form_RegistroVentanillas
                 MessageBox.Show("Los datos de ventanilla fueron agregados exitosamente")
                 'BtnNuevaVentanilla.Enabled = False
             Catch ex As Exception
-                MessageBox.Show("Error")
+                MessageBox.Show("Ha ocurrido un error al manejar la entrada del ComboBox.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
 
 
