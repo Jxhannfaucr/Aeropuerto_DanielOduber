@@ -38,43 +38,50 @@ Partial Class Pasajeros_llegados
         'ComboBoxLlegados
         '
         Me.ComboBoxLlegados.FormattingEnabled = True
-        Me.ComboBoxLlegados.Location = New System.Drawing.Point(211, 72)
+        Me.ComboBoxLlegados.Location = New System.Drawing.Point(281, 89)
+        Me.ComboBoxLlegados.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBoxLlegados.Name = "ComboBoxLlegados"
-        Me.ComboBoxLlegados.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBoxLlegados.Size = New System.Drawing.Size(160, 24)
         Me.ComboBoxLlegados.TabIndex = 0
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(238, 118)
+        Me.Button1.Location = New System.Drawing.Point(281, 144)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(94, 26)
+        Me.Button1.Size = New System.Drawing.Size(125, 32)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Consultar"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'texbox
         '
-        Me.texbox.Location = New System.Drawing.Point(193, 205)
+        Me.texbox.Location = New System.Drawing.Point(257, 252)
+        Me.texbox.Margin = New System.Windows.Forms.Padding(4)
         Me.texbox.Name = "texbox"
-        Me.texbox.Size = New System.Drawing.Size(100, 20)
+        Me.texbox.Size = New System.Drawing.Size(132, 22)
         Me.texbox.TabIndex = 2
         '
         'DataGridView1
         '
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(457, 46)
+        Me.DataGridView1.Location = New System.Drawing.Point(612, 76)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(402, 261)
+        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.Size = New System.Drawing.Size(636, 318)
         Me.DataGridView1.TabIndex = 3
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(49, 75)
+        Me.Label1.Location = New System.Drawing.Point(65, 92)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(156, 18)
+        Me.Label1.Size = New System.Drawing.Size(202, 24)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Seleccione el destino:"
         '
@@ -82,18 +89,20 @@ Partial Class Pasajeros_llegados
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(49, 207)
+        Me.Label2.Location = New System.Drawing.Point(65, 252)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(138, 18)
+        Me.Label2.Size = New System.Drawing.Size(173, 24)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Total de personas:"
         '
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(893, 46)
+        Me.Button2.Location = New System.Drawing.Point(1169, 22)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(89, 28)
+        Me.Button2.Size = New System.Drawing.Size(119, 34)
         Me.Button2.TabIndex = 6
         Me.Button2.Text = "Regresar"
         Me.Button2.UseVisualStyleBackColor = True
@@ -105,9 +114,11 @@ Partial Class Pasajeros_llegados
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.texbox)
         Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Location = New System.Drawing.Point(59, 39)
+        Me.GroupBox1.Location = New System.Drawing.Point(79, 76)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(340, 258)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Size = New System.Drawing.Size(453, 318)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         '
@@ -115,24 +126,26 @@ Partial Class Pasajeros_llegados
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(334, 18)
+        Me.Label3.Location = New System.Drawing.Point(397, 27)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(401, 18)
+        Me.Label3.Size = New System.Drawing.Size(556, 24)
         Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Informe para saber cuantas personas llegaron al destino"
+        Me.Label3.Text = "Informe para saber cuantas personas llegaron al destino final"
         '
         'Pasajeros_llegados
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(994, 580)
+        Me.ClientSize = New System.Drawing.Size(1325, 467)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.DataGridView1)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Pasajeros_llegados"
-        Me.Text = "Pasajeros_llegados"
+        Me.Text = "Pasajeros sin escala"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

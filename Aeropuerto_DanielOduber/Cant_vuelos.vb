@@ -24,7 +24,7 @@ Public Class Cant_vuelos
             DataGridView1.DataSource = dt
 
             ' Mostrar el total de vuelos en el TextBox
-            Dim cantVuelos As Integer = dt.Rows.Cast(Of DataRow)().Sum(Function(row) Convert.ToInt32(row("CantVuelos")))
+            Dim cantVuelos As Integer = dt.Rows.Cast(Of DataRow)().Count(Function(row) Convert.ToInt32(row("CantVuelos")))
             Total_de_vuelos.Text = cantVuelos.ToString()
 
             conect.Cerrar()
@@ -44,5 +44,13 @@ Public Class Cant_vuelos
 
     Private Sub List_ventanillas_KeyPress(sender As Object, e As KeyPressEventArgs) Handles List_ventanillas.KeyPress
         e.Handled = True ' Evita que se procese la tecla presionada
+    End Sub
+
+    Private Sub Cant_vuelos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub List_ventanillas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles List_ventanillas.SelectedIndexChanged
+        Button1.Enabled = True
     End Sub
 End Class

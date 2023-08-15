@@ -21,7 +21,7 @@
             pasar_Al_Menu_admin.Show()
             Me.Hide()
 
-        ElseIf usuario.Equals("usuario") AndAlso contrasena.Equals("easyprogra3") Then
+        ElseIf usuario.Equals("empleado") AndAlso contrasena.Equals("easyprogra3") Then
             Dim pasar_Al_Menu_usuario As New Form_Menu()
 
             pasar_Al_Menu_usuario.Show()

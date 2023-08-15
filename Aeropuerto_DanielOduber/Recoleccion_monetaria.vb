@@ -74,32 +74,36 @@ Public Class Recoleccion_monetaria
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Try
+            Dim destinoSeleccionado As Integer = ComboBoxDestino.SelectedIndex
 
-        Dim destinoSeleccionado As Integer = ComboBoxDestino.SelectedIndex
+            If destinoSeleccionado >= 0 AndAlso destinoSeleccionado < datosVuelosPorVentanilla.Rows.Count Then
+                Dim filaSeleccionada As DataRow = datosVuelosPorVentanilla.Rows(destinoSeleccionado)
+                Dim IDVuelo As Integer = Integer.Parse(filaSeleccionada("IDVuelo"))
 
-        If destinoSeleccionado >= 0 AndAlso destinoSeleccionado < datosVuelosPorVentanilla.Rows.Count Then
-            Dim filaSeleccionada As DataRow = datosVuelosPorVentanilla.Rows(destinoSeleccionado)
-            Dim IDVuelo As Integer = Integer.Parse(filaSeleccionada("IDVuelo"))
-
-            Dim queryCantidadRecolectado As String = "SELECT SUM(p.precio)
+                Dim queryCantidadRecolectado As String = "SELECT SUM(p.precio)
                                         FROM TblPasajero as p
                                         INNER JOIN Ventanillas ON p.ID_Ventanilla = Ventanillas.Id_Proceso
                                         INNER JOIN TblVuelo ON p.ID_Vuelo = TblVuelo.IDVuelo
                                         WHERE TblVuelo.IDVuelo = @IDVuelo AND Ventanillas.Fecha = @Fecha"
 
-            Using cmdCantidad As New SqlCommand(queryCantidadRecolectado, conect.Conectar())
-                cmdCantidad.Parameters.AddWithValue("@IDVuelo", IDVuelo)
-                cmdCantidad.Parameters.AddWithValue("@Fecha", DateTimeVentanilla.Text)
+                Using cmdCantidad As New SqlCommand(queryCantidadRecolectado, conect.Conectar())
+                    cmdCantidad.Parameters.AddWithValue("@IDVuelo", IDVuelo)
+                    cmdCantidad.Parameters.AddWithValue("@Fecha", DateTimeVentanilla.Text)
 
-                Dim cantidadRecolectado As SqlMoney = CInt(cmdCantidad.ExecuteScalar())
-                TotalRecolectado.Text = cantidadRecolectado.ToString()
-                conect.Cerrar()
+                    Dim cantidadRecolectado As SqlMoney = CInt(cmdCantidad.ExecuteScalar())
+                    TotalRecolectado.Text = cantidadRecolectado.ToString()
+                    conect.Cerrar()
 
-                ' Mostrar la cantidad de pasajeros llegaron en algún lugar
-                ' Por ejemplo: Console.WriteLine("Cantidad de pasajeros llegaron: " & cantidadPasajeros)
+                    ' Mostrar la cantidad de pasajeros llegaron en algún lugar
+                    ' Por ejemplo: Console.WriteLine("Cantidad de pasajeros llegaron: " & cantidadPasajeros)
 
-            End Using
-        End If
+                End Using
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
     End Sub
 
 
@@ -110,11 +114,18 @@ Public Class Recoleccion_monetaria
     End Sub
 
     Private Sub ComboBoxID_Ventanilla_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxID_Ventanilla.SelectedIndexChanged
-
+        ComboBoxDestino.Text = ""
+        GroupBox2.Enabled = False
+        TotalRecolectado.Text = ""
     End Sub
 
     Private Sub ComboBoxID_Ventanilla_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ComboBoxID_Ventanilla.KeyPress
         e.Handled = True ' Evita que se procese la tecla presionada
     End Sub
 
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Dim informes As New Informes()
+        informes.Show()
+        Me.Close()
+    End Sub
 End Class

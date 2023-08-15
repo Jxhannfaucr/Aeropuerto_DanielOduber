@@ -58,7 +58,7 @@ Partial Class Login
         'contraseñalogin
         '
         Me.contraseñalogin.Location = New System.Drawing.Point(82, 326)
-        Me.contraseñalogin.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.contraseñalogin.Margin = New System.Windows.Forms.Padding(4)
         Me.contraseñalogin.Name = "contraseñalogin"
         Me.contraseñalogin.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.contraseñalogin.Size = New System.Drawing.Size(176, 22)
@@ -69,7 +69,7 @@ Partial Class Login
         Me.Button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Button1.Location = New System.Drawing.Point(94, 388)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(152, 44)
         Me.Button1.TabIndex = 5
@@ -80,7 +80,7 @@ Partial Class Login
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(82, 30)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(177, 174)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -92,7 +92,7 @@ Partial Class Login
         Me.Button2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Button2.Location = New System.Drawing.Point(94, 479)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(131, 27)
         Me.Button2.TabIndex = 7
@@ -102,7 +102,7 @@ Partial Class Login
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"admin", "usuario"})
+        Me.ComboBox1.Items.AddRange(New Object() {"admin", "empleado"})
         Me.ComboBox1.Location = New System.Drawing.Point(82, 250)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(176, 24)
@@ -121,7 +121,7 @@ Partial Class Login
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.contraseñalogin)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Login"
         Me.Text = "Login"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

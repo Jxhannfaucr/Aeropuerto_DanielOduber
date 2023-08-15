@@ -8,25 +8,43 @@ Public Class Informe_cant_personas
     Dim tabla_destinos As DataTable = New DataTable
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim destinoSeleccionado As Integer = ComboSeleccionar_vuelo.SelectedIndex
+        Try
+            Dim destinoSeleccionado As Integer = ComboSeleccionar_vuelo.SelectedIndex
 
-        If destinoSeleccionado >= 0 AndAlso destinoSeleccionado < tabla_destinos.Rows.Count Then
-            Dim filaSeleccionada As DataRow = tabla_destinos.Rows(destinoSeleccionado)
-            Dim IDVuelo As Integer = Integer.Parse(filaSeleccionada("IDVuelo"))
+            If destinoSeleccionado >= 0 AndAlso destinoSeleccionado < tabla_destinos.Rows.Count Then
+                Dim filaSeleccionada As DataRow = tabla_destinos.Rows(destinoSeleccionado)
+                Dim IDVuelo As Integer = Integer.Parse(filaSeleccionada("IDVuelo"))
 
-            Dim query As String = "SELECT p.Nombre, p.Pasaporte, p.NumAsiento, p.Destino
+                ''llena la datagrid
+                Dim query As String = "SELECT p.Nombre, p.Pasaporte, p.NumAsiento, p.Destino
                                     FROM TblPasajero p
                                     INNER JOIN TblVuelo v ON p.ID_Vuelo = v.idVuelo
-                                    WHERE p.escala = 0 AND v.IDVuelo = @IDVuelo" ' Cambio en la condición para escala = 0
-            Dim cmd As SqlCommand = New SqlCommand(query, conect.Conectar())
-            cmd.Parameters.AddWithValue("@IDVuelo", IDVuelo)
+                                    WHERE v.IDVuelo = @IDVuelo"
+                Dim cmd As SqlCommand = New SqlCommand(query, conect.Conectar())
+                cmd.Parameters.AddWithValue("@IDVuelo", IDVuelo)
 
-            Dim dt As DataTable = New DataTable()
-            Dim da As SqlDataAdapter = New SqlDataAdapter(cmd)
-            da.Fill(dt)
-            DataGridView1.DataSource = dt
-            conect.Cerrar()
-        End If
+                Dim dt As DataTable = New DataTable()
+                Dim da As SqlDataAdapter = New SqlDataAdapter(cmd)
+                da.Fill(dt)
+                DataGridView1.DataSource = dt
+                conect.Cerrar()
+
+                ''llena el textbox de cantidad de pasajeros''
+                Dim query1 As String = "SELECT COUNT(p.Pasaporte)
+                                    FROM TblPasajero p
+                                    INNER JOIN TblVuelo v ON p.ID_Vuelo = v.idVuelo
+                                    WHERE v.IDVuelo = @IDVuelo"
+                Dim cmd1 As SqlCommand = New SqlCommand(query1, conect.Conectar())
+                cmd1.Parameters.AddWithValue("@IDVuelo", IDVuelo)
+                Dim cantidadPasajeros As Integer = CInt(cmd1.ExecuteScalar())
+                txtCantidadPasajeros.Text = cantidadPasajeros.ToString()
+                conect.Cerrar()
+
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
     End Sub
 
     Private Sub Informe_cant_personas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -53,5 +71,9 @@ Public Class Informe_cant_personas
 
     Private Sub ComboSeleccionar_vuelo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ComboSeleccionar_vuelo.KeyPress
         e.Handled = True ' Evita que se procese la tecla presionada
+    End Sub
+
+    Private Sub ComboSeleccionar_vuelo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboSeleccionar_vuelo.SelectedIndexChanged
+        Button1.Enabled = True
     End Sub
 End Class
