@@ -23,6 +23,7 @@ Partial Class FormAgregarVuelo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBoxOrigen = New System.Windows.Forms.GroupBox()
+        Me.ComboBoxid_avion = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DateTimeSalida = New System.Windows.Forms.DateTimePicker()
         Me.sdcs = New System.Windows.Forms.Label()
@@ -41,7 +42,7 @@ Partial Class FormAgregarVuelo
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.ComboBoxid_avion = New System.Windows.Forms.ComboBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBoxOrigen.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -74,6 +75,15 @@ Partial Class FormAgregarVuelo
         Me.GroupBoxOrigen.TabIndex = 27
         Me.GroupBoxOrigen.TabStop = False
         Me.GroupBoxOrigen.Text = "Vuelo"
+        '
+        'ComboBoxid_avion
+        '
+        Me.ComboBoxid_avion.FormattingEnabled = True
+        Me.ComboBoxid_avion.Items.AddRange(New Object() {"9"})
+        Me.ComboBoxid_avion.Location = New System.Drawing.Point(180, 222)
+        Me.ComboBoxid_avion.Name = "ComboBoxid_avion"
+        Me.ComboBoxid_avion.Size = New System.Drawing.Size(189, 21)
+        Me.ComboBoxid_avion.TabIndex = 44
         '
         'Label2
         '
@@ -253,21 +263,23 @@ Partial Class FormAgregarVuelo
         Me.Label19.TabIndex = 12
         Me.Label19.Text = "Origen:"
         '
-        'ComboBoxid_avion
+        'Button1
         '
-        Me.ComboBoxid_avion.FormattingEnabled = True
-        Me.ComboBoxid_avion.Items.AddRange(New Object() {"9"})
-        Me.ComboBoxid_avion.Location = New System.Drawing.Point(180, 222)
-        Me.ComboBoxid_avion.Name = "ComboBoxid_avion"
-        Me.ComboBoxid_avion.Size = New System.Drawing.Size(189, 21)
-        Me.ComboBoxid_avion.TabIndex = 44
+        Me.Button1.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(531, 30)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 28
+        Me.Button1.Text = "Regresar"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'FormAgregarVuelo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(468, 530)
+        Me.ClientSize = New System.Drawing.Size(627, 530)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBoxOrigen)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FormAgregarVuelo"
@@ -298,4 +310,5 @@ Partial Class FormAgregarVuelo
     Friend WithEvents DateTimeSalida As DateTimePicker
     Friend WithEvents Label2 As Label
     Friend WithEvents ComboBoxid_avion As ComboBox
+    Friend WithEvents Button1 As Button
 End Class

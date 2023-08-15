@@ -148,4 +148,10 @@ Public Class FormAgregarVuelo
     Private Sub DateTimeSalida_KeyPress(sender As Object, e As KeyPressEventArgs) Handles DateTimeSalida.KeyPress
         e.Handled = True
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim volver_menu As New Menu_Empleado()
+        volver_menu.Show()
+        Me.Close()
+    End Sub
 End Class
