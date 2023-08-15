@@ -83,6 +83,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Conexion_BD.vb" />
+    <Compile Include="FormAgregarVuelo.Designer.vb">
+      <DependentUpon>FormAgregarVuelo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAgregarVuelo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Informes.Designer.vb">
       <DependentUpon>Informes.vb</DependentUpon>
     </Compile>
@@ -158,6 +164,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Cant_vuelos.resx">
       <DependentUpon>Cant_vuelos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAgregarVuelo.resx">
+      <DependentUpon>FormAgregarVuelo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Informes.resx">
       <DependentUpon>Informes.vb</DependentUpon>

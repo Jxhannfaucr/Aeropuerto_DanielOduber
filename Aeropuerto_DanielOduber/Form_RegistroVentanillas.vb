@@ -14,7 +14,7 @@ Public Class Form_RegistroVentanillas
         LabelConexion.Visible = True
         conect.Cerrar()
         BtnConfirmarCompra.Enabled = False
-        BtnNuevaVentanilla.Enabled = False
+        'BtnNuevaVentanilla.Enabled = False
 
     End Sub
 
@@ -99,7 +99,13 @@ Public Class Form_RegistroVentanillas
         TextBoxEscala.Clear()
     End Sub
 
-
+    Private Sub verificarCompra()
+        If Not String.IsNullOrEmpty(TextBoxNombrePasajero.Text) AndAlso Not String.IsNullOrEmpty(TextBoxNacionalidad.Text) AndAlso Not String.IsNullOrEmpty(TextBoxNumeroDePasaporte.Text) Then
+            BtnConfirmarCompra.Enabled = True
+        Else
+            BtnConfirmarCompra.Enabled = False
+        End If
+    End Sub
     'Parte de ventanillas 
     Private Sub VerificarCamposRellenadosVentanilla()
         If Not String.IsNullOrEmpty(TextBoxCedula_Empl.Text) AndAlso Not String.IsNullOrEmpty(TextBoxNombre_Emple.Text) AndAlso
@@ -194,7 +200,7 @@ Public Class Form_RegistroVentanillas
                 cmd.ExecuteNonQuery()
                 conect.Cerrar()
                 MessageBox.Show("Los datos de ventanilla fueron agregados exitosamente")
-                BtnNuevaVentanilla.Enabled = False
+                'BtnNuevaVentanilla.Enabled = False
             Catch ex As Exception
                 MessageBox.Show("Error")
             End Try
@@ -450,8 +456,21 @@ Public Class Form_RegistroVentanillas
             ComboBoxLinea_Aereas.Text = ""
             GroupBoxPasajero.Enabled = False
             GroupBox1.Enabled = True
+            PictureBox1.Image = Nothing
         Else
 
         End If
+    End Sub
+
+    Private Sub TextBoxNombrePasajero_TextChanged(sender As Object, e As EventArgs) Handles TextBoxNombrePasajero.TextChanged
+        verificarCompra()
+    End Sub
+
+    Private Sub TextBoxNacionalidad_TextChanged(sender As Object, e As EventArgs) Handles TextBoxNacionalidad.TextChanged
+        verificarCompra()
+    End Sub
+
+    Private Sub TextBoxNumeroDePasaporte_TextChanged(sender As Object, e As EventArgs) Handles TextBoxNumeroDePasaporte.TextChanged
+        verificarCompra()
     End Sub
 End Class

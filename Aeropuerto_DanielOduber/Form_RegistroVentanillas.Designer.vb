@@ -299,9 +299,9 @@ Partial Class Form_RegistroVentanillas
         Me.GroupBoxOrigen.Controls.Add(Me.Label18)
         Me.GroupBoxOrigen.Controls.Add(Me.Label19)
         Me.GroupBoxOrigen.Enabled = False
-        Me.GroupBoxOrigen.Location = New System.Drawing.Point(1009, 99)
+        Me.GroupBoxOrigen.Location = New System.Drawing.Point(1009, 90)
         Me.GroupBoxOrigen.Name = "GroupBoxOrigen"
-        Me.GroupBoxOrigen.Size = New System.Drawing.Size(446, 380)
+        Me.GroupBoxOrigen.Size = New System.Drawing.Size(446, 389)
         Me.GroupBoxOrigen.TabIndex = 26
         Me.GroupBoxOrigen.TabStop = False
         Me.GroupBoxOrigen.Text = "Vuelo"
@@ -563,7 +563,7 @@ Partial Class Form_RegistroVentanillas
         '
         Me.PictureBox1.Location = New System.Drawing.Point(1009, 499)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(446, 152)
+        Me.PictureBox1.Size = New System.Drawing.Size(446, 163)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 33
         Me.PictureBox1.TabStop = False
