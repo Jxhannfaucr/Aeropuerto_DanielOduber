@@ -23,11 +23,11 @@ Partial Class FormAgregarVuelo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBoxOrigen = New System.Windows.Forms.GroupBox()
+        Me.ComboBoxescala = New System.Windows.Forms.ComboBox()
         Me.ComboBoxid_avion = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DateTimeSalida = New System.Windows.Forms.DateTimePicker()
         Me.sdcs = New System.Windows.Forms.Label()
-        Me.TextBoxEscala = New System.Windows.Forms.TextBox()
         Me.TextBoxPrecio = New System.Windows.Forms.TextBox()
         Me.TextBoxHoraLlegada = New System.Windows.Forms.TextBox()
         Me.TextBoxHoraSalida = New System.Windows.Forms.TextBox()
@@ -48,11 +48,11 @@ Partial Class FormAgregarVuelo
         '
         'GroupBoxOrigen
         '
+        Me.GroupBoxOrigen.Controls.Add(Me.ComboBoxescala)
         Me.GroupBoxOrigen.Controls.Add(Me.ComboBoxid_avion)
         Me.GroupBoxOrigen.Controls.Add(Me.Label2)
         Me.GroupBoxOrigen.Controls.Add(Me.DateTimeSalida)
         Me.GroupBoxOrigen.Controls.Add(Me.sdcs)
-        Me.GroupBoxOrigen.Controls.Add(Me.TextBoxEscala)
         Me.GroupBoxOrigen.Controls.Add(Me.TextBoxPrecio)
         Me.GroupBoxOrigen.Controls.Add(Me.TextBoxHoraLlegada)
         Me.GroupBoxOrigen.Controls.Add(Me.TextBoxHoraSalida)
@@ -75,6 +75,15 @@ Partial Class FormAgregarVuelo
         Me.GroupBoxOrigen.TabIndex = 27
         Me.GroupBoxOrigen.TabStop = False
         Me.GroupBoxOrigen.Text = "Vuelo"
+        '
+        'ComboBoxescala
+        '
+        Me.ComboBoxescala.FormattingEnabled = True
+        Me.ComboBoxescala.Items.AddRange(New Object() {"none"})
+        Me.ComboBoxescala.Location = New System.Drawing.Point(180, 195)
+        Me.ComboBoxescala.Name = "ComboBoxescala"
+        Me.ComboBoxescala.Size = New System.Drawing.Size(189, 21)
+        Me.ComboBoxescala.TabIndex = 45
         '
         'ComboBoxid_avion
         '
@@ -113,14 +122,6 @@ Partial Class FormAgregarVuelo
         Me.sdcs.Size = New System.Drawing.Size(71, 17)
         Me.sdcs.TabIndex = 40
         Me.sdcs.Text = "ID_avion"
-        '
-        'TextBoxEscala
-        '
-        Me.TextBoxEscala.Location = New System.Drawing.Point(180, 193)
-        Me.TextBoxEscala.Margin = New System.Windows.Forms.Padding(2)
-        Me.TextBoxEscala.Name = "TextBoxEscala"
-        Me.TextBoxEscala.Size = New System.Drawing.Size(189, 20)
-        Me.TextBoxEscala.TabIndex = 39
         '
         'TextBoxPrecio
         '
@@ -301,7 +302,6 @@ Partial Class FormAgregarVuelo
     Friend WithEvents Label19 As Label
     Friend WithEvents ComboBoxnumeroventanilla As ComboBox
     Friend WithEvents ComboBoxorigen As ComboBox
-    Friend WithEvents TextBoxEscala As TextBox
     Friend WithEvents TextBoxPrecio As TextBox
     Friend WithEvents TextBoxHoraLlegada As TextBox
     Friend WithEvents TextBoxHoraSalida As TextBox
@@ -311,4 +311,5 @@ Partial Class FormAgregarVuelo
     Friend WithEvents Label2 As Label
     Friend WithEvents ComboBoxid_avion As ComboBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents ComboBoxescala As ComboBox
 End Class
