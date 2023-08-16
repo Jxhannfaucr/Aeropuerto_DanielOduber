@@ -16,7 +16,9 @@
     End Sub
 
     Private Sub btn_IngresarAvion_Click(sender As Object, e As EventArgs) Handles btn_IngresarAvion.Click
-
+        Dim Part_informes As New Agregar_Avion()
+        Part_informes.Show()
+        Me.Hide()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
