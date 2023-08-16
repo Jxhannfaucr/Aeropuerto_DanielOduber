@@ -34,7 +34,7 @@ Public Class pasajeros_bajados
 
             'creo y hago el select de los pasajeros que bajan 
             Dim dt As DataTable = New DataTable()
-            Dim consulta As String = "SELECT p.Nombre, p.Pasaporte, p.NumAsiento, p.Destino
+            Dim consulta As String = "SELECT p.Nombre, p.Pasaporte, p.NumAsiento, v.Escala as LugarQueBajo, p.Destino as DestinoVuelo
                                                                                             FROM TblPasajero p
                                                                                             INNER JOIN TblVuelo v ON p.ID_Vuelo = v.idVuelo
                                                                                             WHERE p.escala = 1 and v.IDVuelo = @IDVuelo"

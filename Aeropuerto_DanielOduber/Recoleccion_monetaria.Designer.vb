@@ -90,7 +90,7 @@ Partial Class Recoleccion_monetaria
         Me.DateTimeVentanilla.Location = New System.Drawing.Point(218, 191)
         Me.DateTimeVentanilla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DateTimeVentanilla.Name = "DateTimeVentanilla"
-        Me.DateTimeVentanilla.Size = New System.Drawing.Size(251, 22)
+        Me.DateTimeVentanilla.Size = New System.Drawing.Size(317, 22)
         Me.DateTimeVentanilla.TabIndex = 32
         '
         'GroupBox2
@@ -104,7 +104,7 @@ Partial Class Recoleccion_monetaria
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox2.Size = New System.Drawing.Size(504, 389)
+        Me.GroupBox2.Size = New System.Drawing.Size(578, 389)
         Me.GroupBox2.TabIndex = 33
         Me.GroupBox2.TabStop = False
         '
@@ -142,10 +142,10 @@ Partial Class Recoleccion_monetaria
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(169, 324)
+        Me.Button2.Location = New System.Drawing.Point(218, 296)
         Me.Button2.Margin = New System.Windows.Forms.Padding(4)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(100, 41)
+        Me.Button2.Size = New System.Drawing.Size(100, 42)
         Me.Button2.TabIndex = 0
         Me.Button2.Text = "ver"
         Me.Button2.UseVisualStyleBackColor = True
@@ -198,7 +198,7 @@ Partial Class Recoleccion_monetaria
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1155, 601)
+        Me.ClientSize = New System.Drawing.Size(1243, 601)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)

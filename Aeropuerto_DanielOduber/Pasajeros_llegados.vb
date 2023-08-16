@@ -29,7 +29,7 @@ Public Class Pasajeros_llegados
 
             End Using
 
-            Dim queryDetallesPasajeros As String = "SELECT p.Nombre, p.Pasaporte, p.NumAsiento, p.Destino
+            Dim queryDetallesPasajeros As String = "SELECT p.Nombre, p.Pasaporte, p.NumAsiento, p.Destino, v.Escala
                                                     FROM TblPasajero p
                                                     INNER JOIN TblVuelo v ON p.ID_Vuelo = v.idVuelo
                                                     WHERE p.escala = 0 AND v.IDVuelo = @IDVuelo"

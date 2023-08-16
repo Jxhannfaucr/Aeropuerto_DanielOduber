@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Data.SqlTypes
 Imports System.Runtime.Remoting.Contexts
+Imports System.Security.Cryptography
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class Recoleccion_monetaria
@@ -91,7 +92,8 @@ Public Class Recoleccion_monetaria
                     cmdCantidad.Parameters.AddWithValue("@IDVuelo", IDVuelo)
                     cmdCantidad.Parameters.AddWithValue("@Fecha", DateTimeVentanilla.Text)
 
-                    Dim cantidadRecolectado As SqlMoney = CInt(cmdCantidad.ExecuteScalar())
+                    Dim obtenerDato As Decimal = CInt(cmdCantidad.ExecuteScalar())
+                    Dim cantidadRecolectado As String = obtenerDato.ToString("C2")
                     TotalRecolectado.Text = cantidadRecolectado.ToString()
                     conect.Cerrar()
 
