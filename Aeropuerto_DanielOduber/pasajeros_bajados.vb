@@ -45,6 +45,7 @@ Public Class pasajeros_bajados
             da.Fill(dt)
             DataGridView1.DataSource = dt
             conect.Cerrar()
+            ''nose'
 
         End If
 
