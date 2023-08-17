@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{81EC582C-5A2B-4551-AAFA-E8399A628F2C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Aeropuerto_DanielOduber.Menu_Empleado</StartupObject>
+    <StartupObject>Aeropuerto_DanielOduber.My.MyApplication</StartupObject>
     <RootNamespace>Aeropuerto_DanielOduber</RootNamespace>
     <AssemblyName>Aeropuerto_DanielOduber</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -246,6 +246,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="iconoAeuropuerto.ico" />
+    <Content Include="Logos Aerolineas\61586b0b258f1e000415490d.png" />
+    <Content Include="Logos Aerolineas\British-Airways-Logo.png" />
+    <Content Include="Logos Aerolineas\Emirates-Logo.png" />
+    <Content Include="Logos Aerolineas\THUMB-aa_aa__ahz_4cp_grd_pos-%281%29.png" />
     <None Include="Resources\todo-sobre-las-nubes.png" />
     <None Include="Resources\nube-ap.jpg" />
   </ItemGroup>

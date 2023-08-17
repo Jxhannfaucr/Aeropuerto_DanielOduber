@@ -11,7 +11,7 @@ Public Class Agregar_Avion
                                                                   (@Marca, @LineaAerea, @Capacidad, @NombrePiloto)"
             Dim cmdInsert As SqlCommand = New SqlCommand(insertar, conect.Conectar())
             cmdInsert.Parameters.AddWithValue("@Marca", TextBoxmarca.Text)
-            cmdInsert.Parameters.AddWithValue("@LineaAerea", TextBoxlinea.Text)
+            cmdInsert.Parameters.AddWithValue("@LineaAerea", TextBoxlinea.SelectedItem)
             cmdInsert.Parameters.AddWithValue("@Capacidad", TextBoxcapacidad.Text)
             cmdInsert.Parameters.AddWithValue("@NombrePiloto", TextBoxnombre_piloto.Text)
             cmdInsert.ExecuteNonQuery()
@@ -22,7 +22,7 @@ Public Class Agregar_Avion
         End Try
     End Sub
 
-    Private Sub TextBoxlinea_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxlinea.KeyPress
+    Private Sub TextBoxlinea_KeyPress(sender As Object, e As KeyPressEventArgs) 
         ' Verificar si el carácter ingresado es una letra, un espacio o una tecla de control (por ejemplo, retroceso)
         If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso e.KeyChar <> " " Then
             ' Si no es una letra, un espacio ni una tecla de control, se cancela el evento KeyPress
@@ -64,4 +64,5 @@ Public Class Agregar_Avion
         volver_login.Show()
         Me.Close()
     End Sub
+
 End Class

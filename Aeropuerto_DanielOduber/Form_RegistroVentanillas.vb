@@ -14,19 +14,9 @@ Public Class Form_RegistroVentanillas
         LabelConexion.Visible = True
         conect.Cerrar()
         BtnConfirmarCompra.Enabled = False
-        'ComboBoxNumeroDeAsiento.Maximum = 200
-        'BtnNuevaVentanilla.Enabled = False
 
     End Sub
 
-
-    'Public Class Vuelo
-    '    Public Property Origen As String
-    '    Public Property HoraSalida As String
-    '    Public Property HoraLlegada As String
-    '    Public Property Escala As String
-    '    Public Property Precio As SqlMoney
-    'End Class
 
     Private Sub ComboBoxDestino_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxDestino.SelectedIndexChanged
         ''guardo el indice del destino
@@ -134,7 +124,7 @@ Public Class Form_RegistroVentanillas
                 conect.Cerrar()
                 ComboBoxLinea_Aereas.Items.Add(lineaAerea)
                 ComboBoxLinea_Aereas.SelectedItem = lineaAerea
-                PictureBox1.Image = Image.FromFile("C:\Users\Dylan slack\Downloads\THUMB-aa_aa__ahz_4cp_grd_pos-(1).png")
+                PictureBox1.Image = Image.FromFile("C:\Users\user\Documents\UACA\5 cuatrimestre\Progra 3\Proyecto final\Aeropuerto_DanielOduber\Aeropuerto_DanielOduber\Logos Aerolineas\THUMB-aa_aa__ahz_4cp_grd_pos-(1).png")
 
 
             ElseIf ComboBoxID_Ventanilla.SelectedItem = 2 Then
@@ -147,7 +137,7 @@ Public Class Form_RegistroVentanillas
                 conect.Cerrar()
                 ComboBoxLinea_Aereas.Items.Add(lineaAerea)
                 ComboBoxLinea_Aereas.SelectedItem = lineaAerea
-                PictureBox1.Image = Image.FromFile("C:\Users\Dylan slack\Downloads\British-Airways-Logo.png")
+                PictureBox1.Image = Image.FromFile("C:\Users\user\Documents\UACA\5 cuatrimestre\Progra 3\Proyecto final\Aeropuerto_DanielOduber\Aeropuerto_DanielOduber\Logos Aerolineas\British-Airways-Logo.png")
             ElseIf ComboBoxID_Ventanilla.SelectedItem = 3 Then
                 ComboBoxLinea_Aereas.Items.Clear()
                 Dim consulta As String = "select distinct LineaAerea from TblAvion
@@ -158,7 +148,7 @@ Public Class Form_RegistroVentanillas
                 conect.Cerrar()
                 ComboBoxLinea_Aereas.Items.Add(lineaAerea)
                 ComboBoxLinea_Aereas.SelectedItem = lineaAerea
-                PictureBox1.Image = Image.FromFile("C:\Users\Dylan slack\Downloads\Emirates-Logo.png")
+                PictureBox1.Image = Image.FromFile("C:\Users\user\Documents\UACA\5 cuatrimestre\Progra 3\Proyecto final\Aeropuerto_DanielOduber\Aeropuerto_DanielOduber\Logos Aerolineas\Emirates-Logo.png")
 
             ElseIf ComboBoxID_Ventanilla.SelectedItem = 4 Then
                 ComboBoxLinea_Aereas.Items.Clear()
@@ -170,7 +160,7 @@ Public Class Form_RegistroVentanillas
                 conect.Cerrar()
                 ComboBoxLinea_Aereas.Items.Add(lineaAerea)
                 ComboBoxLinea_Aereas.SelectedItem = lineaAerea
-                PictureBox1.Image = Image.FromFile("C:\Users\Dylan slack\Downloads\61586b0b258f1e000415490d.png")
+                PictureBox1.Image = Image.FromFile("C:\Users\user\Documents\UACA\5 cuatrimestre\Progra 3\Proyecto final\Aeropuerto_DanielOduber\Aeropuerto_DanielOduber\Logos Aerolineas\61586b0b258f1e000415490d.png")
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)

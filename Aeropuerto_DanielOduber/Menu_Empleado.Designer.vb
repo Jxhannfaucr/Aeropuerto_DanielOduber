@@ -44,10 +44,10 @@ Partial Class Menu_Empleado
         '
         Me.btn_ProcesarVentanilla.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.btn_ProcesarVentanilla.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_ProcesarVentanilla.Location = New System.Drawing.Point(360, 279)
-        Me.btn_ProcesarVentanilla.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_ProcesarVentanilla.Location = New System.Drawing.Point(414, 344)
+        Me.btn_ProcesarVentanilla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_ProcesarVentanilla.Name = "btn_ProcesarVentanilla"
-        Me.btn_ProcesarVentanilla.Size = New System.Drawing.Size(113, 47)
+        Me.btn_ProcesarVentanilla.Size = New System.Drawing.Size(151, 58)
         Me.btn_ProcesarVentanilla.TabIndex = 12
         Me.btn_ProcesarVentanilla.Text = "Procesar Ventanilla"
         Me.btn_ProcesarVentanilla.UseVisualStyleBackColor = False
@@ -56,10 +56,10 @@ Partial Class Menu_Empleado
         '
         Me.btn_IngresarAvion.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.btn_IngresarAvion.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_IngresarAvion.Location = New System.Drawing.Point(199, 279)
-        Me.btn_IngresarAvion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_IngresarAvion.Location = New System.Drawing.Point(199, 344)
+        Me.btn_IngresarAvion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_IngresarAvion.Name = "btn_IngresarAvion"
-        Me.btn_IngresarAvion.Size = New System.Drawing.Size(113, 47)
+        Me.btn_IngresarAvion.Size = New System.Drawing.Size(151, 58)
         Me.btn_IngresarAvion.TabIndex = 10
         Me.btn_IngresarAvion.Text = "Avion"
         Me.btn_IngresarAvion.UseVisualStyleBackColor = False
@@ -68,10 +68,10 @@ Partial Class Menu_Empleado
         '
         Me.Button2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(511, 279)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button2.Location = New System.Drawing.Point(615, 344)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(113, 47)
+        Me.Button2.Size = New System.Drawing.Size(151, 58)
         Me.Button2.TabIndex = 15
         Me.Button2.Text = "Crear Vuelo"
         Me.Button2.UseVisualStyleBackColor = False
@@ -80,10 +80,9 @@ Partial Class Menu_Empleado
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(395, 146)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Location = New System.Drawing.Point(461, 181)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(97, 26)
+        Me.Label3.Size = New System.Drawing.Size(125, 32)
         Me.Label3.TabIndex = 19
         Me.Label3.Text = "Ingresar:"
         '
@@ -91,10 +90,9 @@ Partial Class Menu_Empleado
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(350, 85)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Location = New System.Drawing.Point(401, 106)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(204, 26)
+        Me.Label2.Size = New System.Drawing.Size(259, 32)
         Me.Label2.TabIndex = 18
         Me.Label2.Text = "Dr: Daniel Oduber"
         '
@@ -102,10 +100,9 @@ Partial Class Menu_Empleado
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(318, 40)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(358, 50)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(273, 26)
+        Me.Label1.Size = New System.Drawing.Size(350, 32)
         Me.Label1.TabIndex = 17
         Me.Label1.Text = "Aeropuerto Internacional"
         '
@@ -113,10 +110,10 @@ Partial Class Menu_Empleado
         '
         Me.Button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(702, 42)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Location = New System.Drawing.Point(820, 50)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(87, 26)
+        Me.Button1.Size = New System.Drawing.Size(116, 32)
         Me.Button1.TabIndex = 21
         Me.Button1.Text = "Volver"
         Me.Button1.UseVisualStyleBackColor = False
@@ -124,10 +121,10 @@ Partial Class Menu_Empleado
         'PictureBox5
         '
         Me.PictureBox5.Image = Global.Aeropuerto_DanielOduber.My.Resources.Resources.WhatsApp_Image_2023_07_26_at_15_52_43_removebg_preview
-        Me.PictureBox5.Location = New System.Drawing.Point(135, 40)
-        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox5.Location = New System.Drawing.Point(114, 50)
+        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(122, 94)
+        Me.PictureBox5.Size = New System.Drawing.Size(163, 116)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox5.TabIndex = 20
         Me.PictureBox5.TabStop = False
@@ -135,10 +132,10 @@ Partial Class Menu_Empleado
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(528, 234)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox1.Location = New System.Drawing.Point(638, 289)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(75, 41)
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 16
         Me.PictureBox1.TabStop = False
@@ -146,10 +143,10 @@ Partial Class Menu_Empleado
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.Aeropuerto_DanielOduber.My.Resources.Resources.procesamiento_de_datos
-        Me.PictureBox4.Location = New System.Drawing.Point(381, 234)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox4.Location = New System.Drawing.Point(442, 289)
+        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(75, 41)
+        Me.PictureBox4.Size = New System.Drawing.Size(100, 50)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox4.TabIndex = 13
         Me.PictureBox4.TabStop = False
@@ -157,20 +154,20 @@ Partial Class Menu_Empleado
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.Aeropuerto_DanielOduber.My.Resources.Resources.avion_de_linea
-        Me.PictureBox2.Location = New System.Drawing.Point(218, 234)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox2.Location = New System.Drawing.Point(225, 289)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(75, 41)
+        Me.PictureBox2.Size = New System.Drawing.Size(100, 50)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 11
         Me.PictureBox2.TabStop = False
         '
         'Menu_Empleado
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1031, 501)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.Label3)
@@ -182,8 +179,9 @@ Partial Class Menu_Empleado
         Me.Controls.Add(Me.btn_ProcesarVentanilla)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.btn_IngresarAvion)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Menu_Empleado"
-        Me.Text = "Menu_Empleado"
+        Me.Text = "Menu Administrador"
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()

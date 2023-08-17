@@ -11,7 +11,7 @@
         Dim usuario As String = ComboBox1.Text
         Dim contrasena As String = contraseñalogin.Text
 
-        If usuario.Equals("admin") AndAlso contrasena.Equals("progra3easy") Then
+        If usuario.Equals("admin") AndAlso contrasena.Equals("admin123") Then
 
             Dim pasar_Al_Menu_admin As New Menu_Empleado()
 
@@ -21,7 +21,7 @@
             pasar_Al_Menu_admin.Show()
             Me.Hide()
 
-        ElseIf usuario.Equals("empleado") AndAlso contrasena.Equals("easyprogra3") Then
+        ElseIf usuario.Equals("empleado") AndAlso contrasena.Equals("user123") Then
             Dim pasar_Al_Menu_usuario As New Form_Menu()
 
             pasar_Al_Menu_usuario.Show()

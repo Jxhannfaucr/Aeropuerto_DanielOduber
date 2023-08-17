@@ -67,11 +67,11 @@ Partial Class FormAgregarVuelo
         Me.GroupBoxOrigen.Controls.Add(Me.Label17)
         Me.GroupBoxOrigen.Controls.Add(Me.Label18)
         Me.GroupBoxOrigen.Controls.Add(Me.Label19)
-        Me.GroupBoxOrigen.Location = New System.Drawing.Point(35, 30)
-        Me.GroupBoxOrigen.Margin = New System.Windows.Forms.Padding(2)
+        Me.GroupBoxOrigen.Location = New System.Drawing.Point(47, 37)
+        Me.GroupBoxOrigen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBoxOrigen.Name = "GroupBoxOrigen"
-        Me.GroupBoxOrigen.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBoxOrigen.Size = New System.Drawing.Size(385, 413)
+        Me.GroupBoxOrigen.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBoxOrigen.Size = New System.Drawing.Size(513, 508)
         Me.GroupBoxOrigen.TabIndex = 27
         Me.GroupBoxOrigen.TabStop = False
         Me.GroupBoxOrigen.Text = "Vuelo"
@@ -80,109 +80,110 @@ Partial Class FormAgregarVuelo
         '
         Me.ComboBoxescala.FormattingEnabled = True
         Me.ComboBoxescala.Items.AddRange(New Object() {"none"})
-        Me.ComboBoxescala.Location = New System.Drawing.Point(180, 195)
+        Me.ComboBoxescala.Location = New System.Drawing.Point(240, 240)
+        Me.ComboBoxescala.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ComboBoxescala.Name = "ComboBoxescala"
-        Me.ComboBoxescala.Size = New System.Drawing.Size(189, 21)
+        Me.ComboBoxescala.Size = New System.Drawing.Size(251, 24)
         Me.ComboBoxescala.TabIndex = 45
         '
         'ComboBoxid_avion
         '
         Me.ComboBoxid_avion.FormattingEnabled = True
         Me.ComboBoxid_avion.Items.AddRange(New Object() {"9"})
-        Me.ComboBoxid_avion.Location = New System.Drawing.Point(180, 222)
+        Me.ComboBoxid_avion.Location = New System.Drawing.Point(240, 273)
+        Me.ComboBoxid_avion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ComboBoxid_avion.Name = "ComboBoxid_avion"
-        Me.ComboBoxid_avion.Size = New System.Drawing.Size(189, 21)
+        Me.ComboBoxid_avion.Size = New System.Drawing.Size(251, 24)
         Me.ComboBoxid_avion.TabIndex = 44
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(17, 294)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Location = New System.Drawing.Point(23, 362)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(130, 17)
+        Me.Label2.Size = New System.Drawing.Size(150, 20)
         Me.Label2.TabIndex = 43
         Me.Label2.Text = "Fecha de Salida:"
         '
         'DateTimeSalida
         '
-        Me.DateTimeSalida.Location = New System.Drawing.Point(180, 291)
+        Me.DateTimeSalida.Location = New System.Drawing.Point(240, 358)
+        Me.DateTimeSalida.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.DateTimeSalida.Name = "DateTimeSalida"
-        Me.DateTimeSalida.Size = New System.Drawing.Size(189, 20)
+        Me.DateTimeSalida.Size = New System.Drawing.Size(251, 22)
         Me.DateTimeSalida.TabIndex = 42
         '
         'sdcs
         '
         Me.sdcs.AutoSize = True
         Me.sdcs.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.sdcs.Location = New System.Drawing.Point(17, 226)
-        Me.sdcs.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.sdcs.Location = New System.Drawing.Point(23, 278)
         Me.sdcs.Name = "sdcs"
-        Me.sdcs.Size = New System.Drawing.Size(71, 17)
+        Me.sdcs.Size = New System.Drawing.Size(61, 20)
         Me.sdcs.TabIndex = 40
-        Me.sdcs.Text = "ID_avion"
+        Me.sdcs.Text = "Avion:"
         '
         'TextBoxPrecio
         '
-        Me.TextBoxPrecio.Location = New System.Drawing.Point(180, 257)
-        Me.TextBoxPrecio.Margin = New System.Windows.Forms.Padding(2)
+        Me.TextBoxPrecio.Location = New System.Drawing.Point(240, 316)
+        Me.TextBoxPrecio.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBoxPrecio.Name = "TextBoxPrecio"
-        Me.TextBoxPrecio.Size = New System.Drawing.Size(189, 20)
+        Me.TextBoxPrecio.Size = New System.Drawing.Size(251, 22)
         Me.TextBoxPrecio.TabIndex = 38
         '
         'TextBoxHoraLlegada
         '
-        Me.TextBoxHoraLlegada.Location = New System.Drawing.Point(180, 132)
-        Me.TextBoxHoraLlegada.Margin = New System.Windows.Forms.Padding(2)
+        Me.TextBoxHoraLlegada.Location = New System.Drawing.Point(240, 162)
+        Me.TextBoxHoraLlegada.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBoxHoraLlegada.Name = "TextBoxHoraLlegada"
-        Me.TextBoxHoraLlegada.Size = New System.Drawing.Size(189, 20)
+        Me.TextBoxHoraLlegada.Size = New System.Drawing.Size(251, 22)
         Me.TextBoxHoraLlegada.TabIndex = 37
         '
         'TextBoxHoraSalida
         '
-        Me.TextBoxHoraSalida.Location = New System.Drawing.Point(180, 96)
-        Me.TextBoxHoraSalida.Margin = New System.Windows.Forms.Padding(2)
+        Me.TextBoxHoraSalida.Location = New System.Drawing.Point(240, 118)
+        Me.TextBoxHoraSalida.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBoxHoraSalida.Name = "TextBoxHoraSalida"
-        Me.TextBoxHoraSalida.Size = New System.Drawing.Size(189, 20)
+        Me.TextBoxHoraSalida.Size = New System.Drawing.Size(251, 22)
         Me.TextBoxHoraSalida.TabIndex = 36
         '
         'TextBoxDestino
         '
-        Me.TextBoxDestino.Location = New System.Drawing.Point(180, 61)
-        Me.TextBoxDestino.Margin = New System.Windows.Forms.Padding(2)
+        Me.TextBoxDestino.Location = New System.Drawing.Point(240, 75)
+        Me.TextBoxDestino.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBoxDestino.Name = "TextBoxDestino"
-        Me.TextBoxDestino.Size = New System.Drawing.Size(189, 20)
+        Me.TextBoxDestino.Size = New System.Drawing.Size(251, 22)
         Me.TextBoxDestino.TabIndex = 35
         '
         'ComboBoxorigen
         '
         Me.ComboBoxorigen.FormattingEnabled = True
         Me.ComboBoxorigen.Items.AddRange(New Object() {"Costa Rica"})
-        Me.ComboBoxorigen.Location = New System.Drawing.Point(180, 28)
-        Me.ComboBoxorigen.Margin = New System.Windows.Forms.Padding(2)
+        Me.ComboBoxorigen.Location = New System.Drawing.Point(240, 34)
+        Me.ComboBoxorigen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ComboBoxorigen.Name = "ComboBoxorigen"
-        Me.ComboBoxorigen.Size = New System.Drawing.Size(189, 21)
+        Me.ComboBoxorigen.Size = New System.Drawing.Size(251, 24)
         Me.ComboBoxorigen.TabIndex = 34
         '
         'ComboBoxnumeroventanilla
         '
         Me.ComboBoxnumeroventanilla.FormattingEnabled = True
         Me.ComboBoxnumeroventanilla.Items.AddRange(New Object() {"1", "2", "3", "4"})
-        Me.ComboBoxnumeroventanilla.Location = New System.Drawing.Point(180, 164)
-        Me.ComboBoxnumeroventanilla.Margin = New System.Windows.Forms.Padding(2)
+        Me.ComboBoxnumeroventanilla.Location = New System.Drawing.Point(240, 202)
+        Me.ComboBoxnumeroventanilla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ComboBoxnumeroventanilla.Name = "ComboBoxnumeroventanilla"
-        Me.ComboBoxnumeroventanilla.Size = New System.Drawing.Size(189, 21)
+        Me.ComboBoxnumeroventanilla.Size = New System.Drawing.Size(251, 24)
         Me.ComboBoxnumeroventanilla.TabIndex = 33
         '
         'BtnAgregar
         '
         Me.BtnAgregar.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.BtnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnAgregar.Location = New System.Drawing.Point(85, 351)
-        Me.BtnAgregar.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnAgregar.Location = New System.Drawing.Point(113, 432)
+        Me.BtnAgregar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnAgregar.Name = "BtnAgregar"
-        Me.BtnAgregar.Size = New System.Drawing.Size(125, 40)
+        Me.BtnAgregar.Size = New System.Drawing.Size(167, 49)
         Me.BtnAgregar.TabIndex = 32
         Me.BtnAgregar.Text = "Agregar"
         Me.BtnAgregar.UseVisualStyleBackColor = False
@@ -191,10 +192,9 @@ Partial Class FormAgregarVuelo
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(17, 257)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(23, 316)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(59, 17)
+        Me.Label1.Size = New System.Drawing.Size(69, 20)
         Me.Label1.TabIndex = 30
         Me.Label1.Text = "Precio:"
         '
@@ -202,10 +202,9 @@ Partial Class FormAgregarVuelo
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(14, 61)
-        Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label14.Location = New System.Drawing.Point(19, 75)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(68, 17)
+        Me.Label14.Size = New System.Drawing.Size(80, 20)
         Me.Label14.TabIndex = 17
         Me.Label14.Text = "Destino:"
         '
@@ -213,10 +212,9 @@ Partial Class FormAgregarVuelo
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(14, 193)
-        Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label15.Location = New System.Drawing.Point(19, 238)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(61, 17)
+        Me.Label15.Size = New System.Drawing.Size(72, 20)
         Me.Label15.TabIndex = 16
         Me.Label15.Text = "Escala:"
         '
@@ -224,10 +222,9 @@ Partial Class FormAgregarVuelo
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(14, 164)
-        Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label16.Location = New System.Drawing.Point(19, 202)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(167, 17)
+        Me.Label16.Size = New System.Drawing.Size(192, 20)
         Me.Label16.TabIndex = 15
         Me.Label16.Text = "Numero de ventanilla:"
         '
@@ -235,10 +232,9 @@ Partial Class FormAgregarVuelo
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(14, 132)
-        Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label17.Location = New System.Drawing.Point(19, 162)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(129, 17)
+        Me.Label17.Size = New System.Drawing.Size(148, 20)
         Me.Label17.TabIndex = 14
         Me.Label17.Text = "Hora de llegada:"
         '
@@ -246,10 +242,9 @@ Partial Class FormAgregarVuelo
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(14, 96)
-        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label18.Location = New System.Drawing.Point(19, 118)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(119, 17)
+        Me.Label18.Size = New System.Drawing.Size(138, 20)
         Me.Label18.TabIndex = 13
         Me.Label18.Text = "Hora de salida:"
         '
@@ -257,32 +252,32 @@ Partial Class FormAgregarVuelo
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(14, 28)
-        Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label19.Location = New System.Drawing.Point(19, 34)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(62, 17)
+        Me.Label19.Size = New System.Drawing.Size(71, 20)
         Me.Label19.TabIndex = 12
         Me.Label19.Text = "Origen:"
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(531, 30)
+        Me.Button1.Location = New System.Drawing.Point(708, 37)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(100, 28)
         Me.Button1.TabIndex = 28
         Me.Button1.Text = "Regresar"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'FormAgregarVuelo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(627, 530)
+        Me.ClientSize = New System.Drawing.Size(836, 652)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBoxOrigen)
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "FormAgregarVuelo"
         Me.Text = "FormAgregarVuelo"
         Me.GroupBoxOrigen.ResumeLayout(False)

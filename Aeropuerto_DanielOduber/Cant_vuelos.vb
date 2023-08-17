@@ -28,7 +28,7 @@ Public Class Cant_vuelos
                 DataGridView1.DataSource = dt
 
                 ' Mostrar el total de vuelos en el TextBox
-                Dim cantVuelos As Integer = dt.Rows.Cast(Of DataRow)().Count(Function(row) Convert.ToInt32(row("CantVuelos")))
+                Dim cantVuelos As Integer = dt.Rows.Cast(Of DataRow)().Sum(Function(row) Convert.ToInt32(row("CantVuelos")))
                 Total_de_vuelos.Text = cantVuelos.ToString()
 
                 conect.Cerrar()
