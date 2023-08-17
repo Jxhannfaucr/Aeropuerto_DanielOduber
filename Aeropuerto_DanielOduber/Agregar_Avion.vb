@@ -22,6 +22,14 @@ Public Class Agregar_Avion
         End Try
     End Sub
 
+    Private Sub validadBoton()
+        If Not String.IsNullOrEmpty(TextBoxmarca.Text) AndAlso Not String.IsNullOrEmpty(TextBoxlinea.SelectedItem.ToString) AndAlso Not String.IsNullOrEmpty(TextBoxcapacidad.Text) AndAlso Not String.IsNullOrEmpty(TextBoxnombre_piloto.Text) Then
+            Button1.Enabled = True
+        Else
+            Button1.Enabled = False
+
+        End If
+    End Sub
     Private Sub TextBoxlinea_KeyPress(sender As Object, e As KeyPressEventArgs) 
         ' Verificar si el carácter ingresado es una letra, un espacio o una tecla de control (por ejemplo, retroceso)
         If Not Char.IsLetter(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso e.KeyChar <> " " Then
@@ -32,7 +40,7 @@ Public Class Agregar_Avion
 
     Private Sub TextBoxmarca_TextChanged(sender As Object, e As EventArgs) Handles TextBoxmarca.TextChanged
         Dim text As String = TextBoxmarca.Text
-
+        validadBoton()
         ' Verificar si el texto contiene caracteres no permitidos
         For Each c As Char In text
             If Not Char.IsLetterOrDigit(c) AndAlso Not Char.IsWhiteSpace(c) Then
@@ -65,4 +73,20 @@ Public Class Agregar_Avion
         Me.Close()
     End Sub
 
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+
+    Private Sub TextBoxlinea_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TextBoxlinea.SelectedIndexChanged
+        validadBoton()
+    End Sub
+
+    Private Sub TextBoxnombre_piloto_TextChanged(sender As Object, e As EventArgs) Handles TextBoxnombre_piloto.TextChanged
+        validadBoton()
+
+    End Sub
+
+    Private Sub TextBoxcapacidad_TextChanged(sender As Object, e As EventArgs) Handles TextBoxcapacidad.TextChanged
+        validadBoton()
+    End Sub
 End Class

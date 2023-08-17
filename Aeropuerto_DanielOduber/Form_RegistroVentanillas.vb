@@ -472,5 +472,7 @@ Public Class Form_RegistroVentanillas
         verificarCompra()
     End Sub
 
+    Private Sub ComboBoxLinea_Aereas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxLinea_Aereas.SelectedIndexChanged
 
+    End Sub
 End Class
