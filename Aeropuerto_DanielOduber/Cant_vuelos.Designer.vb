@@ -46,7 +46,7 @@ Partial Class Cant_vuelos
         'List_ventanillas
         '
         Me.List_ventanillas.FormattingEnabled = True
-        Me.List_ventanillas.Items.AddRange(New Object() {"1", "2", "3", "4", "5"})
+        Me.List_ventanillas.Items.AddRange(New Object() {"1", "2", "3", "4", "Todos"})
         Me.List_ventanillas.Location = New System.Drawing.Point(101, 85)
         Me.List_ventanillas.Name = "List_ventanillas"
         Me.List_ventanillas.Size = New System.Drawing.Size(121, 21)
@@ -67,15 +67,15 @@ Partial Class Cant_vuelos
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(6, 191)
+        Me.Label1.Location = New System.Drawing.Point(26, 191)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(138, 18)
+        Me.Label1.Size = New System.Drawing.Size(149, 18)
         Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Cantidad de vuelos:"
+        Me.Label1.Text = "Cantidad de destinos:"
         '
         'Total_de_vuelos
         '
-        Me.Total_de_vuelos.Location = New System.Drawing.Point(150, 192)
+        Me.Total_de_vuelos.Location = New System.Drawing.Point(181, 191)
         Me.Total_de_vuelos.Name = "Total_de_vuelos"
         Me.Total_de_vuelos.Size = New System.Drawing.Size(100, 20)
         Me.Total_de_vuelos.TabIndex = 4

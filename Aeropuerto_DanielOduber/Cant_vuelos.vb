@@ -6,9 +6,11 @@ Public Class Cant_vuelos
     Public conect As Conexion_BD = New Conexion_BD
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim ventanilla_seleccionada As String = List_ventanillas.Text
+        Dim ventanilla_seleccionada As String = List_ventanillas.SelectedItem.ToString
         Try
-            If List_ventanillas.Text = 1 OrElse List_ventanillas.Text = 2 OrElse List_ventanillas.Text = 3 OrElse List_ventanillas.Text = 4 Then
+            If Not ventanilla_seleccionada = "Todos" Then
+
+
                 Dim Busqueda As String = "SELECT COUNT(IDPasajero) AS CantVuelos, Destino " &
                     "FROM TblPasajero " &
                     "INNER JOIN Ventanillas ON TblPasajero.ID_Ventanilla = Ventanillas.Id_Proceso " &
@@ -31,7 +33,7 @@ Public Class Cant_vuelos
 
                 conect.Cerrar()
 
-            ElseIf ventanilla_seleccionada = 5 Then
+            Else
                 Dim Busqueda As String = "SELECT COUNT(IDPasajero) AS CantVuelos, Destino
                                                 FROM TblPasajero
                                                 INNER JOIN Ventanillas ON TblPasajero.ID_Ventanilla = Ventanillas.Id_Proceso
@@ -81,4 +83,5 @@ Public Class Cant_vuelos
     Private Sub List_ventanillas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles List_ventanillas.SelectedIndexChanged
         Button1.Enabled = True
     End Sub
+
 End Class
