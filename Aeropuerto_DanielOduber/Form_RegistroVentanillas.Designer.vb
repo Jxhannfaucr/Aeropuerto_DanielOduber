@@ -110,7 +110,7 @@ Partial Class Form_RegistroVentanillas
         Me.GroupBoxPasajero.Controls.Add(Me.Label12)
         Me.GroupBoxPasajero.Location = New System.Drawing.Point(537, 72)
         Me.GroupBoxPasajero.Name = "GroupBoxPasajero"
-        Me.GroupBoxPasajero.Size = New System.Drawing.Size(446, 542)
+        Me.GroupBoxPasajero.Size = New System.Drawing.Size(497, 542)
         Me.GroupBoxPasajero.TabIndex = 23
         Me.GroupBoxPasajero.TabStop = False
         Me.GroupBoxPasajero.Text = "Pasajero"
@@ -164,7 +164,7 @@ Partial Class Form_RegistroVentanillas
         Me.TextBoxFechaSalida.Location = New System.Drawing.Point(225, 252)
         Me.TextBoxFechaSalida.Name = "TextBoxFechaSalida"
         Me.TextBoxFechaSalida.ReadOnly = True
-        Me.TextBoxFechaSalida.Size = New System.Drawing.Size(199, 26)
+        Me.TextBoxFechaSalida.Size = New System.Drawing.Size(251, 26)
         Me.TextBoxFechaSalida.TabIndex = 30
         '
         'Label21
@@ -191,7 +191,7 @@ Partial Class Form_RegistroVentanillas
         '
         Me.TextBoxNumeroDePasaporte.Location = New System.Drawing.Point(280, 317)
         Me.TextBoxNumeroDePasaporte.Name = "TextBoxNumeroDePasaporte"
-        Me.TextBoxNumeroDePasaporte.Size = New System.Drawing.Size(144, 26)
+        Me.TextBoxNumeroDePasaporte.Size = New System.Drawing.Size(196, 26)
         Me.TextBoxNumeroDePasaporte.TabIndex = 25
         '
         'Label6
@@ -208,7 +208,7 @@ Partial Class Form_RegistroVentanillas
         '
         Me.TextBoxNacionalidad.Location = New System.Drawing.Point(225, 97)
         Me.TextBoxNacionalidad.Name = "TextBoxNacionalidad"
-        Me.TextBoxNacionalidad.Size = New System.Drawing.Size(199, 26)
+        Me.TextBoxNacionalidad.Size = New System.Drawing.Size(251, 26)
         Me.TextBoxNacionalidad.TabIndex = 23
         '
         'ComboBoxDestino
@@ -216,7 +216,7 @@ Partial Class Form_RegistroVentanillas
         Me.ComboBoxDestino.FormattingEnabled = True
         Me.ComboBoxDestino.Location = New System.Drawing.Point(225, 143)
         Me.ComboBoxDestino.Name = "ComboBoxDestino"
-        Me.ComboBoxDestino.Size = New System.Drawing.Size(199, 28)
+        Me.ComboBoxDestino.Size = New System.Drawing.Size(251, 28)
         Me.ComboBoxDestino.TabIndex = 22
         '
         'TextBoxPrecioTiquete
@@ -224,14 +224,14 @@ Partial Class Form_RegistroVentanillas
         Me.TextBoxPrecioTiquete.Location = New System.Drawing.Point(225, 203)
         Me.TextBoxPrecioTiquete.Name = "TextBoxPrecioTiquete"
         Me.TextBoxPrecioTiquete.ReadOnly = True
-        Me.TextBoxPrecioTiquete.Size = New System.Drawing.Size(199, 26)
+        Me.TextBoxPrecioTiquete.Size = New System.Drawing.Size(251, 26)
         Me.TextBoxPrecioTiquete.TabIndex = 19
         '
         'TextBoxNombrePasajero
         '
         Me.TextBoxNombrePasajero.Location = New System.Drawing.Point(225, 42)
         Me.TextBoxNombrePasajero.Name = "TextBoxNombrePasajero"
-        Me.TextBoxNombrePasajero.Size = New System.Drawing.Size(199, 26)
+        Me.TextBoxNombrePasajero.Size = New System.Drawing.Size(251, 26)
         Me.TextBoxNombrePasajero.TabIndex = 18
         '
         'Label7
@@ -299,7 +299,7 @@ Partial Class Form_RegistroVentanillas
         Me.GroupBoxOrigen.Controls.Add(Me.Label18)
         Me.GroupBoxOrigen.Controls.Add(Me.Label19)
         Me.GroupBoxOrigen.Enabled = False
-        Me.GroupBoxOrigen.Location = New System.Drawing.Point(1009, 90)
+        Me.GroupBoxOrigen.Location = New System.Drawing.Point(1056, 90)
         Me.GroupBoxOrigen.Name = "GroupBoxOrigen"
         Me.GroupBoxOrigen.Size = New System.Drawing.Size(446, 389)
         Me.GroupBoxOrigen.TabIndex = 26
@@ -440,9 +440,9 @@ Partial Class Form_RegistroVentanillas
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.ComboBoxID_Ventanilla)
-        Me.GroupBox1.Location = New System.Drawing.Point(57, 72)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 72)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(446, 523)
+        Me.GroupBox1.Size = New System.Drawing.Size(505, 523)
         Me.GroupBox1.TabIndex = 28
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Ingreso de ventanillas"
@@ -451,7 +451,7 @@ Partial Class Form_RegistroVentanillas
         '
         Me.DateTimeVentanilla.Location = New System.Drawing.Point(183, 340)
         Me.DateTimeVentanilla.Name = "DateTimeVentanilla"
-        Me.DateTimeVentanilla.Size = New System.Drawing.Size(224, 26)
+        Me.DateTimeVentanilla.Size = New System.Drawing.Size(301, 26)
         Me.DateTimeVentanilla.TabIndex = 31
         '
         'Label4
@@ -469,21 +469,21 @@ Partial Class Form_RegistroVentanillas
         Me.ComboBoxLinea_Aereas.FormattingEnabled = True
         Me.ComboBoxLinea_Aereas.Location = New System.Drawing.Point(273, 275)
         Me.ComboBoxLinea_Aereas.Name = "ComboBoxLinea_Aereas"
-        Me.ComboBoxLinea_Aereas.Size = New System.Drawing.Size(136, 28)
+        Me.ComboBoxLinea_Aereas.Size = New System.Drawing.Size(211, 28)
         Me.ComboBoxLinea_Aereas.TabIndex = 21
         '
         'TextBoxCedula_Empl
         '
         Me.TextBoxCedula_Empl.Location = New System.Drawing.Point(273, 205)
         Me.TextBoxCedula_Empl.Name = "TextBoxCedula_Empl"
-        Me.TextBoxCedula_Empl.Size = New System.Drawing.Size(136, 26)
+        Me.TextBoxCedula_Empl.Size = New System.Drawing.Size(211, 26)
         Me.TextBoxCedula_Empl.TabIndex = 19
         '
         'TextBoxNombre_Emple
         '
         Me.TextBoxNombre_Emple.Location = New System.Drawing.Point(273, 137)
         Me.TextBoxNombre_Emple.Name = "TextBoxNombre_Emple"
-        Me.TextBoxNombre_Emple.Size = New System.Drawing.Size(136, 26)
+        Me.TextBoxNombre_Emple.Size = New System.Drawing.Size(211, 26)
         Me.TextBoxNombre_Emple.TabIndex = 18
         '
         'Label5
@@ -532,7 +532,7 @@ Partial Class Form_RegistroVentanillas
         Me.ComboBoxID_Ventanilla.Items.AddRange(New Object() {"1", "2", "3", "4"})
         Me.ComboBoxID_Ventanilla.Location = New System.Drawing.Point(273, 58)
         Me.ComboBoxID_Ventanilla.Name = "ComboBoxID_Ventanilla"
-        Me.ComboBoxID_Ventanilla.Size = New System.Drawing.Size(136, 28)
+        Me.ComboBoxID_Ventanilla.Size = New System.Drawing.Size(211, 28)
         Me.ComboBoxID_Ventanilla.TabIndex = 11
         '
         'LabelConexion
@@ -561,7 +561,7 @@ Partial Class Form_RegistroVentanillas
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(1009, 499)
+        Me.PictureBox1.Location = New System.Drawing.Point(1040, 496)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(446, 163)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -573,7 +573,7 @@ Partial Class Form_RegistroVentanillas
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1516, 683)
+        Me.ClientSize = New System.Drawing.Size(1523, 683)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.BtnNuevaVentanilla)
         Me.Controls.Add(Me.LabelConexion)

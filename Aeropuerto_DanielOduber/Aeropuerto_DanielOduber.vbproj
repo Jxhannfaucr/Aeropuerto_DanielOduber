@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{81EC582C-5A2B-4551-AAFA-E8399A628F2C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Aeropuerto_DanielOduber.My.MyApplication</StartupObject>
+    <StartupObject>Aeropuerto_DanielOduber.Form_RegistroVentanillas</StartupObject>
     <RootNamespace>Aeropuerto_DanielOduber</RootNamespace>
     <AssemblyName>Aeropuerto_DanielOduber</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>

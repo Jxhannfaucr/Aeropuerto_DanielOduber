@@ -14,6 +14,7 @@ Public Class Form_RegistroVentanillas
         LabelConexion.Visible = True
         conect.Cerrar()
         BtnConfirmarCompra.Enabled = False
+        'ComboBoxNumeroDeAsiento.Maximum = 200
         'BtnNuevaVentanilla.Enabled = False
 
     End Sub
@@ -61,13 +62,13 @@ Public Class Form_RegistroVentanillas
         ''if para que el usuario baja en escala o no''
         If Not TextBoxEscala.Text.Equals("none") Then
             escalaSi.Checked = False
-            escalaNo.Checked = False
+            escalaNo.Checked = True
             escalaSi.Enabled = True
             escalaNo.Enabled = True
 
         Else
             escalaSi.Checked = False
-            escalaNo.Checked = True
+            escalaNo.Checked = False
             escalaSi.Enabled = False
             escalaNo.Enabled = False
         End If
@@ -292,101 +293,107 @@ Public Class Form_RegistroVentanillas
     End Sub
 
 
-    Private Sub ComboBoxNumeroDeAsiento_ValueChanged(sender As Object, e As EventArgs) Handles ComboBoxNumeroDeAsiento.ValueChanged
-        If ComboBoxNumeroDeAsiento.Value < 1 Then
-            ComboBoxNumeroDeAsiento.Value = 1
-        ElseIf ComboBoxNumeroDeAsiento.Value > 199 Then
-            ComboBoxNumeroDeAsiento.Value = 199
-        End If
-    End Sub
+
 
     Private Sub BtnConfirmarCompra_Click_1(sender As Object, e As EventArgs) Handles BtnConfirmarCompra.Click
+
         If Not TextBoxNombrePasajero.Text = "" AndAlso Not TextBoxNacionalidad.Text = "" AndAlso
            Not ComboBoxDestino.SelectedItem = "" AndAlso Not TextBoxNumeroDePasaporte.Text = "" Then
+            If ComboBoxNumeroDeAsiento.Value <= 200 AndAlso ComboBoxNumeroDeAsiento.Value > 0 Then
+                Dim confirmar As DialogResult = MessageBox.Show("¿Está seguro de que desea el asiento " & ComboBoxNumeroDeAsiento.Value.ToString() & "?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                If confirmar = DialogResult.Yes Then
+                    ''controlador para saber si se baja en escala o no
+                    Dim pasajeroEscala As Integer = 0
 
-            ''controlador para saber si se baja en escala o no
-            Dim pasajeroEscala As Integer = 0
+                    ''verificar el numero de asientoo'''
+                    Dim numeroAsientoSolicitado$
+                    numeroAsientoSolicitado = ComboBoxNumeroDeAsiento.Value
+                    ''se hace la consulta a la base de datos si esta disponible''
+                    ''solicito el codigo del destino''
+                    Dim destinoSeleccionado As Integer = ComboBoxDestino.SelectedIndex
+                    Dim IDVuelo%
+                    If destinoSeleccionado >= 0 AndAlso destinoSeleccionado < datosVuelosPorVentanilla.Rows.Count Then
+                        Dim filaSeleccionada As DataRow = datosVuelosPorVentanilla.Rows(destinoSeleccionado)
+                        ''Guardo el codigo del vuelo''
+                        IDVuelo = Integer.Parse(filaSeleccionada("IDVuelo"))
+                    End If
 
-            ''verificar el numero de asientoo'''
-            Dim numeroAsientoSolicitado$
-            numeroAsientoSolicitado = ComboBoxNumeroDeAsiento.Value
-            ''se hace la consulta a la base de datos si esta disponible''
-            ''solicito el codigo del destino''
-            Dim destinoSeleccionado As Integer = ComboBoxDestino.SelectedIndex
-            Dim IDVuelo%
-            If destinoSeleccionado >= 0 AndAlso destinoSeleccionado < datosVuelosPorVentanilla.Rows.Count Then
-                Dim filaSeleccionada As DataRow = datosVuelosPorVentanilla.Rows(destinoSeleccionado)
-                ''Guardo el codigo del vuelo''
-                IDVuelo = Integer.Parse(filaSeleccionada("IDVuelo"))
-            End If
+                    ''CONSULTA SI ESTA DISPONIBLE EL ASIENTO''
+                    Dim consulta As String = "SELECT COUNT(*) AS ocupado FROM TblPasajero WHERE ID_Vuelo = @CodigoVuelo AND NumAsiento = @NumeroAsiento"
+                    Dim cmd As SqlCommand = New SqlCommand(consulta, conect.Conectar())
+                    cmd.Parameters.AddWithValue("@CodigoVuelo", IDVuelo)
+                    cmd.Parameters.AddWithValue("@NumeroAsiento", numeroAsientoSolicitado)
+                    ''me devuelve un 0 si esta disponible o un 1 si esta ocupado
+                    Dim disponible As Integer
+                    disponible = CInt(cmd.ExecuteScalar())
+                    conect.Cerrar()
 
-            ''CONSULTA SI ESTA DISPONIBLE EL ASIENTO''
-            Dim consulta As String = "SELECT COUNT(*) AS ocupado FROM TblPasajero WHERE ID_Vuelo = @CodigoVuelo AND NumAsiento = @NumeroAsiento"
-            Dim cmd As SqlCommand = New SqlCommand(consulta, conect.Conectar())
-            cmd.Parameters.AddWithValue("@CodigoVuelo", IDVuelo)
-            cmd.Parameters.AddWithValue("@NumeroAsiento", numeroAsientoSolicitado)
-            ''me devuelve un 0 si esta disponible o un 1 si esta ocupado
-            Dim disponible As Integer
-            disponible = CInt(cmd.ExecuteScalar())
-            conect.Cerrar()
+                    ''CONSULTA DEL ULTIMO PROCESO REALIDADO''
+                    Dim consulta2 As String = "select top 1 Id_Proceso from Ventanillas where NumeroVentanilla = @Ventanilla order by Id_Proceso desc"
+                    Dim cmd2 As SqlCommand = New SqlCommand(consulta2, conect.Conectar())
+                    cmd2.Parameters.AddWithValue("@Ventanilla", ComboBoxID_Ventanilla.Text)
+                    Dim idProceso As Integer
+                    idProceso = CInt(cmd2.ExecuteScalar())
+                    conect.Cerrar()
 
-            ''CONSULTA DEL ULTIMO PROCESO REALIDADO''
-            Dim consulta2 As String = "select top 1 Id_Proceso from Ventanillas where NumeroVentanilla = @Ventanilla order by Id_Proceso desc"
-            Dim cmd2 As SqlCommand = New SqlCommand(consulta2, conect.Conectar())
-            cmd2.Parameters.AddWithValue("@Ventanilla", ComboBoxID_Ventanilla.Text)
-            Dim idProceso As Integer
-            idProceso = CInt(cmd2.ExecuteScalar())
-            conect.Cerrar()
+                    ''verifico lo de la escala''
+                    If escalaNo.Enabled = False AndAlso escalaSi.Enabled = False Then
+                        pasajeroEscala = 0
 
-            ''verifico lo de la escala''
-            If escalaNo.Enabled = False AndAlso escalaSi.Enabled = False Then
-                pasajeroEscala = 0
+                    ElseIf escalaSi.Checked = True Then
+                        pasajeroEscala = 1
 
-            ElseIf escalaSi.Checked = True Then
-                pasajeroEscala = 1
-
-            ElseIf escalaNo.Checked = True Then
-                pasajeroEscala = 0
-            End If
+                    ElseIf escalaNo.Checked = True Then
+                        pasajeroEscala = 0
+                    End If
 
 
-            If disponible = 0 Then
-                ''se insertan los datos de pasajaero''
-                Try
-                    ''se guarda la hora del proceso''
-                    Dim horaActual As DateTime = DateTime.Now
-                    Dim horaMinutos As String = horaActual.ToString("HH:mm")
-                    '''''''''''''''''''''''''''''''''''''''''''''''''''''''
-                    ''se guardan los demas datos''
-                    Dim destinoViaje As String = ComboBoxDestino.SelectedItem.ToString
-                    Dim insertar As String = "insert into TblPasajero (Nombre, Nacionalidad, Destino, Precio, HoraAtencion, FechaSalida, NumAsiento, Escala, Pasaporte, ID_Ventanilla, ID_Vuelo) values
+                    If disponible = 0 Then
+                        ''se insertan los datos de pasajaero''
+                        Try
+                            ''se guarda la hora del proceso''
+                            Dim horaActual As DateTime = DateTime.Now
+                            Dim horaMinutos As String = horaActual.ToString("HH:mm")
+                            '''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                            ''se guardan los demas datos''
+                            Dim destinoViaje As String = ComboBoxDestino.SelectedItem.ToString
+                            Dim insertar As String = "insert into TblPasajero (Nombre, Nacionalidad, Destino, Precio, HoraAtencion, FechaSalida, NumAsiento, Escala, Pasaporte, ID_Ventanilla, ID_Vuelo) values
                                                                   (@Nombre, @Nacionalidad, @Destino, @Precio, @HoraAtencion, @FechaSalida, @NumAsiento, @Escala, @Pasaporte, @ID_Ventanilla, @ID_Vuelo)"
 
-                    Dim cmdInsert As SqlCommand = New SqlCommand(insertar, conect.Conectar())
-                    cmdInsert.Parameters.AddWithValue("@Nombre", TextBoxNombrePasajero.Text)
-                    cmdInsert.Parameters.AddWithValue("@Nacionalidad", TextBoxNacionalidad.Text)
-                    cmdInsert.Parameters.AddWithValue("@Destino", ComboBoxDestino.SelectedItem.ToString)
-                    cmdInsert.Parameters.AddWithValue("@Precio", SqlMoney.Parse(TextBoxPrecioTiquete.Text))
-                    cmdInsert.Parameters.AddWithValue("@HoraAtencion", horaMinutos)
-                    cmdInsert.Parameters.AddWithValue("@FechaSalida", TextBoxFechaSalida.Text)
-                    cmdInsert.Parameters.AddWithValue("@NumAsiento", numeroAsientoSolicitado)
-                    cmdInsert.Parameters.AddWithValue("@Escala", pasajeroEscala)
-                    cmdInsert.Parameters.AddWithValue("@Pasaporte", TextBoxNumeroDePasaporte.Text)
-                    cmdInsert.Parameters.AddWithValue("@ID_Ventanilla", idProceso)
-                    cmdInsert.Parameters.AddWithValue("@ID_Vuelo", IDVuelo)
-                    cmdInsert.ExecuteNonQuery()
-                    conect.Cerrar()
-                    MessageBox.Show("La compra ha sido exitosa")
-                    BtnNuevaVentanilla.Enabled = True
-                    limpiarCuadros()
-                Catch ex As Exception
-                    MessageBox.Show(ex.Message)
-                End Try
+                            Dim cmdInsert As SqlCommand = New SqlCommand(insertar, conect.Conectar())
+                            cmdInsert.Parameters.AddWithValue("@Nombre", TextBoxNombrePasajero.Text)
+                            cmdInsert.Parameters.AddWithValue("@Nacionalidad", TextBoxNacionalidad.Text)
+                            cmdInsert.Parameters.AddWithValue("@Destino", ComboBoxDestino.SelectedItem.ToString)
+                            cmdInsert.Parameters.AddWithValue("@Precio", SqlMoney.Parse(TextBoxPrecioTiquete.Text))
+                            cmdInsert.Parameters.AddWithValue("@HoraAtencion", horaMinutos)
+                            cmdInsert.Parameters.AddWithValue("@FechaSalida", TextBoxFechaSalida.Text)
+                            cmdInsert.Parameters.AddWithValue("@NumAsiento", numeroAsientoSolicitado)
+                            cmdInsert.Parameters.AddWithValue("@Escala", pasajeroEscala)
+                            cmdInsert.Parameters.AddWithValue("@Pasaporte", TextBoxNumeroDePasaporte.Text)
+                            cmdInsert.Parameters.AddWithValue("@ID_Ventanilla", idProceso)
+                            cmdInsert.Parameters.AddWithValue("@ID_Vuelo", IDVuelo)
+                            cmdInsert.ExecuteNonQuery()
+                            conect.Cerrar()
+                            MessageBox.Show("La compra ha sido exitosa")
+                            BtnNuevaVentanilla.Enabled = True
+                            limpiarCuadros()
+                        Catch ex As Exception
+                            MessageBox.Show(ex.Message)
+                        End Try
+
+                    Else
+                        MessageBox.Show("Numero de asiento vendido, ingrese otro")
+                    End If
+                ElseIf confirmar = DialogResult.No Then
+
+
+                End If
 
 
 
             Else
-                MessageBox.Show("Numero de asiento vendido, ingrese otro")
+                    MessageBox.Show("Numero de asiento tiene que ser menor a 200", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                ComboBoxNumeroDeAsiento.Value = ComboBoxNumeroDeAsiento.Maximum
             End If
 
         Else
@@ -456,6 +463,7 @@ Public Class Form_RegistroVentanillas
             ComboBoxLinea_Aereas.Text = ""
             GroupBoxPasajero.Enabled = False
             GroupBox1.Enabled = True
+            limpiarCuadros()
             PictureBox1.Image = Nothing
         Else
 
@@ -473,4 +481,6 @@ Public Class Form_RegistroVentanillas
     Private Sub TextBoxNumeroDePasaporte_TextChanged(sender As Object, e As EventArgs) Handles TextBoxNumeroDePasaporte.TextChanged
         verificarCompra()
     End Sub
+
+
 End Class
