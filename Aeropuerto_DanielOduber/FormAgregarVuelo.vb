@@ -116,80 +116,80 @@ Public Class FormAgregarVuelo
 
     Private Sub ComboBoxnumeroventanilla_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxnumeroventanilla.SelectedIndexChanged
         verificar()
-        'ComboBoxnumeroventanilla.Text = ""
-        'If ComboBoxnumeroventanilla.SelectedItem = 1 Then
+        ComboBoxnumeroventanilla.Text = ""
+        If ComboBoxnumeroventanilla.SelectedItem = 1 Then
 
-        '    Dim querys As String = "select IDAvion, Marca from TblAvion
-        '                            where LineaAerea = 'American Airlines'"
+            Dim querys As String = "select IDAvion, Marca from TblAvion
+                                    where LineaAerea = 'American Airlines'"
 
-        '    Id_aviones.Reset()
-        '    Dim M As SqlCommand = New SqlCommand(querys, conect.Conectar())
-        '    Dim da As SqlDataAdapter = New SqlDataAdapter(M)
-        '    da.Fill(Id_aviones)
-        '    conect.Cerrar()
+            Id_aviones.Reset()
+            Dim M As SqlCommand = New SqlCommand(querys, conect.Conectar())
+            Dim da As SqlDataAdapter = New SqlDataAdapter(M)
+            da.Fill(Id_aviones)
+            conect.Cerrar()
 
-        '    ComboBoxid_avion.Items.Clear()
+            ComboBoxid_avion.Items.Clear()
 
-        '    For Each row As DataRow In Id_aviones.Rows
-        '        ComboBoxid_avion.Items.Add(row("Marca"))
-        '    Next
-        '    conect.Cerrar()
+            For Each row As DataRow In Id_aviones.Rows
+                ComboBoxid_avion.Items.Add(row("Marca"))
+            Next
+            conect.Cerrar()
 
-        'ElseIf ComboBoxnumeroventanilla.SelectedItem = 2 Then
+        ElseIf ComboBoxnumeroventanilla.SelectedItem = 2 Then
 
-        '    Dim querys As String = "select IDAvion, Marca from TblAvion
-        '                            where LineaAerea = 'British Airways'"
+            Dim querys As String = "select IDAvion, Marca from TblAvion
+                                    where LineaAerea = 'British Airways'"
 
-        '    Id_aviones.Reset()
-        '    Dim M As SqlCommand = New SqlCommand(querys, conect.Conectar())
-        '    Dim da As SqlDataAdapter = New SqlDataAdapter(M)
-        '    da.Fill(Id_aviones)
-        '    conect.Cerrar()
+            Id_aviones.Reset()
+            Dim M As SqlCommand = New SqlCommand(querys, conect.Conectar())
+            Dim da As SqlDataAdapter = New SqlDataAdapter(M)
+            da.Fill(Id_aviones)
+            conect.Cerrar()
 
-        '    ComboBoxid_avion.Items.Clear()
+            ComboBoxid_avion.Items.Clear()
 
-        '    For Each row As DataRow In Id_aviones.Rows
-        '        ComboBoxid_avion.Items.Add(row("Marca"))
-        '    Next
-        '    conect.Cerrar()
+            For Each row As DataRow In Id_aviones.Rows
+                ComboBoxid_avion.Items.Add(row("Marca"))
+            Next
+            conect.Cerrar()
 
-        'ElseIf ComboBoxnumeroventanilla.SelectedItem = 3 Then
+        ElseIf ComboBoxnumeroventanilla.SelectedItem = 3 Then
 
-        '    Dim querys As String = "select IDAvion, Marca from TblAvion
-        '                            where LineaAerea = 'Emirates'"
+            Dim querys As String = "select IDAvion, Marca from TblAvion
+                                    where LineaAerea = 'Emirates'"
 
-        '    Id_aviones.Reset()
-        '    Dim M As SqlCommand = New SqlCommand(querys, conect.Conectar())
-        '    Dim da As SqlDataAdapter = New SqlDataAdapter(M)
-        '    da.Fill(Id_aviones)
-        '    conect.Cerrar()
+            Id_aviones.Reset()
+            Dim M As SqlCommand = New SqlCommand(querys, conect.Conectar())
+            Dim da As SqlDataAdapter = New SqlDataAdapter(M)
+            da.Fill(Id_aviones)
+            conect.Cerrar()
 
-        '    ComboBoxid_avion.Items.Clear()
+            ComboBoxid_avion.Items.Clear()
 
-        '    For Each row As DataRow In Id_aviones.Rows
-        '        ComboBoxid_avion.Items.Add(row("Marca"))
-        '    Next
-        '    conect.Cerrar()
+            For Each row As DataRow In Id_aviones.Rows
+                ComboBoxid_avion.Items.Add(row("Marca"))
+            Next
+            conect.Cerrar()
 
-        'ElseIf ComboBoxnumeroventanilla.SelectedItem = 4 Then
+        ElseIf ComboBoxnumeroventanilla.SelectedItem = 4 Then
 
-        '    Dim querys As String = "select IDAvion, Marca from TblAvion
-        '                            where LineaAerea = 'Delta Air Lines'"
+            Dim querys As String = "select IDAvion, Marca from TblAvion
+                                    where LineaAerea = 'Delta Air Lines'"
 
-        '    Id_aviones.Reset()
-        '    Dim M As SqlCommand = New SqlCommand(querys, conect.Conectar())
-        '    Dim da As SqlDataAdapter = New SqlDataAdapter(M)
-        '    da.Fill(Id_aviones)
-        '    conect.Cerrar()
+            Id_aviones.Reset()
+            Dim M As SqlCommand = New SqlCommand(querys, conect.Conectar())
+            Dim da As SqlDataAdapter = New SqlDataAdapter(M)
+            da.Fill(Id_aviones)
+            conect.Cerrar()
 
-        '    ComboBoxid_avion.Items.Clear()
+            ComboBoxid_avion.Items.Clear()
 
-        '    For Each row As DataRow In Id_aviones.Rows
-        '        ComboBoxid_avion.Items.Add(row("Marca"))
-        '    Next
-        '    conect.Cerrar()
+            For Each row As DataRow In Id_aviones.Rows
+                ComboBoxid_avion.Items.Add(row("Marca"))
+            Next
+            conect.Cerrar()
 
-        'End If
+        End If
     End Sub
 
     Private Sub GroupBoxOrigen_Enter(sender As Object, e As EventArgs) Handles GroupBoxOrigen.Enter

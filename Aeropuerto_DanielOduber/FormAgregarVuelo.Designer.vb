@@ -90,7 +90,6 @@ Partial Class FormAgregarVuelo
         'ComboBoxid_avion
         '
         Me.ComboBoxid_avion.FormattingEnabled = True
-        Me.ComboBoxid_avion.Items.AddRange(New Object() {"9"})
         Me.ComboBoxid_avion.Location = New System.Drawing.Point(240, 273)
         Me.ComboBoxid_avion.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBoxid_avion.Name = "ComboBoxid_avion"

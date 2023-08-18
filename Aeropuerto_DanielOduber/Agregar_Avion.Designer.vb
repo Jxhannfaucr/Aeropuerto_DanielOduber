@@ -85,7 +85,7 @@ Partial Class Agregar_Avion
         'TextBoxnombre_piloto
         '
         Me.TextBoxnombre_piloto.Location = New System.Drawing.Point(264, 133)
-        Me.TextBoxnombre_piloto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBoxnombre_piloto.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBoxnombre_piloto.Name = "TextBoxnombre_piloto"
         Me.TextBoxnombre_piloto.Size = New System.Drawing.Size(132, 22)
         Me.TextBoxnombre_piloto.TabIndex = 6
@@ -93,7 +93,7 @@ Partial Class Agregar_Avion
         'TextBoxcapacidad
         '
         Me.TextBoxcapacidad.Location = New System.Drawing.Point(680, 139)
-        Me.TextBoxcapacidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBoxcapacidad.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBoxcapacidad.Name = "TextBoxcapacidad"
         Me.TextBoxcapacidad.ReadOnly = True
         Me.TextBoxcapacidad.Size = New System.Drawing.Size(132, 22)
@@ -103,7 +103,7 @@ Partial Class Agregar_Avion
         'TextBoxmarca
         '
         Me.TextBoxmarca.Location = New System.Drawing.Point(680, 82)
-        Me.TextBoxmarca.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBoxmarca.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBoxmarca.Name = "TextBoxmarca"
         Me.TextBoxmarca.Size = New System.Drawing.Size(132, 22)
         Me.TextBoxmarca.TabIndex = 9
@@ -120,9 +120,9 @@ Partial Class Agregar_Avion
         Me.GroupBox1.Controls.Add(Me.TextBoxnombre_piloto)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Location = New System.Drawing.Point(13, 72)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(832, 380)
         Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
@@ -139,7 +139,7 @@ Partial Class Agregar_Avion
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(343, 279)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(143, 49)
         Me.Button1.TabIndex = 10
@@ -149,7 +149,7 @@ Partial Class Agregar_Avion
         'Button2
         '
         Me.Button2.Location = New System.Drawing.Point(745, 26)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(100, 28)
         Me.Button2.TabIndex = 11
@@ -177,9 +177,9 @@ Partial Class Agregar_Avion
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Agregar_Avion"
-        Me.Text = "Agregar_Avion"
+        Me.Text = "Agregar Avion"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
