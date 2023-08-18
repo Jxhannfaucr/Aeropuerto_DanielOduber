@@ -23,7 +23,7 @@ Public Class pasajeros_bajados
             Dim pasajeros_bajados = filaSeleccionada("Destino").ToString()
 
 
-
+            'consulta para tener la cantidad''
             Dim query As String = "SELECT COUNT(*) AS cantidad_pasajeros_bajaron
                 FROM TblPasajero p
                 INNER JOIN TblVuelo v ON p.ID_Vuelo = v.idVuelo
@@ -31,6 +31,7 @@ Public Class pasajeros_bajados
             Dim cmd As SqlCommand = New SqlCommand(query, conect.Conectar())
             cmd.Parameters.AddWithValue("@IDVuelo", IDVuelo)
             Dim cantidadPasajeros As Integer = CInt(cmd.ExecuteScalar())
+            'lleno la cantidad de pasajero'
             TextBox1.Text = cantidadPasajeros.ToString()
             cmd.ExecuteNonQuery()
             conect.Cerrar()
