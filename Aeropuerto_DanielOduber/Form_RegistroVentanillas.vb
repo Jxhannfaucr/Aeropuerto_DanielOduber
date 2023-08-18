@@ -6,7 +6,7 @@ Imports System.Text
 Public Class Form_RegistroVentanillas
     Public conect As Conexion_BD = New Conexion_BD
     Dim datosVuelosPorVentanilla As DataTable = New DataTable
-
+    Dim numVentanillaGlobal As Integer
     Private Sub Form_RegistroVentanillas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GroupBoxPasajero.Enabled = False ' se activara el group box de pasajeros hasta que los datos de ventanilla se guarden correctamente
         BtnConfirmarVentanilla.Enabled = False
@@ -170,6 +170,7 @@ Public Class Form_RegistroVentanillas
 
     Private Sub BtnConfirmarVentanilla_Click(sender As Object, e As EventArgs) Handles BtnConfirmarVentanilla.Click
         Dim ventanilla As Integer = Integer.Parse(ComboBoxID_Ventanilla.SelectedItem.ToString)
+        numVentanillaGlobal = Integer.Parse(ComboBoxID_Ventanilla.SelectedItem.ToString)
         If Not TextBoxNombre_Emple.Text = "" AndAlso Not TextBoxCedula_Empl.Text = "" AndAlso
             Not ComboBoxID_Ventanilla.SelectedItem = "" AndAlso Not ComboBoxLinea_Aereas.SelectedItem = "" Then
 
