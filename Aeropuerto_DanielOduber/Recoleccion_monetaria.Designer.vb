@@ -37,8 +37,11 @@ Partial Class Recoleccion_monetaria
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Button7 = New System.Windows.Forms.Button()
+        Me.ButtonTodas = New System.Windows.Forms.Button()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'BtnConfirmarVentanilla
@@ -71,7 +74,7 @@ Partial Class Recoleccion_monetaria
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(512, 287)
+        Me.GroupBox1.Size = New System.Drawing.Size(512, 273)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         '
@@ -96,6 +99,7 @@ Partial Class Recoleccion_monetaria
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.ButtonTodas)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.ComboBoxDestino)
@@ -153,7 +157,7 @@ Partial Class Recoleccion_monetaria
         '
         'TotalRecolectado
         '
-        Me.TotalRecolectado.Location = New System.Drawing.Point(891, 526)
+        Me.TotalRecolectado.Location = New System.Drawing.Point(277, 60)
         Me.TotalRecolectado.Margin = New System.Windows.Forms.Padding(4)
         Me.TotalRecolectado.Name = "TotalRecolectado"
         Me.TotalRecolectado.ReadOnly = True
@@ -164,7 +168,7 @@ Partial Class Recoleccion_monetaria
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Georgia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(649, 517)
+        Me.Label4.Location = New System.Drawing.Point(35, 51)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(230, 31)
@@ -194,16 +198,37 @@ Partial Class Recoleccion_monetaria
         Me.Button7.Text = "Regresar"
         Me.Button7.UseVisualStyleBackColor = False
         '
+        'ButtonTodas
+        '
+        Me.ButtonTodas.Font = New System.Drawing.Font("Georgia", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonTodas.Location = New System.Drawing.Point(391, 90)
+        Me.ButtonTodas.Margin = New System.Windows.Forms.Padding(4)
+        Me.ButtonTodas.Name = "ButtonTodas"
+        Me.ButtonTodas.Size = New System.Drawing.Size(100, 30)
+        Me.ButtonTodas.TabIndex = 35
+        Me.ButtonTodas.Text = "Todos"
+        Me.ButtonTodas.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.TotalRecolectado)
+        Me.GroupBox3.Controls.Add(Me.Label4)
+        Me.GroupBox3.Location = New System.Drawing.Point(623, 476)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(578, 113)
+        Me.GroupBox3.TabIndex = 39
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Ver"
+        '
         'Recoleccion_monetaria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1243, 601)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TotalRecolectado)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -214,6 +239,8 @@ Partial Class Recoleccion_monetaria
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -233,4 +260,6 @@ Partial Class Recoleccion_monetaria
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Button7 As Button
+    Friend WithEvents ButtonTodas As Button
+    Friend WithEvents GroupBox3 As GroupBox
 End Class

@@ -11,11 +11,12 @@ Public Class Recoleccion_monetaria
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnConfirmarVentanilla.Click
-        GroupBox2.Enabled = True
         Try
             Dim ventanilla_seleccionada As Object = ComboBoxID_Ventanilla.SelectedItem
             If Not ventanilla_seleccionada = "Todas" And Not ventanilla_seleccionada = Nothing Then
+                GroupBox2.Enabled = True
                 ComboBoxDestino.Enabled = True
+                ButtonTodas.Enabled = True
                 ''ventanilla 1''
                 If ComboBoxID_Ventanilla.SelectedItem = 1 Then
                     datosVuelosPorVentanilla.Reset()
@@ -30,6 +31,7 @@ Public Class Recoleccion_monetaria
                         ComboBoxDestino.Items.Add(row("Destino"))
                     Next
                     conect.Cerrar()
+
 
                     ''ventanilla 2''
                 ElseIf ComboBoxID_Ventanilla.SelectedItem = 2 Then
@@ -82,8 +84,9 @@ Public Class Recoleccion_monetaria
                 MessageBox.Show("Campo vacio")
 
             Else
-
+                GroupBox2.Enabled = True
                 ComboBoxDestino.Enabled = False
+                ButtonTodas.Enabled = False
 
             End If
 
@@ -124,6 +127,8 @@ Public Class Recoleccion_monetaria
                         ' Por ejemplo: Console.WriteLine("Cantidad de pasajeros llegaron: " & cantidadPasajeros)
 
                     End Using
+
+
                 End If
 
             Else
@@ -170,5 +175,33 @@ Public Class Recoleccion_monetaria
         Dim informes As New Informes()
         informes.Show()
         Me.Close()
+    End Sub
+
+    Private Sub ButtonTodas_Click(sender As Object, e As EventArgs) Handles ButtonTodas.Click
+        Try
+            ComboBoxDestino.Text = "TODOS"
+            Dim queryCantidadRecolectado As String = "SELECT SUM(p.precio)
+                                                                FROM TblPasajero as p
+                                                                INNER JOIN Ventanillas ON p.ID_Ventanilla = Ventanillas.Id_Proceso
+                                                                INNER JOIN TblVuelo ON p.ID_Vuelo = TblVuelo.IDVuelo
+                                                                WHERE Ventanillas.NumeroVentanilla = @Ventanilla AND Ventanillas.Fecha = @Fecha"
+
+            Using cmdCantidad As New SqlCommand(queryCantidadRecolectado, conect.Conectar())
+                cmdCantidad.Parameters.AddWithValue("@Fecha", DateTimeVentanilla.Text)
+                cmdCantidad.Parameters.AddWithValue("@Ventanilla", ComboBoxID_Ventanilla.SelectedItem)
+
+                Dim obtenerDato As Decimal = CInt(cmdCantidad.ExecuteScalar())
+                Dim cantidadRecolectado As String = obtenerDato.ToString("C2")
+                TotalRecolectado.Text = cantidadRecolectado.ToString()
+                conect.Cerrar()
+
+                ' Mostrar la cantidad de pasajeros llegaron en algún lugar
+                ' Por ejemplo: Console.WriteLine("Cantidad de pasajeros llegaron: " & cantidadPasajeros)
+
+            End Using
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
     End Sub
 End Class
