@@ -22,6 +22,7 @@ Partial Class Recoleccion_monetaria
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Recoleccion_monetaria))
         Me.BtnConfirmarVentanilla = New System.Windows.Forms.Button()
         Me.ComboBoxID_Ventanilla = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -205,6 +206,7 @@ Partial Class Recoleccion_monetaria
         Me.Controls.Add(Me.TotalRecolectado)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Recoleccion_monetaria"
         Me.Text = "Recoleccion monetaria"

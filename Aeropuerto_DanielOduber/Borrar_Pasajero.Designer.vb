@@ -22,12 +22,13 @@ Partial Class Borrar_Pasajero
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Borrar_Pasajero))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.ComboBoxDestino = New System.Windows.Forms.ComboBox()
+        Me.ButtonBuscar = New System.Windows.Forms.Button()
         Me.DateTimeBuscar = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.ButtonBuscar = New System.Windows.Forms.Button()
+        Me.ComboBoxDestino = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.ButtonEliminar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
@@ -48,23 +49,14 @@ Partial Class Borrar_Pasajero
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscar pasajeros"
         '
-        'Label7
+        'ButtonBuscar
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(40, 58)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(80, 20)
-        Me.Label7.TabIndex = 18
-        Me.Label7.Text = "Destino:"
-        '
-        'ComboBoxDestino
-        '
-        Me.ComboBoxDestino.FormattingEnabled = True
-        Me.ComboBoxDestino.Location = New System.Drawing.Point(142, 58)
-        Me.ComboBoxDestino.Name = "ComboBoxDestino"
-        Me.ComboBoxDestino.Size = New System.Drawing.Size(142, 24)
-        Me.ComboBoxDestino.TabIndex = 19
+        Me.ButtonBuscar.Location = New System.Drawing.Point(157, 211)
+        Me.ButtonBuscar.Name = "ButtonBuscar"
+        Me.ButtonBuscar.Size = New System.Drawing.Size(89, 33)
+        Me.ButtonBuscar.TabIndex = 34
+        Me.ButtonBuscar.Text = "Buscar"
+        Me.ButtonBuscar.UseVisualStyleBackColor = True
         '
         'DateTimeBuscar
         '
@@ -84,14 +76,23 @@ Partial Class Borrar_Pasajero
         Me.Label4.TabIndex = 32
         Me.Label4.Text = "Fecha:"
         '
-        'ButtonBuscar
+        'ComboBoxDestino
         '
-        Me.ButtonBuscar.Location = New System.Drawing.Point(157, 211)
-        Me.ButtonBuscar.Name = "ButtonBuscar"
-        Me.ButtonBuscar.Size = New System.Drawing.Size(89, 33)
-        Me.ButtonBuscar.TabIndex = 34
-        Me.ButtonBuscar.Text = "Buscar"
-        Me.ButtonBuscar.UseVisualStyleBackColor = True
+        Me.ComboBoxDestino.FormattingEnabled = True
+        Me.ComboBoxDestino.Location = New System.Drawing.Point(142, 58)
+        Me.ComboBoxDestino.Name = "ComboBoxDestino"
+        Me.ComboBoxDestino.Size = New System.Drawing.Size(142, 24)
+        Me.ComboBoxDestino.TabIndex = 19
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(40, 58)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(80, 20)
+        Me.Label7.TabIndex = 18
+        Me.Label7.Text = "Destino:"
         '
         'DataGridView1
         '
@@ -122,6 +123,7 @@ Partial Class Borrar_Pasajero
         Me.Controls.Add(Me.ButtonEliminar)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Borrar_Pasajero"
         Me.Text = "Borrar Pasajero"
         Me.GroupBox1.ResumeLayout(False)

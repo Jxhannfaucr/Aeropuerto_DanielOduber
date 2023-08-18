@@ -22,6 +22,7 @@ Partial Class Pasajeros_llegados
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pasajeros_llegados))
         Me.ComboBoxLlegados = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.texbox = New System.Windows.Forms.TextBox()
@@ -143,6 +144,7 @@ Partial Class Pasajeros_llegados
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.DataGridView1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Pasajeros_llegados"
         Me.Text = "Pasajeros sin escala"

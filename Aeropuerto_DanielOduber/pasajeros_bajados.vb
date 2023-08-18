@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Data.SqlTypes
 Imports System.Runtime.Remoting.Contexts
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class pasajeros_bajados
 
@@ -29,6 +30,8 @@ Public Class pasajeros_bajados
                 WHERE p.escala = 1 and v.IDVuelo = @IDVuelo"
             Dim cmd As SqlCommand = New SqlCommand(query, conect.Conectar())
             cmd.Parameters.AddWithValue("@IDVuelo", IDVuelo)
+            Dim cantidadPasajeros As Integer = CInt(cmd.ExecuteScalar())
+            TextBox1.Text = cantidadPasajeros.ToString()
             cmd.ExecuteNonQuery()
             conect.Cerrar()
 

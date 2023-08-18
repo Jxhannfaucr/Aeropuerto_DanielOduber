@@ -22,6 +22,7 @@ Partial Class Informe_cant_personas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Informe_cant_personas))
         Me.ComboSeleccionar_vuelo = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -39,7 +40,7 @@ Partial Class Informe_cant_personas
         '
         Me.ComboSeleccionar_vuelo.FormattingEnabled = True
         Me.ComboSeleccionar_vuelo.Location = New System.Drawing.Point(223, 47)
-        Me.ComboSeleccionar_vuelo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ComboSeleccionar_vuelo.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboSeleccionar_vuelo.Name = "ComboSeleccionar_vuelo"
         Me.ComboSeleccionar_vuelo.Size = New System.Drawing.Size(192, 24)
         Me.ComboSeleccionar_vuelo.TabIndex = 0
@@ -49,7 +50,7 @@ Partial Class Informe_cant_personas
         Me.Button1.Enabled = False
         Me.Button1.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(276, 116)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 34)
         Me.Button1.TabIndex = 1
@@ -72,7 +73,7 @@ Partial Class Informe_cant_personas
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(583, 142)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.Size = New System.Drawing.Size(663, 185)
@@ -81,7 +82,7 @@ Partial Class Informe_cant_personas
         'txtCantidadPasajeros
         '
         Me.txtCantidadPasajeros.Location = New System.Drawing.Point(816, 361)
-        Me.txtCantidadPasajeros.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCantidadPasajeros.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCantidadPasajeros.Name = "txtCantidadPasajeros"
         Me.txtCantidadPasajeros.ReadOnly = True
         Me.txtCantidadPasajeros.Size = New System.Drawing.Size(164, 22)
@@ -102,7 +103,7 @@ Partial Class Informe_cant_personas
         '
         Me.Button2.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Location = New System.Drawing.Point(1131, 32)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(115, 38)
         Me.Button2.TabIndex = 6
@@ -126,9 +127,9 @@ Partial Class Informe_cant_personas
         Me.GroupBox1.Controls.Add(Me.ComboSeleccionar_vuelo)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Location = New System.Drawing.Point(51, 142)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(456, 181)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
@@ -145,7 +146,8 @@ Partial Class Informe_cant_personas
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.txtCantidadPasajeros)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Informe_cant_personas"
         Me.Text = "Personas por vuelo"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

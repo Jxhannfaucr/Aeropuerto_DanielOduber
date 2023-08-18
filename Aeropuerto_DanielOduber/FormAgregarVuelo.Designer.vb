@@ -22,6 +22,7 @@ Partial Class FormAgregarVuelo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAgregarVuelo))
         Me.GroupBoxOrigen = New System.Windows.Forms.GroupBox()
         Me.ComboBoxescala = New System.Windows.Forms.ComboBox()
         Me.ComboBoxid_avion = New System.Windows.Forms.ComboBox()
@@ -81,7 +82,7 @@ Partial Class FormAgregarVuelo
         Me.ComboBoxescala.FormattingEnabled = True
         Me.ComboBoxescala.Items.AddRange(New Object() {"none"})
         Me.ComboBoxescala.Location = New System.Drawing.Point(240, 240)
-        Me.ComboBoxescala.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ComboBoxescala.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBoxescala.Name = "ComboBoxescala"
         Me.ComboBoxescala.Size = New System.Drawing.Size(251, 24)
         Me.ComboBoxescala.TabIndex = 45
@@ -91,7 +92,7 @@ Partial Class FormAgregarVuelo
         Me.ComboBoxid_avion.FormattingEnabled = True
         Me.ComboBoxid_avion.Items.AddRange(New Object() {"9"})
         Me.ComboBoxid_avion.Location = New System.Drawing.Point(240, 273)
-        Me.ComboBoxid_avion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ComboBoxid_avion.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBoxid_avion.Name = "ComboBoxid_avion"
         Me.ComboBoxid_avion.Size = New System.Drawing.Size(251, 24)
         Me.ComboBoxid_avion.TabIndex = 44
@@ -109,7 +110,7 @@ Partial Class FormAgregarVuelo
         'DateTimeSalida
         '
         Me.DateTimeSalida.Location = New System.Drawing.Point(240, 358)
-        Me.DateTimeSalida.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DateTimeSalida.Margin = New System.Windows.Forms.Padding(4)
         Me.DateTimeSalida.Name = "DateTimeSalida"
         Me.DateTimeSalida.Size = New System.Drawing.Size(251, 22)
         Me.DateTimeSalida.TabIndex = 42
@@ -262,7 +263,7 @@ Partial Class FormAgregarVuelo
         '
         Me.Button1.Font = New System.Drawing.Font("Georgia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(446, 30)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 28)
         Me.Button1.TabIndex = 28
@@ -277,6 +278,7 @@ Partial Class FormAgregarVuelo
         Me.ClientSize = New System.Drawing.Size(576, 617)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBoxOrigen)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "FormAgregarVuelo"
         Me.Text = "Agregar Vuelo"

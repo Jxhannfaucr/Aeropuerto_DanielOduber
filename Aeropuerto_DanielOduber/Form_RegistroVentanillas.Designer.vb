@@ -22,6 +22,7 @@ Partial Class Form_RegistroVentanillas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_RegistroVentanillas))
         Me.btn_VolverMenu = New System.Windows.Forms.Button()
         Me.GroupBoxPasajero = New System.Windows.Forms.GroupBox()
         Me.ComboBoxNumeroDeAsiento = New System.Windows.Forms.NumericUpDown()
@@ -474,6 +475,7 @@ Partial Class Form_RegistroVentanillas
         '
         'DateTimeVentanilla
         '
+        Me.DateTimeVentanilla.Enabled = False
         Me.DateTimeVentanilla.Location = New System.Drawing.Point(163, 272)
         Me.DateTimeVentanilla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DateTimeVentanilla.Name = "DateTimeVentanilla"
@@ -629,6 +631,7 @@ Partial Class Form_RegistroVentanillas
         Me.Controls.Add(Me.GroupBoxOrigen)
         Me.Controls.Add(Me.GroupBoxPasajero)
         Me.Controls.Add(Me.btn_VolverMenu)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form_RegistroVentanillas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

@@ -179,7 +179,8 @@ Partial Class Menu_Empleado
         Me.Controls.Add(Me.btn_ProcesarVentanilla)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.btn_IngresarAvion)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Menu_Empleado"
         Me.Text = "Menu Administrador"
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()

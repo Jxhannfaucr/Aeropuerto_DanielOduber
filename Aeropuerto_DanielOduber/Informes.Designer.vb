@@ -110,7 +110,7 @@ Partial Class Informes
         '
         Me.Button7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.Location = New System.Drawing.Point(1140, 53)
+        Me.Button7.Location = New System.Drawing.Point(1116, 48)
         Me.Button7.Margin = New System.Windows.Forms.Padding(3, 1, 3, 1)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(113, 32)
@@ -122,7 +122,7 @@ Partial Class Informes
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(575, 177)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(120, 105)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -143,7 +143,8 @@ Partial Class Informes
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button6)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Informes"
         Me.Text = "Informes"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
