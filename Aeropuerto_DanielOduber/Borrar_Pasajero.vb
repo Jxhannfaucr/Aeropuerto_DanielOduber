@@ -50,4 +50,48 @@ Public Class Borrar_Pasajero
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+    Private Sub ButtonEliminar_Click(sender As Object, e As EventArgs) Handles ButtonEliminar.Click
+        Try
+            Dim codigoPasajero = DataGridView1.CurrentRow.Cells(0).Value.ToString()
+
+            Dim Eliminar As String = "delete from TblPasajero where IDPasajero = @Codigo"
+            Dim cmd As SqlCommand = New SqlCommand(Eliminar, conect.Conectar())
+            cmd.Parameters.AddWithValue("@Codigo", codigoPasajero)
+            cmd.ExecuteNonQuery()
+            conect.Cerrar()
+            MessageBox.Show("El pasajero fue eliminado exitosamente.")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+        Try
+            Dim destinoSeleccionado As Integer = ComboBoxDestino.SelectedIndex
+
+            If destinoSeleccionado >= 0 AndAlso destinoSeleccionado < _tablaVuelos.Rows.Count Then
+                Dim filaSeleccionada As DataRow = _tablaVuelos.Rows(destinoSeleccionado)
+                Dim IDVuelo As Integer = Integer.Parse(filaSeleccionada("IDVuelo"))
+
+                ''llena la datagrid
+                Dim query As String = "select p.IDPasajero, p.Nombre, p.Pasaporte, p.NumAsiento from TblPasajero as p
+                                        inner join TblVuelo as v
+                                        on v.IDVuelo = p.ID_Vuelo
+                                        inner join Ventanillas as vn
+                                        on vn.Id_Proceso = p.ID_Ventanilla
+                                        where v.IDVuelo = @IDVuelo and vn.Fecha = @Fecha"
+                Dim cmd As SqlCommand = New SqlCommand(query, conect.Conectar())
+                cmd.Parameters.AddWithValue("@IDVuelo", IDVuelo)
+                cmd.Parameters.AddWithValue("@Fecha", DateTimeBuscar.Text)
+
+                Dim dt As DataTable = New DataTable()
+                Dim da As SqlDataAdapter = New SqlDataAdapter(cmd)
+                da.Fill(dt)
+                DataGridView1.DataSource = dt
+                conect.Cerrar()
+
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
 End Class
