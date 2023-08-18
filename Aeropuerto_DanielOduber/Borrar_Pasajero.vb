@@ -52,18 +52,29 @@ Public Class Borrar_Pasajero
     End Sub
 
     Private Sub ButtonEliminar_Click(sender As Object, e As EventArgs) Handles ButtonEliminar.Click
-        Try
-            Dim codigoPasajero = DataGridView1.CurrentRow.Cells(0).Value.ToString()
 
-            Dim Eliminar As String = "delete from TblPasajero where IDPasajero = @Codigo"
-            Dim cmd As SqlCommand = New SqlCommand(Eliminar, conect.Conectar())
-            cmd.Parameters.AddWithValue("@Codigo", codigoPasajero)
-            cmd.ExecuteNonQuery()
-            conect.Cerrar()
-            MessageBox.Show("El pasajero fue eliminado exitosamente.")
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+        Dim respuesta As DialogResult
+        respuesta = MessageBox.Show("¿Estás seguro de realizar esta acción?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If respuesta = DialogResult.Yes Then
+            Try
+                Dim codigoPasajero = DataGridView1.CurrentRow.Cells(0).Value.ToString()
+
+                Dim Eliminar As String = "delete from TblPasajero where IDPasajero = @Codigo"
+                Dim cmd As SqlCommand = New SqlCommand(Eliminar, conect.Conectar())
+                cmd.Parameters.AddWithValue("@Codigo", codigoPasajero)
+                cmd.ExecuteNonQuery()
+                conect.Cerrar()
+                MessageBox.Show("El pasajero fue eliminado exitosamente.")
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        ElseIf respuesta = DialogResult.No Then
+
+            MessageBox.Show("Has cancelado la acción.", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+
+
 
         Try
             Dim destinoSeleccionado As Integer = ComboBoxDestino.SelectedIndex
