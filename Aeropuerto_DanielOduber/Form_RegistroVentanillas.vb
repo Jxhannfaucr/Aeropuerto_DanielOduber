@@ -453,6 +453,7 @@ Public Class Form_RegistroVentanillas
             GroupBox1.Enabled = True
             limpiarCuadros()
             PictureBox1.Image = Nothing
+            ButtonBorrarP.Enabled = False
         Else
 
         End If
