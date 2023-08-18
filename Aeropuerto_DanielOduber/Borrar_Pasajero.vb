@@ -16,4 +16,8 @@ Public Class Borrar_Pasajero
             ComboBoxDestino.Items.Add(row("Destino"))
         Next
     End Sub
+
+    Private Sub ButtonBuscar_Click(sender As Object, e As EventArgs) Handles ButtonBuscar.Click
+
+    End Sub
 End Class

@@ -69,8 +69,8 @@ Partial Class Form_RegistroVentanillas
         Me.ComboBoxID_Ventanilla = New System.Windows.Forms.ComboBox()
         Me.LabelConexion = New System.Windows.Forms.Label()
         Me.BtnNuevaVentanilla = New System.Windows.Forms.Button()
+        Me.ButtonBorrarP = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBoxPasajero.SuspendLayout()
         CType(Me.ComboBoxNumeroDeAsiento, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBoxOrigen.SuspendLayout()
@@ -590,6 +590,21 @@ Partial Class Form_RegistroVentanillas
         Me.BtnNuevaVentanilla.Text = "Cambiar Ventanilla "
         Me.BtnNuevaVentanilla.UseVisualStyleBackColor = False
         '
+        'ButtonBorrarP
+        '
+        Me.ButtonBorrarP.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.ButtonBorrarP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.ButtonBorrarP.Enabled = False
+        Me.ButtonBorrarP.Font = New System.Drawing.Font("Microsoft Tai Le", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonBorrarP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.ButtonBorrarP.Location = New System.Drawing.Point(743, 21)
+        Me.ButtonBorrarP.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ButtonBorrarP.Name = "ButtonBorrarP"
+        Me.ButtonBorrarP.Size = New System.Drawing.Size(176, 31)
+        Me.ButtonBorrarP.TabIndex = 34
+        Me.ButtonBorrarP.Text = "Borrar pasajero"
+        Me.ButtonBorrarP.UseVisualStyleBackColor = False
+        '
         'PictureBox1
         '
         Me.PictureBox1.Location = New System.Drawing.Point(939, 405)
@@ -600,27 +615,13 @@ Partial Class Form_RegistroVentanillas
         Me.PictureBox1.TabIndex = 33
         Me.PictureBox1.TabStop = False
         '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Tai Le", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.Location = New System.Drawing.Point(743, 21)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(176, 31)
-        Me.Button1.TabIndex = 34
-        Me.Button1.Text = "Borrar pasajero"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'Form_RegistroVentanillas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1354, 546)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.ButtonBorrarP)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.BtnNuevaVentanilla)
         Me.Controls.Add(Me.LabelConexion)
@@ -694,5 +695,5 @@ Partial Class Form_RegistroVentanillas
     Friend WithEvents Label4 As Label
     Friend WithEvents BtnNuevaVentanilla As Button
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents ButtonBorrarP As Button
 End Class

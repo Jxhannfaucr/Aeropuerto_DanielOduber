@@ -25,16 +25,25 @@ Partial Class Borrar_Pasajero
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ComboBoxDestino = New System.Windows.Forms.ComboBox()
+        Me.DateTimeVentanilla = New System.Windows.Forms.DateTimePicker()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.ButtonBuscar = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.ButtonEliminar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.ButtonBuscar)
+        Me.GroupBox1.Controls.Add(Me.DateTimeVentanilla)
+        Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.ComboBoxDestino)
         Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Location = New System.Drawing.Point(25, 28)
+        Me.GroupBox1.Location = New System.Drawing.Point(179, 28)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(319, 311)
+        Me.GroupBox1.Size = New System.Drawing.Size(431, 311)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscar pasajeros"
@@ -52,26 +61,80 @@ Partial Class Borrar_Pasajero
         'ComboBoxDestino
         '
         Me.ComboBoxDestino.FormattingEnabled = True
-        Me.ComboBoxDestino.Location = New System.Drawing.Point(147, 58)
+        Me.ComboBoxDestino.Location = New System.Drawing.Point(142, 58)
         Me.ComboBoxDestino.Name = "ComboBoxDestino"
         Me.ComboBoxDestino.Size = New System.Drawing.Size(142, 24)
         Me.ComboBoxDestino.TabIndex = 19
+        '
+        'DateTimeVentanilla
+        '
+        Me.DateTimeVentanilla.Location = New System.Drawing.Point(132, 135)
+        Me.DateTimeVentanilla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DateTimeVentanilla.Name = "DateTimeVentanilla"
+        Me.DateTimeVentanilla.Size = New System.Drawing.Size(268, 22)
+        Me.DateTimeVentanilla.TabIndex = 33
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(39, 135)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(66, 20)
+        Me.Label4.TabIndex = 32
+        Me.Label4.Text = "Fecha:"
+        '
+        'ButtonBuscar
+        '
+        Me.ButtonBuscar.Location = New System.Drawing.Point(157, 211)
+        Me.ButtonBuscar.Name = "ButtonBuscar"
+        Me.ButtonBuscar.Size = New System.Drawing.Size(89, 33)
+        Me.ButtonBuscar.TabIndex = 34
+        Me.ButtonBuscar.Text = "Buscar"
+        Me.ButtonBuscar.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(20, 367)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.Size = New System.Drawing.Size(754, 230)
+        Me.DataGridView1.TabIndex = 2
+        '
+        'ButtonEliminar
+        '
+        Me.ButtonEliminar.Location = New System.Drawing.Point(20, 328)
+        Me.ButtonEliminar.Name = "ButtonEliminar"
+        Me.ButtonEliminar.Size = New System.Drawing.Size(116, 33)
+        Me.ButtonEliminar.TabIndex = 35
+        Me.ButtonEliminar.Text = "Eliminar"
+        Me.ButtonEliminar.UseVisualStyleBackColor = True
         '
         'Borrar_Pasajero
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 609)
+        Me.Controls.Add(Me.ButtonEliminar)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Borrar_Pasajero"
         Me.Text = "Borrar Pasajero"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents ComboBoxDestino As ComboBox
     Friend WithEvents Label7 As Label
+    Friend WithEvents ButtonBuscar As Button
+    Friend WithEvents DateTimeVentanilla As DateTimePicker
+    Friend WithEvents Label4 As Label
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents ButtonEliminar As Button
 End Class

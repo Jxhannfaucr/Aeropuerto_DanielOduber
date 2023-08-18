@@ -6,7 +6,7 @@ Imports System.Text
 Public Class Form_RegistroVentanillas
     Public conect As Conexion_BD = New Conexion_BD
     Dim datosVuelosPorVentanilla As DataTable = New DataTable
-    Dim numVentanillaGlobal As Integer
+
     Private Sub Form_RegistroVentanillas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GroupBoxPasajero.Enabled = False ' se activara el group box de pasajeros hasta que los datos de ventanilla se guarden correctamente
         BtnConfirmarVentanilla.Enabled = False
@@ -170,7 +170,6 @@ Public Class Form_RegistroVentanillas
 
     Private Sub BtnConfirmarVentanilla_Click(sender As Object, e As EventArgs) Handles BtnConfirmarVentanilla.Click
         Dim ventanilla As Integer = Integer.Parse(ComboBoxID_Ventanilla.SelectedItem.ToString)
-        numVentanillaGlobal = Integer.Parse(ComboBoxID_Ventanilla.SelectedItem.ToString)
         If Not TextBoxNombre_Emple.Text = "" AndAlso Not TextBoxCedula_Empl.Text = "" AndAlso
             Not ComboBoxID_Ventanilla.SelectedItem = "" AndAlso Not ComboBoxLinea_Aereas.SelectedItem = "" Then
 
@@ -272,9 +271,7 @@ Public Class Form_RegistroVentanillas
                 conect.Cerrar()
             End If
 
-
-            'if comprobacion ventanilla
-            'select destino tblvuelo donde ventanilla sea 1 
+            ButtonBorrarP.Enabled = True
 
         Else
             MessageBox.Show("Ha ocurrido un error. Datos Inválidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -475,5 +472,11 @@ Public Class Form_RegistroVentanillas
 
     Private Sub ComboBoxLinea_Aereas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxLinea_Aereas.SelectedIndexChanged
 
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles ButtonBorrarP.Click
+        Dim borrarP As New Borrar_Pasajero()
+        borrarP.TablaVuelos = datosVuelosPorVentanilla
+        borrarP.Show()
     End Sub
 End Class
