@@ -55,7 +55,7 @@ Partial Class Recoleccion_monetaria
         'ComboBoxID_Ventanilla
         '
         Me.ComboBoxID_Ventanilla.FormattingEnabled = True
-        Me.ComboBoxID_Ventanilla.Items.AddRange(New Object() {"1", "2", "3", "4"})
+        Me.ComboBoxID_Ventanilla.Items.AddRange(New Object() {"1", "2", "3", "4", "Todas"})
         Me.ComboBoxID_Ventanilla.Location = New System.Drawing.Point(324, 96)
         Me.ComboBoxID_Ventanilla.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBoxID_Ventanilla.Name = "ComboBoxID_Ventanilla"

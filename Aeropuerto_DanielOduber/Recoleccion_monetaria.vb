@@ -12,96 +12,132 @@ Public Class Recoleccion_monetaria
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnConfirmarVentanilla.Click
         GroupBox2.Enabled = True
-        ''ventanilla 1''
-        If ComboBoxID_Ventanilla.SelectedItem = 1 Then
-            datosVuelosPorVentanilla.Reset()
-            Dim consulta As String = "select * from TblVuelo where NumeroVentanilla = 1"
-            Dim M As SqlCommand = New SqlCommand(consulta, conect.Conectar())
-            Dim da As SqlDataAdapter = New SqlDataAdapter(M)
-            da.Fill(datosVuelosPorVentanilla)
-            conect.Cerrar()
-            ComboBoxDestino.Items.Clear()
+        Dim ventanilla_seleccionada As String = ComboBoxID_Ventanilla.SelectedItem.ToString
+        Try
+            If Not ventanilla_seleccionada = "Todas" Then
+                ComboBoxDestino.Enabled = True
+                ''ventanilla 1''
+                If ComboBoxID_Ventanilla.SelectedItem = 1 Then
+                    datosVuelosPorVentanilla.Reset()
+                    Dim consulta As String = "select * from TblVuelo where NumeroVentanilla = 1"
+                    Dim M As SqlCommand = New SqlCommand(consulta, conect.Conectar())
+                    Dim da As SqlDataAdapter = New SqlDataAdapter(M)
+                    da.Fill(datosVuelosPorVentanilla)
+                    conect.Cerrar()
+                    ComboBoxDestino.Items.Clear()
 
-            For Each row As DataRow In datosVuelosPorVentanilla.Rows
-                ComboBoxDestino.Items.Add(row("Destino"))
-            Next
-            conect.Cerrar()
+                    For Each row As DataRow In datosVuelosPorVentanilla.Rows
+                        ComboBoxDestino.Items.Add(row("Destino"))
+                    Next
+                    conect.Cerrar()
 
-            ''ventanilla 2''
-        ElseIf ComboBoxID_Ventanilla.SelectedItem = 2 Then
-            datosVuelosPorVentanilla.Reset()
-            Dim consulta As String = "select * from TblVuelo where NumeroVentanilla = 2"
-            Dim M As SqlCommand = New SqlCommand(consulta, conect.Conectar())
-            Dim da As SqlDataAdapter = New SqlDataAdapter(M)
-            da.Fill(datosVuelosPorVentanilla)
-            conect.Cerrar()
-            ComboBoxDestino.Items.Clear()
+                    ''ventanilla 2''
+                ElseIf ComboBoxID_Ventanilla.SelectedItem = 2 Then
+                    datosVuelosPorVentanilla.Reset()
+                    Dim consulta As String = "select * from TblVuelo where NumeroVentanilla = 2"
+                    Dim M As SqlCommand = New SqlCommand(consulta, conect.Conectar())
+                    Dim da As SqlDataAdapter = New SqlDataAdapter(M)
+                    da.Fill(datosVuelosPorVentanilla)
+                    conect.Cerrar()
+                    ComboBoxDestino.Items.Clear()
 
-            For Each row As DataRow In datosVuelosPorVentanilla.Rows
-                ComboBoxDestino.Items.Add(row("Destino"))
-            Next
-            conect.Cerrar()
+                    For Each row As DataRow In datosVuelosPorVentanilla.Rows
+                        ComboBoxDestino.Items.Add(row("Destino"))
+                    Next
+                    conect.Cerrar()
 
-            ''ventanilla 3''
-        ElseIf ComboBoxID_Ventanilla.SelectedItem = 3 Then
-            datosVuelosPorVentanilla.Reset()
-            Dim consulta As String = "select * from TblVuelo where NumeroVentanilla = 3"
-            Dim M As SqlCommand = New SqlCommand(consulta, conect.Conectar())
-            Dim da As SqlDataAdapter = New SqlDataAdapter(M)
-            da.Fill(datosVuelosPorVentanilla)
-            conect.Cerrar()
-            ComboBoxDestino.Items.Clear()
+                    ''ventanilla 3''
+                ElseIf ComboBoxID_Ventanilla.SelectedItem = 3 Then
+                    datosVuelosPorVentanilla.Reset()
+                    Dim consulta As String = "select * from TblVuelo where NumeroVentanilla = 3"
+                    Dim M As SqlCommand = New SqlCommand(consulta, conect.Conectar())
+                    Dim da As SqlDataAdapter = New SqlDataAdapter(M)
+                    da.Fill(datosVuelosPorVentanilla)
+                    conect.Cerrar()
+                    ComboBoxDestino.Items.Clear()
 
-            For Each row As DataRow In datosVuelosPorVentanilla.Rows
-                ComboBoxDestino.Items.Add(row("Destino"))
-            Next
-            conect.Cerrar()
+                    For Each row As DataRow In datosVuelosPorVentanilla.Rows
+                        ComboBoxDestino.Items.Add(row("Destino"))
+                    Next
+                    conect.Cerrar()
 
-            ''ventanilla 4''
-        ElseIf ComboBoxID_Ventanilla.SelectedItem = 4 Then
-            datosVuelosPorVentanilla.Reset()
-            Dim consulta As String = "select * from TblVuelo where NumeroVentanilla = 4"
-            Dim M As SqlCommand = New SqlCommand(consulta, conect.Conectar())
-            Dim da As SqlDataAdapter = New SqlDataAdapter(M)
-            da.Fill(datosVuelosPorVentanilla)
-            conect.Cerrar()
-            ComboBoxDestino.Items.Clear()
+                    ''ventanilla 4''
+                ElseIf ComboBoxID_Ventanilla.SelectedItem = 4 Then
+                    datosVuelosPorVentanilla.Reset()
+                    Dim consulta As String = "select * from TblVuelo where NumeroVentanilla = 4"
+                    Dim M As SqlCommand = New SqlCommand(consulta, conect.Conectar())
+                    Dim da As SqlDataAdapter = New SqlDataAdapter(M)
+                    da.Fill(datosVuelosPorVentanilla)
+                    conect.Cerrar()
+                    ComboBoxDestino.Items.Clear()
 
-            For Each row As DataRow In datosVuelosPorVentanilla.Rows
-                ComboBoxDestino.Items.Add(row("Destino"))
-            Next
-            conect.Cerrar()
-        End If
+                    For Each row As DataRow In datosVuelosPorVentanilla.Rows
+                        ComboBoxDestino.Items.Add(row("Destino"))
+                    Next
+                    conect.Cerrar()
+                End If
+
+            Else
+
+                ComboBoxDestino.Enabled = False
+
+            End If
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
-            Dim destinoSeleccionado As Integer = ComboBoxDestino.SelectedIndex
+            Dim ventanilla_seleccionada As String = ComboBoxID_Ventanilla.SelectedItem.ToString
+            If Not ventanilla_seleccionada = "Todas" Then
 
-            If destinoSeleccionado >= 0 AndAlso destinoSeleccionado < datosVuelosPorVentanilla.Rows.Count Then
-                Dim filaSeleccionada As DataRow = datosVuelosPorVentanilla.Rows(destinoSeleccionado)
-                Dim IDVuelo As Integer = Integer.Parse(filaSeleccionada("IDVuelo"))
+                Dim destinoSeleccionado As Integer = ComboBoxDestino.SelectedIndex
 
-                Dim queryCantidadRecolectado As String = "SELECT SUM(p.precio)
+                If destinoSeleccionado >= 0 AndAlso destinoSeleccionado < datosVuelosPorVentanilla.Rows.Count Then
+                    Dim filaSeleccionada As DataRow = datosVuelosPorVentanilla.Rows(destinoSeleccionado)
+                    Dim IDVuelo As Integer = Integer.Parse(filaSeleccionada("IDVuelo"))
+
+                    Dim queryCantidadRecolectado As String = "SELECT SUM(p.precio)
                                         FROM TblPasajero as p
                                         INNER JOIN Ventanillas ON p.ID_Ventanilla = Ventanillas.Id_Proceso
                                         INNER JOIN TblVuelo ON p.ID_Vuelo = TblVuelo.IDVuelo
                                         WHERE TblVuelo.IDVuelo = @IDVuelo AND Ventanillas.Fecha = @Fecha"
 
-                Using cmdCantidad As New SqlCommand(queryCantidadRecolectado, conect.Conectar())
-                    cmdCantidad.Parameters.AddWithValue("@IDVuelo", IDVuelo)
-                    cmdCantidad.Parameters.AddWithValue("@Fecha", DateTimeVentanilla.Text)
+                    Using cmdCantidad As New SqlCommand(queryCantidadRecolectado, conect.Conectar())
+                        cmdCantidad.Parameters.AddWithValue("@IDVuelo", IDVuelo)
+                        cmdCantidad.Parameters.AddWithValue("@Fecha", DateTimeVentanilla.Text)
 
-                    Dim obtenerDato As Decimal = CInt(cmdCantidad.ExecuteScalar())
-                    Dim cantidadRecolectado As String = obtenerDato.ToString("C2")
-                    TotalRecolectado.Text = cantidadRecolectado.ToString()
-                    conect.Cerrar()
+                        Dim obtenerDato As Decimal = CInt(cmdCantidad.ExecuteScalar())
+                        Dim cantidadRecolectado As String = obtenerDato.ToString("C2")
+                        TotalRecolectado.Text = cantidadRecolectado.ToString()
+                        conect.Cerrar()
 
-                    ' Mostrar la cantidad de pasajeros llegaron en algún lugar
-                    ' Por ejemplo: Console.WriteLine("Cantidad de pasajeros llegaron: " & cantidadPasajeros)
+                        ' Mostrar la cantidad de pasajeros llegaron en algún lugar
+                        ' Por ejemplo: Console.WriteLine("Cantidad de pasajeros llegaron: " & cantidadPasajeros)
 
-                End Using
+                    End Using
+                End If
+
+            Else
+                Dim queryCantidadRecolectado As String = "SELECT SUM(p.precio)
+                                        FROM TblPasajero as p
+                                        INNER JOIN Ventanillas ON p.ID_Ventanilla = Ventanillas.Id_Proceso
+                                        INNER JOIN TblVuelo ON p.ID_Vuelo = TblVuelo.IDVuelo
+                                        WHERE Ventanillas.Fecha = @Fecha"
+
+                Dim cmdCantidad2 As New SqlCommand(queryCantidadRecolectado, conect.Conectar())
+                cmdCantidad2.Parameters.AddWithValue("@Fecha", DateTimeVentanilla.Text)
+
+                Dim obtenerDato As Decimal = CInt(cmdCantidad2.ExecuteScalar())
+                Dim cantidadRecolectado As String = obtenerDato.ToString("C2")
+                TotalRecolectado.Text = cantidadRecolectado.ToString()
+                conect.Cerrar()
             End If
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
