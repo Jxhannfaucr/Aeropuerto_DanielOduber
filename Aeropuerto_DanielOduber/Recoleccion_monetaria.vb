@@ -12,9 +12,9 @@ Public Class Recoleccion_monetaria
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnConfirmarVentanilla.Click
         GroupBox2.Enabled = True
-        Dim ventanilla_seleccionada As String = ComboBoxID_Ventanilla.SelectedItem.ToString
         Try
-            If Not ventanilla_seleccionada = "Todas" Then
+            Dim ventanilla_seleccionada As Object = ComboBoxID_Ventanilla.SelectedItem
+            If Not ventanilla_seleccionada = "Todas" And Not ventanilla_seleccionada = Nothing Then
                 ComboBoxDestino.Enabled = True
                 ''ventanilla 1''
                 If ComboBoxID_Ventanilla.SelectedItem = 1 Then
@@ -77,6 +77,10 @@ Public Class Recoleccion_monetaria
                     conect.Cerrar()
                 End If
 
+
+            ElseIf ventanilla_seleccionada = Nothing Then
+                MessageBox.Show("Campo vacio")
+
             Else
 
                 ComboBoxDestino.Enabled = False
@@ -123,6 +127,7 @@ Public Class Recoleccion_monetaria
                 End If
 
             Else
+                ''si es todas, hace una suma de todos los vuelos hechos por las ventanillas ese dia''
                 Dim queryCantidadRecolectado As String = "SELECT SUM(p.precio)
                                         FROM TblPasajero as p
                                         INNER JOIN Ventanillas ON p.ID_Ventanilla = Ventanillas.Id_Proceso
