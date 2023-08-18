@@ -25,7 +25,7 @@ Partial Class Borrar_Pasajero
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ComboBoxDestino = New System.Windows.Forms.ComboBox()
-        Me.DateTimeVentanilla = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimeBuscar = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ButtonBuscar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -37,7 +37,7 @@ Partial Class Borrar_Pasajero
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.ButtonBuscar)
-        Me.GroupBox1.Controls.Add(Me.DateTimeVentanilla)
+        Me.GroupBox1.Controls.Add(Me.DateTimeBuscar)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.ComboBoxDestino)
         Me.GroupBox1.Controls.Add(Me.Label7)
@@ -66,13 +66,13 @@ Partial Class Borrar_Pasajero
         Me.ComboBoxDestino.Size = New System.Drawing.Size(142, 24)
         Me.ComboBoxDestino.TabIndex = 19
         '
-        'DateTimeVentanilla
+        'DateTimeBuscar
         '
-        Me.DateTimeVentanilla.Location = New System.Drawing.Point(132, 135)
-        Me.DateTimeVentanilla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.DateTimeVentanilla.Name = "DateTimeVentanilla"
-        Me.DateTimeVentanilla.Size = New System.Drawing.Size(268, 22)
-        Me.DateTimeVentanilla.TabIndex = 33
+        Me.DateTimeBuscar.Location = New System.Drawing.Point(132, 135)
+        Me.DateTimeBuscar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DateTimeBuscar.Name = "DateTimeBuscar"
+        Me.DateTimeBuscar.Size = New System.Drawing.Size(268, 22)
+        Me.DateTimeBuscar.TabIndex = 33
         '
         'Label4
         '
@@ -95,6 +95,7 @@ Partial Class Borrar_Pasajero
         '
         'DataGridView1
         '
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(20, 367)
         Me.DataGridView1.Name = "DataGridView1"
@@ -133,7 +134,7 @@ Partial Class Borrar_Pasajero
     Friend WithEvents ComboBoxDestino As ComboBox
     Friend WithEvents Label7 As Label
     Friend WithEvents ButtonBuscar As Button
-    Friend WithEvents DateTimeVentanilla As DateTimePicker
+    Friend WithEvents DateTimeBuscar As DateTimePicker
     Friend WithEvents Label4 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents ButtonEliminar As Button
