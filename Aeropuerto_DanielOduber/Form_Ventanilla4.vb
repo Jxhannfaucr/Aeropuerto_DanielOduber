@@ -3,7 +3,7 @@ Imports System.Data.SqlClient
 Imports System.Data.SqlTypes
 Imports System.Text
 
-Public Class Form_Ventanilla2
+Public Class Form_Ventanilla4
     Public conect As Conexion_BD = New Conexion_BD
     Dim datosVuelosPorVentanilla As DataTable = New DataTable
 

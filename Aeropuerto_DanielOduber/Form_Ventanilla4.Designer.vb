@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form_Ventanilla2
+Partial Class Form_Ventanilla4
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,7 +22,6 @@ Partial Class Form_Ventanilla2
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Ventanilla2))
         Me.ButtonBorrarP = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.LabelConexion = New System.Windows.Forms.Label()
@@ -143,7 +142,7 @@ Partial Class Form_Ventanilla2
         Me.ComboBoxID_Ventanilla.ReadOnly = True
         Me.ComboBoxID_Ventanilla.Size = New System.Drawing.Size(188, 22)
         Me.ComboBoxID_Ventanilla.TabIndex = 32
-        Me.ComboBoxID_Ventanilla.Text = "2"
+        Me.ComboBoxID_Ventanilla.Text = "4"
         Me.ComboBoxID_Ventanilla.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'DateTimeVentanilla
@@ -196,7 +195,7 @@ Partial Class Form_Ventanilla2
         Me.TextBoxCedula_Empl.ReadOnly = True
         Me.TextBoxCedula_Empl.Size = New System.Drawing.Size(188, 22)
         Me.TextBoxCedula_Empl.TabIndex = 19
-        Me.TextBoxCedula_Empl.Text = "407665588"
+        Me.TextBoxCedula_Empl.Text = "508997766"
         Me.TextBoxCedula_Empl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBoxNombre_Emple
@@ -207,7 +206,7 @@ Partial Class Form_Ventanilla2
         Me.TextBoxNombre_Emple.ReadOnly = True
         Me.TextBoxNombre_Emple.Size = New System.Drawing.Size(188, 22)
         Me.TextBoxNombre_Emple.TabIndex = 18
-        Me.TextBoxNombre_Emple.Text = "María Sandoval Gutiérrez "
+        Me.TextBoxNombre_Emple.Text = "Marta Esquivel Fernández"
         Me.TextBoxNombre_Emple.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label5
@@ -606,7 +605,7 @@ Partial Class Form_Ventanilla2
         Me.btn_VolverMenu.Text = "Menu"
         Me.btn_VolverMenu.UseVisualStyleBackColor = False
         '
-        'Form_Ventanilla2
+        'Form_Ventanilla4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -619,9 +618,8 @@ Partial Class Form_Ventanilla2
         Me.Controls.Add(Me.GroupBoxOrigen)
         Me.Controls.Add(Me.GroupBoxPasajero)
         Me.Controls.Add(Me.btn_VolverMenu)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "Form_Ventanilla2"
-        Me.Text = "Ventanilla 2"
+        Me.Name = "Form_Ventanilla4"
+        Me.Text = "Ventanilla 4"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

@@ -28,8 +28,9 @@ Partial Class Login
         Me.contraseñalogin = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.RadioButtonAdmin = New System.Windows.Forms.RadioButton()
+        Me.RadioButtonEmpleado = New System.Windows.Forms.RadioButton()
+        Me.ComboBox1 = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -37,7 +38,7 @@ Partial Class Login
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(118, 221)
+        Me.Label1.Location = New System.Drawing.Point(117, 304)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(87, 24)
@@ -48,7 +49,7 @@ Partial Class Login
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(105, 288)
+        Me.Label2.Location = New System.Drawing.Point(104, 371)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(118, 24)
@@ -57,7 +58,7 @@ Partial Class Login
         '
         'contraseñalogin
         '
-        Me.contraseñalogin.Location = New System.Drawing.Point(82, 326)
+        Me.contraseñalogin.Location = New System.Drawing.Point(81, 409)
         Me.contraseñalogin.Margin = New System.Windows.Forms.Padding(4)
         Me.contraseñalogin.Name = "contraseñalogin"
         Me.contraseñalogin.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -68,7 +69,7 @@ Partial Class Login
         '
         Me.Button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.Location = New System.Drawing.Point(94, 388)
+        Me.Button1.Location = New System.Drawing.Point(93, 459)
         Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(152, 44)
@@ -87,35 +88,45 @@ Partial Class Login
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'Button2
+        'RadioButtonAdmin
         '
-        Me.Button2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button2.Location = New System.Drawing.Point(94, 479)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(131, 27)
-        Me.Button2.TabIndex = 7
-        Me.Button2.Text = "Cerrar programa"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.RadioButtonAdmin.AutoSize = True
+        Me.RadioButtonAdmin.Location = New System.Drawing.Point(43, 257)
+        Me.RadioButtonAdmin.Name = "RadioButtonAdmin"
+        Me.RadioButtonAdmin.Size = New System.Drawing.Size(71, 20)
+        Me.RadioButtonAdmin.TabIndex = 8
+        Me.RadioButtonAdmin.TabStop = True
+        Me.RadioButtonAdmin.Text = "ADMIN"
+        Me.RadioButtonAdmin.UseVisualStyleBackColor = True
+        '
+        'RadioButtonEmpleado
+        '
+        Me.RadioButtonEmpleado.AutoSize = True
+        Me.RadioButtonEmpleado.Location = New System.Drawing.Point(195, 257)
+        Me.RadioButtonEmpleado.Name = "RadioButtonEmpleado"
+        Me.RadioButtonEmpleado.Size = New System.Drawing.Size(102, 20)
+        Me.RadioButtonEmpleado.TabIndex = 9
+        Me.RadioButtonEmpleado.TabStop = True
+        Me.RadioButtonEmpleado.Text = "EMPLEADO"
+        Me.RadioButtonEmpleado.UseVisualStyleBackColor = True
         '
         'ComboBox1
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"admin", "empleado"})
-        Me.ComboBox1.Location = New System.Drawing.Point(82, 250)
+        Me.ComboBox1.Location = New System.Drawing.Point(81, 345)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(176, 24)
-        Me.ComboBox1.TabIndex = 6
+        Me.ComboBox1.Size = New System.Drawing.Size(176, 22)
+        Me.ComboBox1.TabIndex = 10
         '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(350, 569)
+        Me.ClientSize = New System.Drawing.Size(350, 574)
         Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.RadioButtonEmpleado)
+        Me.Controls.Add(Me.RadioButtonAdmin)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
@@ -136,6 +147,7 @@ Partial Class Login
     Friend WithEvents Label2 As Label
     Friend WithEvents contraseñalogin As TextBox
     Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents RadioButtonAdmin As RadioButton
+    Friend WithEvents RadioButtonEmpleado As RadioButton
+    Friend WithEvents ComboBox1 As TextBox
 End Class

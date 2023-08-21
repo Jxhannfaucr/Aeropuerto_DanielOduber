@@ -156,7 +156,7 @@ Public Class Form_Ventanilla1
     Private Sub btn_VolverMenu_Click(sender As Object, e As EventArgs) Handles btn_VolverMenu.Click
         Dim confirmar As DialogResult = MessageBox.Show("¿Desea cerrar la ventanilla?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If confirmar = DialogResult.Yes Then
-            Form_Menu.Show()
+            Login.Show()
             Me.Close()
         End If
 

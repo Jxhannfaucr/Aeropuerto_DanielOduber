@@ -622,9 +622,7 @@ Partial Class Form_Ventanilla1
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form_Ventanilla1"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Registro de ventanillas"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
+        Me.Text = "Ventanilla 1"
         Me.GroupBoxPasajero.ResumeLayout(False)
         Me.GroupBoxPasajero.PerformLayout()
         Me.GroupBoxOrigen.ResumeLayout(False)

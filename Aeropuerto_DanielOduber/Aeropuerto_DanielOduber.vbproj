@@ -101,16 +101,22 @@
     <Compile Include="FormAgregarVuelo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form_Ventanilla2.Designer.vb">
+      <DependentUpon>Form_Ventanilla2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Ventanilla2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form_Ventanilla3.Designer.vb">
       <DependentUpon>Form_Ventanilla3.vb</DependentUpon>
     </Compile>
     <Compile Include="Form_Ventanilla3.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Ventanilla2.Designer.vb">
-      <DependentUpon>Form_Ventanilla2.vb</DependentUpon>
+    <Compile Include="Form_Ventanilla4.Designer.vb">
+      <DependentUpon>Form_Ventanilla4.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form_Ventanilla2.vb">
+    <Compile Include="Form_Ventanilla4.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Informes.Designer.vb">
@@ -198,11 +204,14 @@
     <EmbeddedResource Include="FormAgregarVuelo.resx">
       <DependentUpon>FormAgregarVuelo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Ventanilla2.resx">
+      <DependentUpon>Form_Ventanilla2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Ventanilla3.resx">
       <DependentUpon>Form_Ventanilla3.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Ventanilla2.resx">
-      <DependentUpon>Form_Ventanilla2.vb</DependentUpon>
+    <EmbeddedResource Include="Form_Ventanilla4.resx">
+      <DependentUpon>Form_Ventanilla4.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Informes.resx">
       <DependentUpon>Informes.vb</DependentUpon>
