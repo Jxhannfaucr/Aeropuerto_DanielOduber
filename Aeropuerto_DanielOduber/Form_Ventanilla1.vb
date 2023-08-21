@@ -3,7 +3,7 @@ Imports System.Data.SqlClient
 Imports System.Data.SqlTypes
 Imports System.Text
 
-Public Class Form_RegistroVentanillas
+Public Class Form_Ventanilla1
     Public conect As Conexion_BD = New Conexion_BD
     Dim datosVuelosPorVentanilla As DataTable = New DataTable
 
@@ -15,19 +15,75 @@ Public Class Form_RegistroVentanillas
         conect.Cerrar()
         BtnConfirmarCompra.Enabled = False
 
+        'Cargar aerolineas'
+        Try
+            VerificarCamposRellenadosVentanilla()
+            If ComboBoxID_Ventanilla.Text = 1 Then
+                ComboBoxLinea_Aereas.Items.Clear()
+                Dim consulta As String = "select distinct LineaAerea from TblAvion
+                                        inner join TblVuelo on ID_Avion = IDAvion
+                                        where NumeroVentanilla = 1"
+                Dim cmd As SqlCommand = New SqlCommand(consulta, conect.Conectar())
+                Dim lineaAerea As String = Convert.ToString(cmd.ExecuteScalar())
+                conect.Cerrar()
+                ComboBoxLinea_Aereas.Items.Add(lineaAerea)
+                ComboBoxLinea_Aereas.SelectedItem = lineaAerea
+                PictureBox1.Image = Image.FromFile("C:\Users\user\Documents\UACA\5 cuatrimestre\Progra 3\Proyecto final\Aeropuerto_DanielOduber\Aeropuerto_DanielOduber\Logos Aerolineas\THUMB-aa_aa__ahz_4cp_grd_pos-(1).png")
+
+
+            ElseIf ComboBoxID_Ventanilla.Text = 2 Then
+                ComboBoxLinea_Aereas.Items.Clear()
+                Dim consulta As String = "select distinct LineaAerea from TblAvion
+                                        inner join TblVuelo on ID_Avion = IDAvion
+                                        where NumeroVentanilla = 2"
+                Dim cmd As SqlCommand = New SqlCommand(consulta, conect.Conectar())
+                Dim lineaAerea As String = Convert.ToString(cmd.ExecuteScalar())
+                conect.Cerrar()
+                ComboBoxLinea_Aereas.Items.Add(lineaAerea)
+                ComboBoxLinea_Aereas.SelectedItem = lineaAerea
+                PictureBox1.Image = Image.FromFile("C:\Users\user\Documents\UACA\5 cuatrimestre\Progra 3\Proyecto final\Aeropuerto_DanielOduber\Aeropuerto_DanielOduber\Logos Aerolineas\British-Airways-Logo.png")
+            ElseIf ComboBoxID_Ventanilla.Text = 3 Then
+                ComboBoxLinea_Aereas.Items.Clear()
+                Dim consulta As String = "select distinct LineaAerea from TblAvion
+                                        inner join TblVuelo on ID_Avion = IDAvion
+                                        where NumeroVentanilla = 3"
+                Dim cmd As SqlCommand = New SqlCommand(consulta, conect.Conectar())
+                Dim lineaAerea As String = Convert.ToString(cmd.ExecuteScalar())
+                conect.Cerrar()
+                ComboBoxLinea_Aereas.Items.Add(lineaAerea)
+                ComboBoxLinea_Aereas.SelectedItem = lineaAerea
+                PictureBox1.Image = Image.FromFile("C:\Users\user\Documents\UACA\5 cuatrimestre\Progra 3\Proyecto final\Aeropuerto_DanielOduber\Aeropuerto_DanielOduber\Logos Aerolineas\Emirates-Logo.png")
+
+            ElseIf ComboBoxID_Ventanilla.Text = 4 Then
+                ComboBoxLinea_Aereas.Items.Clear()
+                Dim consulta As String = "select distinct LineaAerea from TblAvion
+                                        inner join TblVuelo on ID_Avion = IDAvion
+                                        where NumeroVentanilla = 4"
+                Dim cmd As SqlCommand = New SqlCommand(consulta, conect.Conectar())
+                Dim lineaAerea As String = Convert.ToString(cmd.ExecuteScalar())
+                conect.Cerrar()
+                ComboBoxLinea_Aereas.Items.Add(lineaAerea)
+                ComboBoxLinea_Aereas.SelectedItem = lineaAerea
+                PictureBox1.Image = Image.FromFile("C:\Users\user\Documents\UACA\5 cuatrimestre\Progra 3\Proyecto final\Aeropuerto_DanielOduber\Aeropuerto_DanielOduber\Logos Aerolineas\61586b0b258f1e000415490d.png")
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
     End Sub
 
 
     Private Sub ComboBoxDestino_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxDestino.SelectedIndexChanged
+        ListBoxNumeroDeAsiento.Items.Clear()
         ''guardo el indice del destino
         Dim destinoSeleccionado As Integer = ComboBoxDestino.SelectedIndex
-
+        Dim IDVuelo%
         ''busco los datos de ese destino en la dataTable''
         If destinoSeleccionado >= 0 AndAlso destinoSeleccionado < datosVuelosPorVentanilla.Rows.Count Then
             Dim filaSeleccionada As DataRow = datosVuelosPorVentanilla.Rows(destinoSeleccionado)
 
             ''Guardo los datos que se necesitan''
-            Dim IDVuelo% = Integer.Parse(filaSeleccionada("IDVuelo"))
+            IDVuelo = Integer.Parse(filaSeleccionada("IDVuelo"))
             Dim origen$ = filaSeleccionada("Origen").ToString()
             Dim Destino$ = filaSeleccionada("Destino").ToString()
             Dim HoraSalida$ = filaSeleccionada("HoraSalida").ToString()
@@ -63,11 +119,47 @@ Public Class Form_RegistroVentanillas
             escalaNo.Enabled = False
         End If
 
+        ''CONSULTA LA LISTA DE NUMEROS DE ASIENTOS''
+        Dim asientosDisponibles As New List(Of Integer)()
+        Dim consulta As String = "select NumAsiento from TblPasajero
+                                    where ID_Vuelo = @CodigoVuelo
+                                    order by NumAsiento asc"
+        Dim cmd As SqlCommand = New SqlCommand(consulta, conect.Conectar())
+        cmd.Parameters.AddWithValue("@CodigoVuelo", IDVuelo)
+        Dim disponible As Integer
+        disponible = CInt(cmd.ExecuteScalar())
+        ''LOS AGREGA A UNA LISTA''
+        Try
+            Dim reader As SqlDataReader = cmd.ExecuteReader()
+            While reader.Read()
+                Dim numAsiento As Integer = CInt(reader("NumAsiento"))
+                ''AGREGA A LISTA''
+                asientosDisponibles.Add(numAsiento)
+            End While
+            reader.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            conect.Cerrar()
+        End Try
+
+        ''RECORRE LA LISTA PARA AGREGAR AL COMBOBOX LOS ASIENTOS DISPONIBLES''
+        For i As Integer = 1 To 200
+            ''SI EL NUMERO NO ESTA EN LA LISTA, LO AGREGA''
+            If Not asientosDisponibles.Contains(i) Then
+                ListBoxNumeroDeAsiento.Items.Add(i)
+            End If
+        Next
+
     End Sub
 
     Private Sub btn_VolverMenu_Click(sender As Object, e As EventArgs) Handles btn_VolverMenu.Click
-        Form_Menu.Show()
-        Me.Close()
+        Dim confirmar As DialogResult = MessageBox.Show("¿Desea cerrar la ventanilla?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If confirmar = DialogResult.Yes Then
+            Form_Menu.Show()
+            Me.Close()
+        End If
+
     End Sub
 
     Private Sub BtnConfirmarCompra_Click(sender As Object, e As EventArgs)
@@ -88,10 +180,14 @@ Public Class Form_RegistroVentanillas
         TextBoxHoraLlegada.Clear()
         TextBoxNumVentanilla.Clear()
         TextBoxEscala.Clear()
+        ListBoxNumeroDeAsiento.Items.Clear()
+        ListBoxNumeroDeAsiento.Text = ""
     End Sub
 
     Private Sub verificarCompra()
-        If Not String.IsNullOrEmpty(TextBoxNombrePasajero.Text) AndAlso Not String.IsNullOrEmpty(TextBoxNacionalidad.Text) AndAlso Not String.IsNullOrEmpty(TextBoxNumeroDePasaporte.Text) Then
+        If Not String.IsNullOrEmpty(TextBoxNombrePasajero.Text) AndAlso Not String.IsNullOrEmpty(TextBoxNacionalidad.Text) AndAlso
+            Not String.IsNullOrEmpty(TextBoxNumeroDePasaporte.Text) AndAlso
+            Not String.IsNullOrEmpty(ListBoxNumeroDeAsiento.Text) Then
             BtnConfirmarCompra.Enabled = True
         Else
             BtnConfirmarCompra.Enabled = False
@@ -103,7 +199,7 @@ Public Class Form_RegistroVentanillas
         Not String.IsNullOrEmpty(ComboBoxID_Ventanilla.Text) AndAlso Not String.IsNullOrEmpty(ComboBoxLinea_Aereas.Text) Then
             BtnConfirmarVentanilla.Enabled = True
         Else
-            BtnConfirmarVentanilla.Enabled = False
+            BtnConfirmarVentanilla.Enabled = True
         End If
     End Sub
 
@@ -111,67 +207,11 @@ Public Class Form_RegistroVentanillas
     Private Sub TextBox_TextChanged(sender As Object, e As EventArgs) Handles TextBoxNombre_Emple.TextChanged, TextBoxCedula_Empl.TextChanged
         VerificarCamposRellenadosVentanilla()
     End Sub
-    Private Sub ComboBoxID_Ventanilla_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxID_Ventanilla.SelectedIndexChanged
-        Try
-            VerificarCamposRellenadosVentanilla()
-            If ComboBoxID_Ventanilla.SelectedItem = 1 Then
-                ComboBoxLinea_Aereas.Items.Clear()
-                Dim consulta As String = "select distinct LineaAerea from TblAvion
-                                        inner join TblVuelo on ID_Avion = IDAvion
-                                        where NumeroVentanilla = 1"
-                Dim cmd As SqlCommand = New SqlCommand(consulta, conect.Conectar())
-                Dim lineaAerea As String = Convert.ToString(cmd.ExecuteScalar())
-                conect.Cerrar()
-                ComboBoxLinea_Aereas.Items.Add(lineaAerea)
-                ComboBoxLinea_Aereas.SelectedItem = lineaAerea
-                PictureBox1.Image = Image.FromFile("C:\Users\user\Documents\UACA\5 cuatrimestre\Progra 3\Proyecto final\Aeropuerto_DanielOduber\Aeropuerto_DanielOduber\Logos Aerolineas\THUMB-aa_aa__ahz_4cp_grd_pos-(1).png")
-
-
-            ElseIf ComboBoxID_Ventanilla.SelectedItem = 2 Then
-                ComboBoxLinea_Aereas.Items.Clear()
-                Dim consulta As String = "select distinct LineaAerea from TblAvion
-                                        inner join TblVuelo on ID_Avion = IDAvion
-                                        where NumeroVentanilla = 2"
-                Dim cmd As SqlCommand = New SqlCommand(consulta, conect.Conectar())
-                Dim lineaAerea As String = Convert.ToString(cmd.ExecuteScalar())
-                conect.Cerrar()
-                ComboBoxLinea_Aereas.Items.Add(lineaAerea)
-                ComboBoxLinea_Aereas.SelectedItem = lineaAerea
-                PictureBox1.Image = Image.FromFile("C:\Users\user\Documents\UACA\5 cuatrimestre\Progra 3\Proyecto final\Aeropuerto_DanielOduber\Aeropuerto_DanielOduber\Logos Aerolineas\British-Airways-Logo.png")
-            ElseIf ComboBoxID_Ventanilla.SelectedItem = 3 Then
-                ComboBoxLinea_Aereas.Items.Clear()
-                Dim consulta As String = "select distinct LineaAerea from TblAvion
-                                        inner join TblVuelo on ID_Avion = IDAvion
-                                        where NumeroVentanilla = 3"
-                Dim cmd As SqlCommand = New SqlCommand(consulta, conect.Conectar())
-                Dim lineaAerea As String = Convert.ToString(cmd.ExecuteScalar())
-                conect.Cerrar()
-                ComboBoxLinea_Aereas.Items.Add(lineaAerea)
-                ComboBoxLinea_Aereas.SelectedItem = lineaAerea
-                PictureBox1.Image = Image.FromFile("C:\Users\user\Documents\UACA\5 cuatrimestre\Progra 3\Proyecto final\Aeropuerto_DanielOduber\Aeropuerto_DanielOduber\Logos Aerolineas\Emirates-Logo.png")
-
-            ElseIf ComboBoxID_Ventanilla.SelectedItem = 4 Then
-                ComboBoxLinea_Aereas.Items.Clear()
-                Dim consulta As String = "select distinct LineaAerea from TblAvion
-                                        inner join TblVuelo on ID_Avion = IDAvion
-                                        where NumeroVentanilla = 4"
-                Dim cmd As SqlCommand = New SqlCommand(consulta, conect.Conectar())
-                Dim lineaAerea As String = Convert.ToString(cmd.ExecuteScalar())
-                conect.Cerrar()
-                ComboBoxLinea_Aereas.Items.Add(lineaAerea)
-                ComboBoxLinea_Aereas.SelectedItem = lineaAerea
-                PictureBox1.Image = Image.FromFile("C:\Users\user\Documents\UACA\5 cuatrimestre\Progra 3\Proyecto final\Aeropuerto_DanielOduber\Aeropuerto_DanielOduber\Logos Aerolineas\61586b0b258f1e000415490d.png")
-            End If
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-
-    End Sub
 
     Private Sub BtnConfirmarVentanilla_Click(sender As Object, e As EventArgs) Handles BtnConfirmarVentanilla.Click
-        Dim ventanilla As Integer = Integer.Parse(ComboBoxID_Ventanilla.SelectedItem.ToString)
+        Dim ventanilla As Integer = Integer.Parse(ComboBoxID_Ventanilla.Text)
         If Not TextBoxNombre_Emple.Text = "" AndAlso Not TextBoxCedula_Empl.Text = "" AndAlso
-            Not ComboBoxID_Ventanilla.SelectedItem = "" AndAlso Not ComboBoxLinea_Aereas.SelectedItem = "" Then
+            Not ComboBoxID_Ventanilla.Text = "" AndAlso Not ComboBoxLinea_Aereas.SelectedItem = "" Then
 
             ''se insertan los datos a ventanilla''
             Try
@@ -180,16 +220,16 @@ Public Class Form_RegistroVentanillas
                 Dim horaMinutos As String = horaActual.ToString("HH:mm")
                 '''''''''''''''''''''''''''''''''''''''''''''''''''''''
                 ''se guardan los demas datos''
-                Dim insertar As String = "insert into Ventanillas (NumeroVentanilla, Nombre_empleado, Cedula_Empleado, Hora_Apertura, Linea_aerea, Fecha) values (@NumeroVentanilla, @Nombre_empleado, @Cedula_Empleado, @Hora_Apertura,@Linea_aerea, @Fecha)"
-                Dim cmd As SqlCommand = New SqlCommand(insertar, conect.Conectar())
-                cmd.Parameters.AddWithValue("@NumeroVentanilla", ComboBoxID_Ventanilla.Text)
-                cmd.Parameters.AddWithValue("@Nombre_empleado", TextBoxNombre_Emple.Text)
-                cmd.Parameters.AddWithValue("@Cedula_Empleado", TextBoxCedula_Empl.Text)
-                cmd.Parameters.AddWithValue("@Hora_Apertura", horaMinutos)
-                cmd.Parameters.AddWithValue("@Linea_aerea", ComboBoxLinea_Aereas.Text)
-                cmd.Parameters.AddWithValue("@Fecha", DateTimeVentanilla.Text)
-                cmd.ExecuteNonQuery()
-                conect.Cerrar()
+                'Dim insertar As String = "insert into Ventanillas (NumeroVentanilla, Nombre_empleado, Cedula_Empleado, Hora_Apertura, Linea_aerea, Fecha) values (@NumeroVentanilla, @Nombre_empleado, @Cedula_Empleado, @Hora_Apertura,@Linea_aerea, @Fecha)"
+                'Dim cmd As SqlCommand = New SqlCommand(insertar, conect.Conectar())
+                'cmd.Parameters.AddWithValue("@NumeroVentanilla", ComboBoxID_Ventanilla.Text)
+                'cmd.Parameters.AddWithValue("@Nombre_empleado", TextBoxNombre_Emple.Text)
+                'cmd.Parameters.AddWithValue("@Cedula_Empleado", TextBoxCedula_Empl.Text)
+                'cmd.Parameters.AddWithValue("@Hora_Apertura", horaMinutos)
+                'cmd.Parameters.AddWithValue("@Linea_aerea", ComboBoxLinea_Aereas.Text)
+                'cmd.Parameters.AddWithValue("@Fecha", DateTimeVentanilla.Text)
+                'cmd.ExecuteNonQuery()
+                'conect.Cerrar()
                 MessageBox.Show("Los datos de ventanilla fueron agregados exitosamente")
                 'BtnNuevaVentanilla.Enabled = False
             Catch ex As Exception
@@ -203,7 +243,7 @@ Public Class Form_RegistroVentanillas
             ''if para saber que ventanilla se eligio, y llenar la datatable''
 
             ''ventanilla 1''
-            If ComboBoxID_Ventanilla.SelectedItem = 1 Then
+            If ComboBoxID_Ventanilla.Text = 1 Then
                 datosVuelosPorVentanilla.Reset()
                 GroupBox1.Enabled = False ' apago el group box de ventanilla para que no se puedan realizar cambios
                 BtnConfirmarVentanilla.Enabled = False 'apago el boton de confimar porque si no se podrian guardar los mismos datos una y otra vez
@@ -220,7 +260,7 @@ Public Class Form_RegistroVentanillas
                 conect.Cerrar()
 
                 ''ventanilla 2''
-            ElseIf ComboBoxID_Ventanilla.SelectedItem = 2 Then
+            ElseIf ComboBoxID_Ventanilla.Text = 2 Then
                 datosVuelosPorVentanilla.Reset()
                 GroupBox1.Enabled = False ' apago el group box de ventanilla para que no se puedan realizar cambios
                 BtnConfirmarVentanilla.Enabled = False 'apago el boton de confimar porque si no se podrian guardar los mismos datos una y otra vez
@@ -237,7 +277,7 @@ Public Class Form_RegistroVentanillas
                 conect.Cerrar()
 
                 ''ventanilla 3''
-            ElseIf ComboBoxID_Ventanilla.SelectedItem = 3 Then
+            ElseIf ComboBoxID_Ventanilla.Text = 3 Then
                 datosVuelosPorVentanilla.Reset()
                 GroupBox1.Enabled = False ' apago el group box de ventanilla para que no se puedan realizar cambios
                 BtnConfirmarVentanilla.Enabled = False 'apago el boton de confimar porque si no se podrian guardar los mismos datos una y otra vez
@@ -254,7 +294,7 @@ Public Class Form_RegistroVentanillas
                 conect.Cerrar()
 
                 ''ventanilla 4''
-            ElseIf ComboBoxID_Ventanilla.SelectedItem = 4 Then
+            ElseIf ComboBoxID_Ventanilla.Text = 4 Then
                 datosVuelosPorVentanilla.Reset()
                 GroupBox1.Enabled = False ' apago el group box de ventanilla para que no se puedan realizar cambios
                 BtnConfirmarVentanilla.Enabled = False 'apago el boton de confimar porque si no se podrian guardar los mismos datos una y otra vez
@@ -284,18 +324,17 @@ Public Class Form_RegistroVentanillas
 
 
     Private Sub BtnConfirmarCompra_Click_1(sender As Object, e As EventArgs) Handles BtnConfirmarCompra.Click
-
         If Not TextBoxNombrePasajero.Text = "" AndAlso Not TextBoxNacionalidad.Text = "" AndAlso
-           Not ComboBoxDestino.SelectedItem = "" AndAlso Not TextBoxNumeroDePasaporte.Text = "" Then
-            If ComboBoxNumeroDeAsiento.Value <= 200 AndAlso ComboBoxNumeroDeAsiento.Value > 0 Then
-                Dim confirmar As DialogResult = MessageBox.Show("¿Está seguro de que desea el asiento " & ComboBoxNumeroDeAsiento.Value.ToString() & "?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+           Not ComboBoxDestino.SelectedItem = "" AndAlso Not TextBoxNumeroDePasaporte.Text = "" AndAlso Not ListBoxNumeroDeAsiento.Text = "" Then
+            If ListBoxNumeroDeAsiento.Text <= 200 AndAlso ListBoxNumeroDeAsiento.Text > 0 Then
+                Dim confirmar As DialogResult = MessageBox.Show("¿Está seguro de que desea el asiento " & ListBoxNumeroDeAsiento.Text.ToString() & "?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 If confirmar = DialogResult.Yes Then
                     ''controlador para saber si se baja en escala o no
                     Dim pasajeroEscala As Integer = 0
 
                     ''verificar el numero de asientoo'''
                     Dim numeroAsientoSolicitado$
-                    numeroAsientoSolicitado = ComboBoxNumeroDeAsiento.Value
+                    numeroAsientoSolicitado = ListBoxNumeroDeAsiento.Text
                     ''se hace la consulta a la base de datos si esta disponible''
                     ''solicito el codigo del destino''
                     Dim destinoSeleccionado As Integer = ComboBoxDestino.SelectedIndex
@@ -363,7 +402,6 @@ Public Class Form_RegistroVentanillas
                             cmdInsert.ExecuteNonQuery()
                             conect.Cerrar()
                             MessageBox.Show("La compra ha sido exitosa")
-                            BtnNuevaVentanilla.Enabled = True
                             limpiarCuadros()
                         Catch ex As Exception
                             MessageBox.Show(ex.Message)
@@ -380,8 +418,8 @@ Public Class Form_RegistroVentanillas
 
 
             Else
-                    MessageBox.Show("Numero de asiento tiene que ser menor a 200", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                ComboBoxNumeroDeAsiento.Value = ComboBoxNumeroDeAsiento.Maximum
+                MessageBox.Show("Numero de asiento tiene que ser menor a 200", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
             End If
 
         Else
@@ -435,29 +473,12 @@ Public Class Form_RegistroVentanillas
         End If
     End Sub
 
-    Private Sub ComboBoxNumeroDeAsiento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ComboBoxNumeroDeAsiento.KeyPress
+    Private Sub ComboBoxNumeroDeAsiento_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> "," AndAlso e.KeyChar <> "." Then
             e.Handled = True ' Cancelar la entrada de caracteres no válidos.
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnNuevaVentanilla.Click
-        Dim Resultado As DialogResult = MessageBox.Show("¿Está seguro de que desea cambiar los datos de ventanilla?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
-        If Resultado = DialogResult.Yes Then
-            ComboBoxID_Ventanilla.Text = ""
-            TextBoxNombre_Emple.Clear()
-            TextBoxCedula_Empl.Clear()
-            ComboBoxLinea_Aereas.Text = ""
-            GroupBoxPasajero.Enabled = False
-            GroupBox1.Enabled = True
-            limpiarCuadros()
-            PictureBox1.Image = Nothing
-            ButtonBorrarP.Enabled = False
-        Else
-
-        End If
-    End Sub
 
     Private Sub TextBoxNombrePasajero_TextChanged(sender As Object, e As EventArgs) Handles TextBoxNombrePasajero.TextChanged
         verificarCompra()
@@ -479,5 +500,15 @@ Public Class Form_RegistroVentanillas
         Dim borrarP As New Borrar_Pasajero()
         borrarP.TablaVuelos = datosVuelosPorVentanilla
         borrarP.Show()
+    End Sub
+
+    Private Sub ListBoxNumeroDeAsiento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ListBoxNumeroDeAsiento.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> "," AndAlso e.KeyChar <> "." Then
+            e.Handled = True ' Cancelar la entrada de caracteres no válidos.
+        End If
+    End Sub
+
+    Private Sub ListBoxNumeroDeAsiento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBoxNumeroDeAsiento.SelectedIndexChanged
+        verificarCompra()
     End Sub
 End Class
