@@ -171,7 +171,7 @@ Public Class Cant_vuelos
         Me.Close()
     End Sub
 
-    Private Sub List_ventanillas_KeyPress(sender As Object, e As KeyPressEventArgs) Handles List_ventanillas.KeyPress
+    Private Sub List_ventanillas_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.Handled = True ' Evita que se procese la tecla presionada
     End Sub
 
