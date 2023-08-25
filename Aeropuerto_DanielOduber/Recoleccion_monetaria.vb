@@ -300,8 +300,11 @@ Public Class Recoleccion_monetaria
 
                 End If
 
-                Dim total = totalV1 + totalV2 + totalV3 + totalV4
-                TextBoxTotal.Text = total.ToString
+                'Dim total = totalV1 + totalV2 + totalV3 + totalV4
+                'TextBoxTotal.Text = total.ToString
+                Dim totalGeneral As Decimal = totalV1 + totalV2 + totalV3 + totalV4
+
+                TextBoxTotal.Text = totalGeneral.ToString("C2", colon)
 
                 ''TODOS''
             ElseIf CheckBox5.Checked Then
@@ -331,82 +334,87 @@ Public Class Recoleccion_monetaria
 
                 End If
 
+
+
                 Dim destinoSeleccionado2 As Integer = ComboBoxDestino2.SelectedIndex
-                    If destinoSeleccionado2 >= 0 AndAlso destinoSeleccionado2 < dt2.Rows.Count Then
-                        Dim filaSeleccionada As DataRow = dt2.Rows(destinoSeleccionado2)
-                        Dim IDVuelo As Integer = Integer.Parse(filaSeleccionada("IDVuelo"))
+                If destinoSeleccionado2 >= 0 AndAlso destinoSeleccionado2 < dt2.Rows.Count Then
+                    Dim filaSeleccionada As DataRow = dt2.Rows(destinoSeleccionado2)
+                    Dim IDVuelo As Integer = Integer.Parse(filaSeleccionada("IDVuelo"))
 
-                        Dim queryCantidadRecolectado As String = "SELECT SUM(p.precio)
+                    Dim queryCantidadRecolectado As String = "SELECT SUM(p.precio)
                                         FROM TblPasajero as p
                                         INNER JOIN Ventanillas ON p.ID_Ventanilla = Ventanillas.Id_Proceso
                                         INNER JOIN TblVuelo ON p.ID_Vuelo = TblVuelo.IDVuelo
                                         WHERE TblVuelo.IDVuelo = @IDVuelo AND Ventanillas.Fecha = @Fecha"
 
-                        Using cmdCantidad As New SqlCommand(queryCantidadRecolectado, conect.Conectar())
-                            cmdCantidad.Parameters.AddWithValue("@IDVuelo", IDVuelo)
-                            cmdCantidad.Parameters.AddWithValue("@Fecha", DateTimeVentanilla.Text)
+                    Using cmdCantidad As New SqlCommand(queryCantidadRecolectado, conect.Conectar())
+                        cmdCantidad.Parameters.AddWithValue("@IDVuelo", IDVuelo)
+                        cmdCantidad.Parameters.AddWithValue("@Fecha", DateTimeVentanilla.Text)
 
-                            Dim obtenerDato As Decimal = CInt(cmdCantidad.ExecuteScalar())
-                            Dim cantidadRecolectado As String = obtenerDato.ToString("C2", colon)
-                            TotalRecolectado2.Text = cantidadRecolectado.ToString()
-                            conect.Cerrar()
+                        Dim obtenerDato As Decimal = CInt(cmdCantidad.ExecuteScalar())
+                        Dim cantidadRecolectado As String = obtenerDato.ToString("C2", colon)
+                        TotalRecolectado2.Text = cantidadRecolectado.ToString()
+                        conect.Cerrar()
 
-                        End Using
+                    End Using
 
-
-                    End If
-
-                Dim destinoSeleccionado3 As Integer = ComboBoxDestino3.SelectedIndex
-                    If destinoSeleccionado3 >= 0 AndAlso destinoSeleccionado3 < dt3.Rows.Count Then
-                        Dim filaSeleccionada As DataRow = dt3.Rows(destinoSeleccionado3)
-                        Dim IDVuelo As Integer = Integer.Parse(filaSeleccionada("IDVuelo"))
-
-                        Dim queryCantidadRecolectado As String = "SELECT SUM(p.precio)
-                                        FROM TblPasajero as p
-                                        INNER JOIN Ventanillas ON p.ID_Ventanilla = Ventanillas.Id_Proceso
-                                        INNER JOIN TblVuelo ON p.ID_Vuelo = TblVuelo.IDVuelo
-                                        WHERE TblVuelo.IDVuelo = @IDVuelo AND Ventanillas.Fecha = @Fecha"
-
-                        Using cmdCantidad As New SqlCommand(queryCantidadRecolectado, conect.Conectar())
-                            cmdCantidad.Parameters.AddWithValue("@IDVuelo", IDVuelo)
-                            cmdCantidad.Parameters.AddWithValue("@Fecha", DateTimeVentanilla.Text)
-
-                            Dim obtenerDato As Decimal = CInt(cmdCantidad.ExecuteScalar())
-                            Dim cantidadRecolectado As String = obtenerDato.ToString("C2", colon)
-                            TotalRecolectado3.Text = cantidadRecolectado.ToString()
-                            conect.Cerrar()
-
-                        End Using
-
-
-                    End If
-
-                Dim destinoSeleccionado4 As Integer = ComboBoxDestino4.SelectedIndex
-                    If destinoSeleccionado4 >= 0 AndAlso destinoSeleccionado4 < dt4.Rows.Count Then
-                        Dim filaSeleccionada As DataRow = dt4.Rows(destinoSeleccionado4)
-                        Dim IDVuelo As Integer = Integer.Parse(filaSeleccionada("IDVuelo"))
-
-                        Dim queryCantidadRecolectado As String = "SELECT SUM(p.precio)
-                                        FROM TblPasajero as p
-                                        INNER JOIN Ventanillas ON p.ID_Ventanilla = Ventanillas.Id_Proceso
-                                        INNER JOIN TblVuelo ON p.ID_Vuelo = TblVuelo.IDVuelo
-                                        WHERE TblVuelo.IDVuelo = @IDVuelo AND Ventanillas.Fecha = @Fecha"
-
-                        Using cmdCantidad As New SqlCommand(queryCantidadRecolectado, conect.Conectar())
-                            cmdCantidad.Parameters.AddWithValue("@IDVuelo", IDVuelo)
-                            cmdCantidad.Parameters.AddWithValue("@Fecha", DateTimeVentanilla.Text)
-
-                            Dim obtenerDato As Decimal = CInt(cmdCantidad.ExecuteScalar())
-                            Dim cantidadRecolectado As String = obtenerDato.ToString("C2", colon)
-                            TotalRecolectado4.Text = cantidadRecolectado.ToString()
-                            conect.Cerrar()
-
-                        End Using
-
-
-                    End If
 
                 End If
+
+                Dim destinoSeleccionado3 As Integer = ComboBoxDestino3.SelectedIndex
+                If destinoSeleccionado3 >= 0 AndAlso destinoSeleccionado3 < dt3.Rows.Count Then
+                    Dim filaSeleccionada As DataRow = dt3.Rows(destinoSeleccionado3)
+                    Dim IDVuelo As Integer = Integer.Parse(filaSeleccionada("IDVuelo"))
+
+                    Dim queryCantidadRecolectado As String = "SELECT SUM(p.precio)
+                                        FROM TblPasajero as p
+                                        INNER JOIN Ventanillas ON p.ID_Ventanilla = Ventanillas.Id_Proceso
+                                        INNER JOIN TblVuelo ON p.ID_Vuelo = TblVuelo.IDVuelo
+                                        WHERE TblVuelo.IDVuelo = @IDVuelo AND Ventanillas.Fecha = @Fecha"
+
+                    Using cmdCantidad As New SqlCommand(queryCantidadRecolectado, conect.Conectar())
+                        cmdCantidad.Parameters.AddWithValue("@IDVuelo", IDVuelo)
+                        cmdCantidad.Parameters.AddWithValue("@Fecha", DateTimeVentanilla.Text)
+
+                        Dim obtenerDato As Decimal = CInt(cmdCantidad.ExecuteScalar())
+                        Dim cantidadRecolectado As String = obtenerDato.ToString("C2", colon)
+                        TotalRecolectado3.Text = cantidadRecolectado.ToString()
+                        conect.Cerrar()
+
+                    End Using
+
+
+                End If
+
+                Dim destinoSeleccionado4 As Integer = ComboBoxDestino4.SelectedIndex
+                If destinoSeleccionado4 >= 0 AndAlso destinoSeleccionado4 < dt4.Rows.Count Then
+                    Dim filaSeleccionada As DataRow = dt4.Rows(destinoSeleccionado4)
+                    Dim IDVuelo As Integer = Integer.Parse(filaSeleccionada("IDVuelo"))
+
+                    Dim queryCantidadRecolectado As String = "SELECT SUM(p.precio)
+                                        FROM TblPasajero as p
+                                        INNER JOIN Ventanillas ON p.ID_Ventanilla = Ventanillas.Id_Proceso
+                                        INNER JOIN TblVuelo ON p.ID_Vuelo = TblVuelo.IDVuelo
+                                        WHERE TblVuelo.IDVuelo = @IDVuelo AND Ventanillas.Fecha = @Fecha"
+
+                    Using cmdCantidad As New SqlCommand(queryCantidadRecolectado, conect.Conectar())
+                        cmdCantidad.Parameters.AddWithValue("@IDVuelo", IDVuelo)
+                        cmdCantidad.Parameters.AddWithValue("@Fecha", DateTimeVentanilla.Text)
+
+                        Dim obtenerDato As Decimal = CInt(cmdCantidad.ExecuteScalar())
+                        Dim cantidadRecolectado As String = obtenerDato.ToString("C2", colon)
+                        TotalRecolectado4.Text = cantidadRecolectado.ToString()
+                        conect.Cerrar()
+
+                    End Using
+
+
+                End If
+                'Dim totalGeneral As Decimal = totalV1 + totalV2 + totalV3 + totalV4
+
+                '' Mostrar el total general en el TextBox
+                'TextBoxTotal.Text = totalGeneral.ToString("C2", colon)
+            End If
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
