@@ -15,10 +15,6 @@ Public Class Recoleccion_monetaria
     Dim dt3 As DataTable = New DataTable()
     Dim dt4 As DataTable = New DataTable()
 
-    Dim totalV1 = 0
-    Dim totalV2 = 0
-    Dim totalV3 = 0
-    Dim totalV4 = 0
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnConfirmarVentanilla.Click
@@ -182,6 +178,12 @@ Public Class Recoleccion_monetaria
         TotalRecolectado2.Text = ""
         TotalRecolectado3.Text = ""
         TotalRecolectado4.Text = ""
+        TextBoxTotal.Text = ""
+
+        Dim totalV1 = 0
+        Dim totalV2 = 0
+        Dim totalV3 = 0
+        Dim totalV4 = 0
 
         Dim colon As New CultureInfo("es-CR")
         colon.NumberFormat.CurrencySymbol = "₡"
@@ -452,6 +454,11 @@ Public Class Recoleccion_monetaria
         TotalRecolectado3.Text = ""
         TotalRecolectado4.Text = ""
 
+        Dim totalV1 = 0
+        Dim totalV2 = 0
+        Dim totalV3 = 0
+        Dim totalV4 = 0
+
         Dim colon As New CultureInfo("es-CR")
         colon.NumberFormat.CurrencySymbol = "₡"
         Try
@@ -645,6 +652,7 @@ Public Class Recoleccion_monetaria
         TotalRecolectado2.Text = ""
         TotalRecolectado3.Text = ""
         TotalRecolectado4.Text = ""
+        TextBoxTotal.Text = ""
 
     End Sub
 
@@ -664,6 +672,7 @@ Public Class Recoleccion_monetaria
         TotalRecolectado2.Text = ""
         TotalRecolectado3.Text = ""
         TotalRecolectado4.Text = ""
+        TextBoxTotal.Text = ""
     End Sub
 
     Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
@@ -682,6 +691,7 @@ Public Class Recoleccion_monetaria
         TotalRecolectado2.Text = ""
         TotalRecolectado3.Text = ""
         TotalRecolectado4.Text = ""
+        TextBoxTotal.Text = ""
     End Sub
 
     Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox3.CheckedChanged
@@ -700,7 +710,8 @@ Public Class Recoleccion_monetaria
         TotalRecolectado2.Text = ""
         TotalRecolectado3.Text = ""
         TotalRecolectado4.Text = ""
-        'p
+        TextBoxTotal.Text = ""
+
     End Sub
 
     Private Sub CheckBox4_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox4.CheckedChanged
@@ -719,5 +730,6 @@ Public Class Recoleccion_monetaria
         TotalRecolectado2.Text = ""
         TotalRecolectado3.Text = ""
         TotalRecolectado4.Text = ""
+        TextBoxTotal.Text = ""
     End Sub
 End Class
