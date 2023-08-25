@@ -220,16 +220,16 @@ Public Class Form_Ventanilla4
                 Dim horaMinutos As String = horaActual.ToString("HH:mm")
                 '''''''''''''''''''''''''''''''''''''''''''''''''''''''
                 ''se guardan los demas datos''
-                'Dim insertar As String = "insert into Ventanillas (NumeroVentanilla, Nombre_empleado, Cedula_Empleado, Hora_Apertura, Linea_aerea, Fecha) values (@NumeroVentanilla, @Nombre_empleado, @Cedula_Empleado, @Hora_Apertura,@Linea_aerea, @Fecha)"
-                'Dim cmd As SqlCommand = New SqlCommand(insertar, conect.Conectar())
-                'cmd.Parameters.AddWithValue("@NumeroVentanilla", ComboBoxID_Ventanilla.Text)
-                'cmd.Parameters.AddWithValue("@Nombre_empleado", TextBoxNombre_Emple.Text)
-                'cmd.Parameters.AddWithValue("@Cedula_Empleado", TextBoxCedula_Empl.Text)
-                'cmd.Parameters.AddWithValue("@Hora_Apertura", horaMinutos)
-                'cmd.Parameters.AddWithValue("@Linea_aerea", ComboBoxLinea_Aereas.Text)
-                'cmd.Parameters.AddWithValue("@Fecha", DateTimeVentanilla.Text)
-                'cmd.ExecuteNonQuery()
-                'conect.Cerrar()
+                Dim insertar As String = "insert into Ventanillas (NumeroVentanilla, Nombre_empleado, Cedula_Empleado, Hora_Apertura, Linea_aerea, Fecha) values (@NumeroVentanilla, @Nombre_empleado, @Cedula_Empleado, @Hora_Apertura,@Linea_aerea, @Fecha)"
+                Dim cmd As SqlCommand = New SqlCommand(insertar, conect.Conectar())
+                cmd.Parameters.AddWithValue("@NumeroVentanilla", ComboBoxID_Ventanilla.Text)
+                cmd.Parameters.AddWithValue("@Nombre_empleado", TextBoxNombre_Emple.Text)
+                cmd.Parameters.AddWithValue("@Cedula_Empleado", TextBoxCedula_Empl.Text)
+                cmd.Parameters.AddWithValue("@Hora_Apertura", horaMinutos)
+                cmd.Parameters.AddWithValue("@Linea_aerea", ComboBoxLinea_Aereas.Text)
+                cmd.Parameters.AddWithValue("@Fecha", DateTimeVentanilla.Text)
+                cmd.ExecuteNonQuery()
+                conect.Cerrar()
                 MessageBox.Show("Los datos de ventanilla fueron agregados exitosamente")
                 'BtnNuevaVentanilla.Enabled = False
             Catch ex As Exception
