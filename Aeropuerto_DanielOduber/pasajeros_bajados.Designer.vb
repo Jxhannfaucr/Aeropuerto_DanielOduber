@@ -58,7 +58,7 @@ Partial Class pasajeros_bajados
         '
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(326, 165)
+        Me.DataGridView1.Location = New System.Drawing.Point(340, 165)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
@@ -101,17 +101,17 @@ Partial Class pasajeros_bajados
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(13, 310)
+        Me.Label2.Font = New System.Drawing.Font("Georgia", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(2, 283)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(94, 23)
+        Me.Label2.Size = New System.Drawing.Size(330, 20)
         Me.Label2.TabIndex = 8
-        Me.Label2.Text = "Cantidad:"
+        Me.Label2.Text = "Cantidad de personas bajadas en la escala:"
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(130, 313)
+        Me.TextBox1.Location = New System.Drawing.Point(102, 315)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
         Me.TextBox1.Size = New System.Drawing.Size(115, 22)

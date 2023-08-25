@@ -46,6 +46,7 @@ Partial Class Recoleccion_monetaria
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TextBoxTotal = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -53,7 +54,6 @@ Partial Class Recoleccion_monetaria
         Me.TotalRecolectado4 = New System.Windows.Forms.TextBox()
         Me.TotalRecolectado3 = New System.Windows.Forms.TextBox()
         Me.TotalRecolectado2 = New System.Windows.Forms.TextBox()
-        Me.TextBoxTotal = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -155,7 +155,7 @@ Partial Class Recoleccion_monetaria
         '
         'DateTimeVentanilla
         '
-        Me.DateTimeVentanilla.Location = New System.Drawing.Point(218, 228)
+        Me.DateTimeVentanilla.Location = New System.Drawing.Point(218, 176)
         Me.DateTimeVentanilla.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DateTimeVentanilla.Name = "DateTimeVentanilla"
         Me.DateTimeVentanilla.Size = New System.Drawing.Size(317, 22)
@@ -210,10 +210,10 @@ Partial Class Recoleccion_monetaria
         'ButtonTodas
         '
         Me.ButtonTodas.Font = New System.Drawing.Font("Georgia", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonTodas.Location = New System.Drawing.Point(237, 159)
+        Me.ButtonTodas.Location = New System.Drawing.Point(296, 252)
         Me.ButtonTodas.Margin = New System.Windows.Forms.Padding(4)
         Me.ButtonTodas.Name = "ButtonTodas"
-        Me.ButtonTodas.Size = New System.Drawing.Size(100, 30)
+        Me.ButtonTodas.Size = New System.Drawing.Size(100, 42)
         Me.ButtonTodas.TabIndex = 35
         Me.ButtonTodas.Text = "Todos"
         Me.ButtonTodas.UseVisualStyleBackColor = True
@@ -222,7 +222,7 @@ Partial Class Recoleccion_monetaria
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Georgia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(23, 228)
+        Me.Label3.Location = New System.Drawing.Point(23, 176)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(174, 23)
@@ -252,7 +252,7 @@ Partial Class Recoleccion_monetaria
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Georgia", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(237, 302)
+        Me.Button2.Location = New System.Drawing.Point(163, 252)
         Me.Button2.Margin = New System.Windows.Forms.Padding(4)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(100, 42)
@@ -321,6 +321,15 @@ Partial Class Recoleccion_monetaria
         Me.GroupBox3.TabIndex = 39
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Ver"
+        '
+        'TextBoxTotal
+        '
+        Me.TextBoxTotal.Location = New System.Drawing.Point(652, 26)
+        Me.TextBoxTotal.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBoxTotal.Name = "TextBoxTotal"
+        Me.TextBoxTotal.ReadOnly = True
+        Me.TextBoxTotal.Size = New System.Drawing.Size(150, 22)
+        Me.TextBoxTotal.TabIndex = 43
         '
         'Label9
         '
@@ -392,15 +401,6 @@ Partial Class Recoleccion_monetaria
         Me.TotalRecolectado2.ReadOnly = True
         Me.TotalRecolectado2.Size = New System.Drawing.Size(208, 22)
         Me.TotalRecolectado2.TabIndex = 37
-        '
-        'TextBoxTotal
-        '
-        Me.TextBoxTotal.Location = New System.Drawing.Point(652, 26)
-        Me.TextBoxTotal.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBoxTotal.Name = "TextBoxTotal"
-        Me.TextBoxTotal.ReadOnly = True
-        Me.TextBoxTotal.Size = New System.Drawing.Size(150, 22)
-        Me.TextBoxTotal.TabIndex = 43
         '
         'Recoleccion_monetaria
         '
