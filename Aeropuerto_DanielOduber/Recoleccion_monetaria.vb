@@ -329,7 +329,7 @@ Public Class Recoleccion_monetaria
                         Dim cantidadRecolectado As String = obtenerDato.ToString("C2", colon)
                         TotalRecolectado1.Text = cantidadRecolectado.ToString()
                         conect.Cerrar()
-
+                        totalV1 = obtenerDato
                     End Using
 
                 End If
@@ -355,7 +355,7 @@ Public Class Recoleccion_monetaria
                         Dim cantidadRecolectado As String = obtenerDato.ToString("C2", colon)
                         TotalRecolectado2.Text = cantidadRecolectado.ToString()
                         conect.Cerrar()
-
+                        totalV2 = obtenerDato
                     End Using
 
 
@@ -380,7 +380,7 @@ Public Class Recoleccion_monetaria
                         Dim cantidadRecolectado As String = obtenerDato.ToString("C2", colon)
                         TotalRecolectado3.Text = cantidadRecolectado.ToString()
                         conect.Cerrar()
-
+                        totalV3 = obtenerDato
                     End Using
 
 
@@ -405,15 +405,16 @@ Public Class Recoleccion_monetaria
                         Dim cantidadRecolectado As String = obtenerDato.ToString("C2", colon)
                         TotalRecolectado4.Text = cantidadRecolectado.ToString()
                         conect.Cerrar()
-
+                        totalV4 = obtenerDato
                     End Using
 
 
                 End If
-                'Dim totalGeneral As Decimal = totalV1 + totalV2 + totalV3 + totalV4
 
-                '' Mostrar el total general en el TextBox
-                'TextBoxTotal.Text = totalGeneral.ToString("C2", colon)
+                Dim totalGeneral As Decimal = totalV1 + totalV2 + totalV3 + totalV4
+
+
+                TextBoxTotal.Text = totalGeneral.ToString("C2", colon)
             End If
 
         Catch ex As Exception
@@ -473,7 +474,7 @@ Public Class Recoleccion_monetaria
                 Dim cantidadRecolectado As String = obtenerDato.ToString("C2", colon)
                 TotalRecolectado1.Text = cantidadRecolectado.ToString()
                 conect.Cerrar()
-
+                totalV1 = obtenerDato
                 ''VENTANILLA 2''
                 Dim queryCantidadRecolectado2 As String = "SELECT SUM(p.precio)
                                         FROM TblPasajero as p
@@ -488,7 +489,7 @@ Public Class Recoleccion_monetaria
                 Dim cantidadRecolectado2 As String = obtenerDato2.ToString("C2", colon)
                 TotalRecolectado2.Text = cantidadRecolectado2.ToString()
                 conect.Cerrar()
-
+                totalV2 = obtenerDato2
                 ''VENTANILLA 3''
                 Dim queryCantidadRecolectado3 As String = "SELECT SUM(p.precio)
                                         FROM TblPasajero as p
@@ -503,7 +504,7 @@ Public Class Recoleccion_monetaria
                 Dim cantidadRecolectado3 As String = obtenerDato3.ToString("C2", colon)
                 TotalRecolectado3.Text = cantidadRecolectado3.ToString()
                 conect.Cerrar()
-
+                totalV3 = obtenerDato3
                 ''VENTANILLA 4''
                 Dim queryCantidadRecolectado4 As String = "SELECT SUM(p.precio)
                                         FROM TblPasajero as p
@@ -518,7 +519,12 @@ Public Class Recoleccion_monetaria
                 Dim cantidadRecolectado4 As String = obtenerDato4.ToString("C2", colon)
                 TotalRecolectado4.Text = cantidadRecolectado4.ToString()
                 conect.Cerrar()
+                totalV4 = obtenerDato4
 
+
+                Dim totalGeneral As Decimal = totalV1 + totalV2 + totalV3 + totalV4
+
+                TextBoxTotal.Text = totalGeneral.ToString("C2", colon)
 
             ElseIf Not CheckBox5.Checked Then
 
@@ -537,6 +543,7 @@ Public Class Recoleccion_monetaria
                     Dim cantidadRecolectado As String = obtenerDato.ToString("C2", colon)
                     TotalRecolectado1.Text = cantidadRecolectado.ToString()
                     conect.Cerrar()
+                    totalV1 = obtenerDato
                 End If
 
                 If CheckBox2.Checked Then
@@ -554,6 +561,7 @@ Public Class Recoleccion_monetaria
                     Dim cantidadRecolectado2 As String = obtenerDato2.ToString("C2", colon)
                     TotalRecolectado2.Text = cantidadRecolectado2.ToString()
                     conect.Cerrar()
+                    totalV2 = obtenerDato2
                 End If
 
                 If CheckBox3.Checked Then
@@ -571,6 +579,7 @@ Public Class Recoleccion_monetaria
                     Dim cantidadRecolectado3 As String = obtenerDato3.ToString("C2", colon)
                     TotalRecolectado3.Text = cantidadRecolectado3.ToString()
                     conect.Cerrar()
+                    totalV3 = obtenerDato3
                 End If
 
                 If CheckBox4.Checked Then
@@ -588,8 +597,12 @@ Public Class Recoleccion_monetaria
                     Dim cantidadRecolectado4 As String = obtenerDato4.ToString("C2", colon)
                     TotalRecolectado4.Text = cantidadRecolectado4.ToString()
                     conect.Cerrar()
+                    totalV4 = obtenerDato4
                 End If
 
+                Dim totalGeneral As Decimal = totalV1 + totalV2 + totalV3 + totalV4
+
+                TextBoxTotal.Text = totalGeneral.ToString("C2", colon)
 
             End If
         Catch ex As Exception
@@ -687,6 +700,7 @@ Public Class Recoleccion_monetaria
         TotalRecolectado2.Text = ""
         TotalRecolectado3.Text = ""
         TotalRecolectado4.Text = ""
+        'p
     End Sub
 
     Private Sub CheckBox4_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox4.CheckedChanged
